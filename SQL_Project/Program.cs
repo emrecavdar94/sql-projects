@@ -15,7 +15,7 @@ namespace SQL_Project
         [STAThread]
         static void Main()
         {
-            SqlConnection baglanti = new SqlConnection("Server=DESKTOP-4GC137M;Database=araba;User Id=araba;Password=arabaparola;");
+            SqlConnection baglanti = new SqlConnection("Server=.;Database=araba;User Id=araba;Password=arabaparola;");
             baglanti.Open();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

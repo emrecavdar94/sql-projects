@@ -164,6 +164,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -180,6 +181,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="pictures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\access_key-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_security_business_web_data_information_system-512.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
