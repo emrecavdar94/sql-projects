@@ -24,12 +24,13 @@ namespace SQL_Project
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            
+
             String kullanici = tbKullaniciAdi.Text;
             String parola = tbParola.Text;
             SHA1 sha = new SHA1CryptoServiceProvider();
             StringBuilder parolaSha = new StringBuilder();
-            foreach (byte b in sha.ComputeHash(Encoding.UTF8.GetBytes(parola))) {
+            foreach (byte b in sha.ComputeHash(Encoding.UTF8.GetBytes(parola)))
+            {
                 parolaSha.Append(b.ToString("x2"));
             }
 
@@ -41,12 +42,12 @@ namespace SQL_Project
 
             if (DS.Tables.Count > 0)
             {
-                for (int i=0; i<DS.Tables.Count; i++)
+                for (int i = 0; i < DS.Tables.Count; i++)
                     if (kullanici == DS.Tables[0].Rows[i][0].ToString())
                     {
                         if (parolaSha.ToString() == DS.Tables[0].Rows[i][1].ToString())
                         {
-                            perno = Int64.Parse( DS.Tables[0].Rows[i][2].ToString());
+                            perno = Int64.Parse(DS.Tables[0].Rows[i][2].ToString());
                             this.Close();
                         }
                     }

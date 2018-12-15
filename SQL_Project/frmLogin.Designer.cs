@@ -33,8 +33,8 @@
             this.btnCikis = new System.Windows.Forms.Button();
             this.pbLogin = new System.Windows.Forms.PictureBox();
             this.btnGiris = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblParola = new System.Windows.Forms.Label();
+            this.lblKullaniciAdi = new System.Windows.Forms.Label();
             this.tbParola = new System.Windows.Forms.TextBox();
             this.tbKullaniciAdi = new System.Windows.Forms.TextBox();
             this.pnlLogin.SuspendLayout();
@@ -46,8 +46,8 @@
             this.pnlLogin.Controls.Add(this.btnCikis);
             this.pnlLogin.Controls.Add(this.pbLogin);
             this.pnlLogin.Controls.Add(this.btnGiris);
-            this.pnlLogin.Controls.Add(this.label2);
-            this.pnlLogin.Controls.Add(this.label1);
+            this.pnlLogin.Controls.Add(this.lblParola);
+            this.pnlLogin.Controls.Add(this.lblKullaniciAdi);
             this.pnlLogin.Controls.Add(this.tbParola);
             this.pnlLogin.Controls.Add(this.tbKullaniciAdi);
             this.pnlLogin.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -88,23 +88,23 @@
             this.btnGiris.UseVisualStyleBackColor = true;
             this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
-            // label2
+            // lblParola
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 188);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Parola";
+            this.lblParola.AutoSize = true;
+            this.lblParola.Location = new System.Drawing.Point(55, 188);
+            this.lblParola.Name = "lblParola";
+            this.lblParola.Size = new System.Drawing.Size(37, 13);
+            this.lblParola.TabIndex = 3;
+            this.lblParola.Text = "Parola";
             // 
-            // label1
+            // lblKullaniciAdi
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 147);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Kullanıcı Adı";
+            this.lblKullaniciAdi.AutoSize = true;
+            this.lblKullaniciAdi.Location = new System.Drawing.Point(55, 147);
+            this.lblKullaniciAdi.Name = "lblKullaniciAdi";
+            this.lblKullaniciAdi.Size = new System.Drawing.Size(64, 13);
+            this.lblKullaniciAdi.TabIndex = 2;
+            this.lblKullaniciAdi.Text = "Kullanıcı Adı";
             // 
             // tbParola
             // 
@@ -132,9 +132,13 @@
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.pnlLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmLogin";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmLogin";
+            this.Text = "Login Page";
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogin)).EndInit();
@@ -146,8 +150,8 @@
 
         private System.Windows.Forms.Panel pnlLogin;
         private System.Windows.Forms.Button btnGiris;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblParola;
+        private System.Windows.Forms.Label lblKullaniciAdi;
         private System.Windows.Forms.TextBox tbParola;
         private System.Windows.Forms.TextBox tbKullaniciAdi;
         private System.Windows.Forms.PictureBox pbLogin;
