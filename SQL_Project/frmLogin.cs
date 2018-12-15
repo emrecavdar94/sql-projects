@@ -50,7 +50,7 @@ namespace SQL_Project
                     }
                     else
                     {
-                        MessageBox.Show("Hatalı Kullanıcı adı veya parolası");
+                        MessageBox.Show("Hatalı Kullanıcı adı veya parolası","Giriş Bilgileri Hatası",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
                 }
             }

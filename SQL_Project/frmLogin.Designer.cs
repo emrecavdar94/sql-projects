@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.pnlLogin = new System.Windows.Forms.Panel();
-            this.btnCikis = new System.Windows.Forms.Button();
-            this.pbLogin = new System.Windows.Forms.PictureBox();
             this.btnGiris = new System.Windows.Forms.Button();
             this.lblParola = new System.Windows.Forms.Label();
             this.lblKullaniciAdi = new System.Windows.Forms.Label();
             this.tbParola = new System.Windows.Forms.TextBox();
             this.tbKullaniciAdi = new System.Windows.Forms.TextBox();
+            this.btnCikis = new System.Windows.Forms.Button();
+            this.pbLogin = new System.Windows.Forms.PictureBox();
             this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogin)).BeginInit();
             this.SuspendLayout();
@@ -55,28 +55,6 @@
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(284, 262);
             this.pnlLogin.TabIndex = 0;
-            // 
-            // btnCikis
-            // 
-            this.btnCikis.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCikis.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCikis.Image = ((System.Drawing.Image)(resources.GetObject("btnCikis.Image")));
-            this.btnCikis.Location = new System.Drawing.Point(249, -1);
-            this.btnCikis.Name = "btnCikis";
-            this.btnCikis.Size = new System.Drawing.Size(36, 36);
-            this.btnCikis.TabIndex = 6;
-            this.btnCikis.UseVisualStyleBackColor = true;
-            this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
-            // 
-            // pbLogin
-            // 
-            this.pbLogin.Image = ((System.Drawing.Image)(resources.GetObject("pbLogin.Image")));
-            this.pbLogin.Location = new System.Drawing.Point(80, 0);
-            this.pbLogin.Name = "pbLogin";
-            this.pbLogin.Size = new System.Drawing.Size(130, 130);
-            this.pbLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbLogin.TabIndex = 5;
-            this.pbLogin.TabStop = false;
             // 
             // btnGiris
             // 
@@ -123,6 +101,28 @@
             this.tbKullaniciAdi.Size = new System.Drawing.Size(100, 26);
             this.tbKullaniciAdi.TabIndex = 0;
             // 
+            // btnCikis
+            // 
+            this.btnCikis.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCikis.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCikis.Image = global::SQL_Project.Properties.Resources.exit_button;
+            this.btnCikis.Location = new System.Drawing.Point(249, -1);
+            this.btnCikis.Name = "btnCikis";
+            this.btnCikis.Size = new System.Drawing.Size(36, 36);
+            this.btnCikis.TabIndex = 6;
+            this.btnCikis.UseVisualStyleBackColor = true;
+            this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
+            // 
+            // pbLogin
+            // 
+            this.pbLogin.Image = global::SQL_Project.Properties.Resources.login_pictures;
+            this.pbLogin.Location = new System.Drawing.Point(80, 0);
+            this.pbLogin.Name = "pbLogin";
+            this.pbLogin.Size = new System.Drawing.Size(130, 130);
+            this.pbLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogin.TabIndex = 5;
+            this.pbLogin.TabStop = false;
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnGiris;
@@ -136,7 +136,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Page";
             this.pnlLogin.ResumeLayout(false);
