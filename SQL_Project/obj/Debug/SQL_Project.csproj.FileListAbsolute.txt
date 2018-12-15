@@ -1,0 +1,30 @@
+C:\Users\Deniz\documents\visual studio 2015\Projects\SQL_Project\SQL_Project\bin\Debug\SQL_Project.exe.config
+C:\Users\Deniz\documents\visual studio 2015\Projects\SQL_Project\SQL_Project\bin\Debug\SQL_Project.exe
+C:\Users\Deniz\documents\visual studio 2015\Projects\SQL_Project\SQL_Project\bin\Debug\SQL_Project.pdb
+C:\Users\Deniz\documents\visual studio 2015\Projects\SQL_Project\SQL_Project\obj\Debug\SQL_Project.csprojResolveAssemblyReference.cache
+C:\Users\Deniz\documents\visual studio 2015\Projects\SQL_Project\SQL_Project\obj\Debug\SQL_Project.frmArac.resources
+C:\Users\Deniz\documents\visual studio 2015\Projects\SQL_Project\SQL_Project\obj\Debug\SQL_Project.frmLogin.resources
+C:\Users\Deniz\documents\visual studio 2015\Projects\SQL_Project\SQL_Project\obj\Debug\SQL_Project.frmMasterForm.resources
+C:\Users\Deniz\documents\visual studio 2015\Projects\SQL_Project\SQL_Project\obj\Debug\SQL_Project.frmMusteri.resources
+C:\Users\Deniz\documents\visual studio 2015\Projects\SQL_Project\SQL_Project\obj\Debug\SQL_Project.frmPersonel.resources
+C:\Users\Deniz\documents\visual studio 2015\Projects\SQL_Project\SQL_Project\obj\Debug\SQL_Project.Properties.Resources.resources
+C:\Users\Deniz\documents\visual studio 2015\Projects\SQL_Project\SQL_Project\obj\Debug\SQL_Project.csproj.GenerateResource.Cache
+C:\Users\Deniz\documents\visual studio 2015\Projects\SQL_Project\SQL_Project\obj\Debug\SQL_Project.exe
+C:\Users\Deniz\documents\visual studio 2015\Projects\SQL_Project\SQL_Project\obj\Debug\SQL_Project.pdb
+C:\Users\emreCavdar\source\repos\SQL_Project\SQL_Project\bin\Debug\SQL_Project.exe.config
+C:\Users\emreCavdar\source\repos\SQL_Project\SQL_Project\bin\Debug\SQL_Project.exe
+C:\Users\emreCavdar\source\repos\SQL_Project\SQL_Project\bin\Debug\SQL_Project.pdb
+C:\Users\emreCavdar\source\repos\SQL_Project\SQL_Project\obj\Debug\SQL_Project.csprojAssemblyReference.cache
+C:\Users\emreCavdar\source\repos\SQL_Project\SQL_Project\obj\Debug\SQL_Project.frmArac.resources
+C:\Users\emreCavdar\source\repos\SQL_Project\SQL_Project\obj\Debug\SQL_Project.frmLogin.resources
+C:\Users\emreCavdar\source\repos\SQL_Project\SQL_Project\obj\Debug\SQL_Project.frmMasterForm.resources
+C:\Users\emreCavdar\source\repos\SQL_Project\SQL_Project\obj\Debug\SQL_Project.frmMusteri.resources
+C:\Users\emreCavdar\source\repos\SQL_Project\SQL_Project\obj\Debug\SQL_Project.frmPersonel.resources
+C:\Users\emreCavdar\source\repos\SQL_Project\SQL_Project\obj\Debug\SQL_Project.Properties.Resources.resources
+C:\Users\emreCavdar\source\repos\SQL_Project\SQL_Project\obj\Debug\SQL_Project.csproj.GenerateResource.cache
+C:\Users\emreCavdar\source\repos\SQL_Project\SQL_Project\obj\Debug\SQL_Project.csproj.CoreCompileInputs.cache
+C:\Users\emreCavdar\source\repos\SQL_Project\SQL_Project\obj\Debug\SQL_Project.exe
+C:\Users\emreCavdar\source\repos\SQL_Project\SQL_Project\obj\Debug\SQL_Project.pdb
+C:\Users\emreCavdar\source\repos\SQL_Project\SQL_Project\obj\Debug\SQL_Project.frmSatis.resources
+C:\Users\emreCavdar\source\repos\SQL_Project\SQL_Project\obj\Debug\SQL_Project.frmServis.resources
+C:\Users\emreCavdar\source\repos\SQL_Project\SQL_Project\obj\Debug\SQL_Project.frmYonetim.resources
