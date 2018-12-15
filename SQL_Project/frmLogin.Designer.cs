@@ -30,21 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.pnlLogin = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCikis = new System.Windows.Forms.Button();
+            this.pbLogin = new System.Windows.Forms.PictureBox();
             this.btnGiris = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbParola = new System.Windows.Forms.TextBox();
             this.tbKullaniciAdi = new System.Windows.Forms.TextBox();
             this.pnlLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogin)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLogin
             // 
-            this.pnlLogin.Controls.Add(this.button1);
-            this.pnlLogin.Controls.Add(this.pictureBox1);
+            this.pnlLogin.Controls.Add(this.btnCikis);
+            this.pnlLogin.Controls.Add(this.pbLogin);
             this.pnlLogin.Controls.Add(this.btnGiris);
             this.pnlLogin.Controls.Add(this.label2);
             this.pnlLogin.Controls.Add(this.label1);
@@ -56,30 +56,33 @@
             this.pnlLogin.Size = new System.Drawing.Size(284, 262);
             this.pnlLogin.TabIndex = 0;
             // 
-            // button1
+            // btnCikis
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(248, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(36, 36);
-            this.button1.TabIndex = 6;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCikis.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCikis.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCikis.Image = ((System.Drawing.Image)(resources.GetObject("btnCikis.Image")));
+            this.btnCikis.Location = new System.Drawing.Point(249, -1);
+            this.btnCikis.Name = "btnCikis";
+            this.btnCikis.Size = new System.Drawing.Size(36, 36);
+            this.btnCikis.TabIndex = 6;
+            this.btnCikis.UseVisualStyleBackColor = true;
+            this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
             // 
-            // pictureBox1
+            // pbLogin
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(80, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(130, 130);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.pbLogin.Image = ((System.Drawing.Image)(resources.GetObject("pbLogin.Image")));
+            this.pbLogin.Location = new System.Drawing.Point(80, 0);
+            this.pbLogin.Name = "pbLogin";
+            this.pbLogin.Size = new System.Drawing.Size(130, 130);
+            this.pbLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogin.TabIndex = 5;
+            this.pbLogin.TabStop = false;
             // 
             // btnGiris
             // 
-            this.btnGiris.Location = new System.Drawing.Point(104, 227);
+            this.btnGiris.Location = new System.Drawing.Point(117, 216);
             this.btnGiris.Name = "btnGiris";
-            this.btnGiris.Size = new System.Drawing.Size(75, 23);
+            this.btnGiris.Size = new System.Drawing.Size(50, 30);
             this.btnGiris.TabIndex = 4;
             this.btnGiris.Text = "Giriş";
             this.btnGiris.UseVisualStyleBackColor = true;
@@ -122,8 +125,10 @@
             // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnGiris;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCikis;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.pnlLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -132,7 +137,7 @@
             this.Text = "frmLogin";
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogin)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -145,7 +150,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbParola;
         private System.Windows.Forms.TextBox tbKullaniciAdi;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pbLogin;
+        private System.Windows.Forms.Button btnCikis;
     }
 }

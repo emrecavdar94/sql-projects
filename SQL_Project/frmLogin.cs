@@ -52,5 +52,10 @@ namespace SQL_Project
                     }
             }
         }
+
+        private void btnCikis_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
