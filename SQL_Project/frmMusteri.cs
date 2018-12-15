@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,8 +13,11 @@ namespace SQL_Project
 {
     public partial class frmMusteri : Form
     {
-        public frmMusteri()
+        private SqlConnection baglanti;
+        public long perno;
+        public frmMusteri(SqlConnection baglanti)
         {
+            this.baglanti = baglanti;
             InitializeComponent();
         }
     }

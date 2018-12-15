@@ -23,20 +23,20 @@ namespace SQL_Project
 
         private void personelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmPersonel personel = new frmPersonel();
-            personel.ShowDialog();
+            frmPersonel personelForm = new frmPersonel(baglanti);
+            personelForm.ShowDialog();
         }
 
         private void musteriToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmMusteri musteri = new frmMusteri();
-            musteri.ShowDialog();
+            frmMusteri musteriForm = new frmMusteri();
+            musteriForm.ShowDialog();
         }
 
         private void aracToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmArac arac = new frmArac();
-            arac.ShowDialog();
+            frmArac aracForm = new frmArac();
+            aracForm.ShowDialog();
         }
 
         private void frmMasterForm_Load(object sender, EventArgs e)
@@ -46,25 +46,26 @@ namespace SQL_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmSatis frmSatis = new frmSatis();
-            frmSatis.ShowDialog();
+            frmSatis satisForm = new frmSatis();
+            satisForm.ShowDialog();
         }
 
         private void btnServis_Click(object sender, EventArgs e)
         {
-            frmServis frmServis = new frmServis();
-            frmServis.ShowDialog();
+            frmServis servisForm = new frmServis();
+            servisForm.ShowDialog();
         }
 
         private void btnRaporlar_Click(object sender, EventArgs e)
         {
-            
+            frmRaporlar raporlarForm = new frmRaporlar();
+            raporlarForm.ShowDialog();
         }
 
         private void btnYonetim_Click(object sender, EventArgs e)
         {
-            frmYonetim frmYonetim = new frmYonetim();
-            frmYonetim.ShowDialog();
+            frmYonetim yonetimForm = new frmYonetim();
+            yonetimForm.ShowDialog();
         }
     }
 }

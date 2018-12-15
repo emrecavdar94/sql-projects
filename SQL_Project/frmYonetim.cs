@@ -16,5 +16,11 @@ namespace SQL_Project
         {
             InitializeComponent();
         }
+
+        private void btnPersoneller_Click(object sender, EventArgs e)
+        {
+            frmYetkiler yetkilerForm = new frmYetkiler();
+            yetkilerForm.ShowDialog();
+        }
     }
 }
