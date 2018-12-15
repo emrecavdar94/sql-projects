@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.gbKisiselBilgiler = new System.Windows.Forms.GroupBox();
+            this.btnTCNoDoldur = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbSoyad = new System.Windows.Forms.TextBox();
+            this.tbAd = new System.Windows.Forms.TextBox();
             this.lblMusteriAdres = new System.Windows.Forms.Label();
             this.lblMusteriEPosta = new System.Windows.Forms.Label();
             this.lblMusteriTelNo = new System.Windows.Forms.Label();
@@ -37,11 +42,8 @@
             this.tbEPosta = new System.Windows.Forms.TextBox();
             this.tbTelNo = new System.Windows.Forms.TextBox();
             this.tbMusteriTCNo = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbSoyad = new System.Windows.Forms.TextBox();
-            this.tbAd = new System.Windows.Forms.TextBox();
             this.gbAracBilgileri = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.lblModel = new System.Windows.Forms.Label();
             this.tbModel = new System.Windows.Forms.TextBox();
             this.lblMarka = new System.Windows.Forms.Label();
@@ -52,8 +54,6 @@
             this.tbMotorNo = new System.Windows.Forms.TextBox();
             this.lblSasiNo = new System.Windows.Forms.Label();
             this.tbSasiNo = new System.Windows.Forms.TextBox();
-            this.btnTCNoDoldur = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnSatisyap = new System.Windows.Forms.Button();
             this.gbKisiselBilgiler.SuspendLayout();
             this.gbAracBilgileri.SuspendLayout();
@@ -84,6 +84,57 @@
             this.gbKisiselBilgiler.TabStop = false;
             this.gbKisiselBilgiler.Text = "Müşteri";
             this.gbKisiselBilgiler.Enter += new System.EventHandler(this.gbKisiselBilgiler_Enter);
+            // 
+            // btnTCNoDoldur
+            // 
+            this.btnTCNoDoldur.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnTCNoDoldur.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnTCNoDoldur.Location = new System.Drawing.Point(304, 20);
+            this.btnTCNoDoldur.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTCNoDoldur.Name = "btnTCNoDoldur";
+            this.btnTCNoDoldur.Size = new System.Drawing.Size(33, 25);
+            this.btnTCNoDoldur.TabIndex = 4;
+            this.btnTCNoDoldur.Tag = "";
+            this.btnTCNoDoldur.Text = "...";
+            this.btnTCNoDoldur.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnTCNoDoldur.UseVisualStyleBackColor = true;
+            this.btnTCNoDoldur.Click += new System.EventHandler(this.btnTCNoDoldur_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 91);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 17);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Soyadı";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 59);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(28, 17);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Adı";
+            // 
+            // tbSoyad
+            // 
+            this.tbSoyad.Location = new System.Drawing.Point(141, 87);
+            this.tbSoyad.Margin = new System.Windows.Forms.Padding(4);
+            this.tbSoyad.Name = "tbSoyad";
+            this.tbSoyad.Size = new System.Drawing.Size(196, 22);
+            this.tbSoyad.TabIndex = 12;
+            // 
+            // tbAd
+            // 
+            this.tbAd.Location = new System.Drawing.Point(141, 55);
+            this.tbAd.Margin = new System.Windows.Forms.Padding(4);
+            this.tbAd.Name = "tbAd";
+            this.tbAd.Size = new System.Drawing.Size(196, 22);
+            this.tbAd.TabIndex = 11;
             // 
             // lblMusteriAdres
             // 
@@ -159,42 +210,6 @@
             this.tbMusteriTCNo.TabIndex = 3;
             this.tbMusteriTCNo.TextChanged += new System.EventHandler(this.tbMusteriTCNo_TextChanged);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 91);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 17);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Soyadı";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 59);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 17);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Adı";
-            // 
-            // tbSoyad
-            // 
-            this.tbSoyad.Location = new System.Drawing.Point(141, 87);
-            this.tbSoyad.Margin = new System.Windows.Forms.Padding(4);
-            this.tbSoyad.Name = "tbSoyad";
-            this.tbSoyad.Size = new System.Drawing.Size(196, 22);
-            this.tbSoyad.TabIndex = 12;
-            // 
-            // tbAd
-            // 
-            this.tbAd.Location = new System.Drawing.Point(141, 55);
-            this.tbAd.Margin = new System.Windows.Forms.Padding(4);
-            this.tbAd.Name = "tbAd";
-            this.tbAd.Size = new System.Drawing.Size(196, 22);
-            this.tbAd.TabIndex = 11;
-            // 
             // gbAracBilgileri
             // 
             this.gbAracBilgileri.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -217,6 +232,20 @@
             this.gbAracBilgileri.TabIndex = 2;
             this.gbAracBilgileri.TabStop = false;
             this.gbAracBilgileri.Text = "Araç Bilgileri";
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button1.Location = new System.Drawing.Point(306, 22);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 25);
+            this.button1.TabIndex = 15;
+            this.button1.Tag = "";
+            this.button1.Text = "...";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // lblModel
             // 
@@ -307,34 +336,6 @@
             this.tbSasiNo.Name = "tbSasiNo";
             this.tbSasiNo.Size = new System.Drawing.Size(157, 22);
             this.tbSasiNo.TabIndex = 0;
-            // 
-            // btnTCNoDoldur
-            // 
-            this.btnTCNoDoldur.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnTCNoDoldur.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnTCNoDoldur.Location = new System.Drawing.Point(304, 20);
-            this.btnTCNoDoldur.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTCNoDoldur.Name = "btnTCNoDoldur";
-            this.btnTCNoDoldur.Size = new System.Drawing.Size(33, 25);
-            this.btnTCNoDoldur.TabIndex = 4;
-            this.btnTCNoDoldur.Tag = "";
-            this.btnTCNoDoldur.Text = "...";
-            this.btnTCNoDoldur.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnTCNoDoldur.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(306, 22);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 25);
-            this.button1.TabIndex = 15;
-            this.button1.Tag = "";
-            this.button1.Text = "...";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // btnSatisyap
             // 

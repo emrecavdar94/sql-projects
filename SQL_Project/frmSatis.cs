@@ -35,5 +35,22 @@ namespace SQL_Project
         {
 
         }
+
+        private void btnTCNoDoldur_Click(object sender, EventArgs e)
+        {
+            String komut = "SELECT * FROM musteri WHERE tckNo ='" + tbMusteriTCNo.Text + "'";
+            SqlDataAdapter sqlDA = new SqlDataAdapter(komut, baglanti);
+            DataSet DS = new DataSet();
+            sqlDA.Fill(DS);
+
+            if (DS.Tables.Count > 0)
+            {
+                tbAd.Text = DS.Tables[0].Rows[0][1].ToString();
+                tbSoyad.Text = DS.Tables[0].Rows[0][2].ToString();
+                tbTelNo.Text = DS.Tables[0].Rows[0][4].ToString();
+                tbEPosta.Text = DS.Tables[0].Rows[0][5].ToString();
+                tbAdres.Text = DS.Tables[0].Rows[0][6].ToString();
+            }
+        }
     }
 }

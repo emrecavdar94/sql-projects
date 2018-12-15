@@ -35,7 +35,6 @@ namespace SQL_Project
             }
 
             String komut = "SELECT kullaniciAdi, parola,perNo FROM personel";
-            //SqlCommand sqlSorgu = new SqlCommand(komut, baglanti);
             SqlDataAdapter sqlDA = new SqlDataAdapter(komut, baglanti);
             DataSet DS = new DataSet();
             sqlDA.Fill(DS);
@@ -43,14 +42,17 @@ namespace SQL_Project
             if (DS.Tables.Count > 0)
             {
                 for (int i = 0; i < DS.Tables.Count; i++)
-                    if (kullanici == DS.Tables[0].Rows[i][0].ToString())
+                {
+                    if (kullanici == DS.Tables[0].Rows[i][0].ToString() && parolaSha.ToString() == DS.Tables[0].Rows[i][1].ToString())
                     {
-                        if (parolaSha.ToString() == DS.Tables[0].Rows[i][1].ToString())
-                        {
-                            perno = Int64.Parse(DS.Tables[0].Rows[i][2].ToString());
-                            this.Close();
-                        }
+                        perno = Int64.Parse(DS.Tables[0].Rows[i][2].ToString());
+                        this.Close();
                     }
+                    else
+                    {
+                        MessageBox.Show("Hatalı Kullanıcı adı veya parolası");
+                    }
+                }
             }
         }
 
