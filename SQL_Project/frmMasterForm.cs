@@ -29,13 +29,13 @@ namespace SQL_Project
 
         private void musteriToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmMusteri musteriForm = new frmMusteri();
+            frmMusteri musteriForm = new frmMusteri(baglanti);
             musteriForm.ShowDialog();
         }
 
         private void aracToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmArac aracForm = new frmArac();
+            frmArac aracForm = new frmArac(baglanti);
             aracForm.ShowDialog();
         }
 
@@ -46,25 +46,25 @@ namespace SQL_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmSatis satisForm = new frmSatis();
+            frmSatis satisForm = new frmSatis(baglanti);
             satisForm.ShowDialog();
         }
 
         private void btnServis_Click(object sender, EventArgs e)
         {
-            frmServis servisForm = new frmServis();
+            frmServis servisForm = new frmServis(baglanti);
             servisForm.ShowDialog();
         }
 
         private void btnRaporlar_Click(object sender, EventArgs e)
         {
-            frmRaporlar raporlarForm = new frmRaporlar();
+            frmRaporlar raporlarForm = new frmRaporlar(baglanti);
             raporlarForm.ShowDialog();
         }
 
         private void btnYonetim_Click(object sender, EventArgs e)
         {
-            frmYonetim yonetimForm = new frmYonetim();
+            frmYonetim yonetimForm = new frmYonetim(baglanti);
             yonetimForm.ShowDialog();
         }
     }

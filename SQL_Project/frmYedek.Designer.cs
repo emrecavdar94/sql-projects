@@ -101,6 +101,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "frmYedek";
             this.Text = "frmYedek";
+            this.Load += new System.EventHandler(this.frmYedek_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
