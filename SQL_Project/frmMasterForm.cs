@@ -21,30 +21,12 @@ namespace SQL_Project
             InitializeComponent();
         }
 
-        private void personelToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmPersonel personelForm = new frmPersonel(baglanti);
-            personelForm.ShowDialog();
-        }
-
-        private void musteriToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmMusteri musteriForm = new frmMusteri(baglanti);
-            musteriForm.ShowDialog();
-        }
-
-        private void aracToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmArac aracForm = new frmArac(baglanti);
-            aracForm.ShowDialog();
-        }
-
         private void frmMasterForm_Load(object sender, EventArgs e)
         {
             lblMasterKarsilama.Text = perno.ToString();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSatis_Click(object sender, EventArgs e)
         {
             frmSatis satisForm = new frmSatis(baglanti);
             satisForm.ShowDialog();

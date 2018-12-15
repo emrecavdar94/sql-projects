@@ -29,68 +29,34 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMasterForm));
-            this.msMasterForm = new System.Windows.Forms.MenuStrip();
-            this.personelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.musteriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aracToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSatis = new System.Windows.Forms.Button();
             this.btnServis = new System.Windows.Forms.Button();
             this.btnYonetim = new System.Windows.Forms.Button();
             this.btnRaporlar = new System.Windows.Forms.Button();
             this.lblMasterKarsilama = new System.Windows.Forms.Label();
-            this.msMasterForm.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // msMasterForm
-            // 
-            this.msMasterForm.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.msMasterForm.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.msMasterForm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.personelToolStripMenuItem,
-            this.musteriToolStripMenuItem,
-            this.aracToolStripMenuItem});
-            this.msMasterForm.Location = new System.Drawing.Point(0, 0);
-            this.msMasterForm.Name = "msMasterForm";
-            this.msMasterForm.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.msMasterForm.Size = new System.Drawing.Size(736, 28);
-            this.msMasterForm.TabIndex = 1;
-            // 
-            // personelToolStripMenuItem
-            // 
-            this.personelToolStripMenuItem.Name = "personelToolStripMenuItem";
-            this.personelToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
-            this.personelToolStripMenuItem.Text = "Personel";
-            this.personelToolStripMenuItem.Click += new System.EventHandler(this.personelToolStripMenuItem_Click);
-            // 
-            // musteriToolStripMenuItem
-            // 
-            this.musteriToolStripMenuItem.Name = "musteriToolStripMenuItem";
-            this.musteriToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
-            this.musteriToolStripMenuItem.Text = "Müşteri";
-            this.musteriToolStripMenuItem.Click += new System.EventHandler(this.musteriToolStripMenuItem_Click);
-            // 
-            // aracToolStripMenuItem
-            // 
-            this.aracToolStripMenuItem.Name = "aracToolStripMenuItem";
-            this.aracToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
-            this.aracToolStripMenuItem.Text = "Araç";
-            this.aracToolStripMenuItem.Click += new System.EventHandler(this.aracToolStripMenuItem_Click);
             // 
             // btnSatis
             // 
-            this.btnSatis.Location = new System.Drawing.Point(58, 80);
+            this.btnSatis.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSatis.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSatis.Location = new System.Drawing.Point(36, 60);
+            this.btnSatis.Margin = new System.Windows.Forms.Padding(2);
             this.btnSatis.Name = "btnSatis";
-            this.btnSatis.Size = new System.Drawing.Size(179, 124);
+            this.btnSatis.Size = new System.Drawing.Size(130, 100);
             this.btnSatis.TabIndex = 2;
             this.btnSatis.Text = "SATIŞ";
             this.btnSatis.UseVisualStyleBackColor = true;
-            this.btnSatis.Click += new System.EventHandler(this.button1_Click);
+            this.btnSatis.Click += new System.EventHandler(this.btnSatis_Click);
             // 
             // btnServis
             // 
-            this.btnServis.Location = new System.Drawing.Point(303, 80);
+            this.btnServis.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnServis.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnServis.Location = new System.Drawing.Point(219, 60);
+            this.btnServis.Margin = new System.Windows.Forms.Padding(2);
             this.btnServis.Name = "btnServis";
-            this.btnServis.Size = new System.Drawing.Size(180, 124);
+            this.btnServis.Size = new System.Drawing.Size(130, 100);
             this.btnServis.TabIndex = 3;
             this.btnServis.Text = "SERVİS";
             this.btnServis.UseVisualStyleBackColor = true;
@@ -98,9 +64,12 @@
             // 
             // btnYonetim
             // 
-            this.btnYonetim.Location = new System.Drawing.Point(303, 255);
+            this.btnYonetim.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnYonetim.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnYonetim.Location = new System.Drawing.Point(219, 202);
+            this.btnYonetim.Margin = new System.Windows.Forms.Padding(2);
             this.btnYonetim.Name = "btnYonetim";
-            this.btnYonetim.Size = new System.Drawing.Size(180, 124);
+            this.btnYonetim.Size = new System.Drawing.Size(130, 100);
             this.btnYonetim.TabIndex = 5;
             this.btnYonetim.Text = "YÖNETİM";
             this.btnYonetim.UseVisualStyleBackColor = true;
@@ -108,9 +77,12 @@
             // 
             // btnRaporlar
             // 
-            this.btnRaporlar.Location = new System.Drawing.Point(58, 255);
+            this.btnRaporlar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRaporlar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnRaporlar.Location = new System.Drawing.Point(36, 202);
+            this.btnRaporlar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRaporlar.Name = "btnRaporlar";
-            this.btnRaporlar.Size = new System.Drawing.Size(179, 124);
+            this.btnRaporlar.Size = new System.Drawing.Size(130, 100);
             this.btnRaporlar.TabIndex = 4;
             this.btnRaporlar.Text = "RAPORLAR";
             this.btnRaporlar.UseVisualStyleBackColor = true;
@@ -119,43 +91,36 @@
             // lblMasterKarsilama
             // 
             this.lblMasterKarsilama.AutoSize = true;
-            this.lblMasterKarsilama.Location = new System.Drawing.Point(58, 42);
+            this.lblMasterKarsilama.Location = new System.Drawing.Point(175, 23);
+            this.lblMasterKarsilama.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMasterKarsilama.Name = "lblMasterKarsilama";
-            this.lblMasterKarsilama.Size = new System.Drawing.Size(46, 17);
+            this.lblMasterKarsilama.Size = new System.Drawing.Size(35, 13);
             this.lblMasterKarsilama.TabIndex = 6;
             this.lblMasterKarsilama.Text = "label1";
             // 
             // frmMasterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 532);
+            this.ClientSize = new System.Drawing.Size(384, 362);
             this.Controls.Add(this.lblMasterKarsilama);
             this.Controls.Add(this.btnYonetim);
             this.Controls.Add(this.btnRaporlar);
             this.Controls.Add(this.btnServis);
             this.Controls.Add(this.btnSatis);
-            this.Controls.Add(this.msMasterForm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMasterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Araç Satış";
             this.Load += new System.EventHandler(this.frmMasterForm_Load);
-            this.msMasterForm.ResumeLayout(false);
-            this.msMasterForm.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.MenuStrip msMasterForm;
-        private System.Windows.Forms.ToolStripMenuItem personelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem musteriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aracToolStripMenuItem;
         private System.Windows.Forms.Button btnSatis;
         private System.Windows.Forms.Button btnServis;
         private System.Windows.Forms.Button btnYonetim;
