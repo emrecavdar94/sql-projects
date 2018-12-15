@@ -100,7 +100,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SQL_Project.Properties.Resources.lock_security_business_web_data_information_system_512;
+            this.pictureBox1.Image = global::SQL_Project.Properties.Resources.access_key_512;
             this.pictureBox1.Location = new System.Drawing.Point(80, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(130, 130);
