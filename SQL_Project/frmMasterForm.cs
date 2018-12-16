@@ -29,24 +29,28 @@ namespace SQL_Project
         private void btnSatis_Click(object sender, EventArgs e)
         {
             frmSatis satisForm = new frmSatis(baglanti);
+            satisForm.perno = perno;
             satisForm.ShowDialog();
         }
 
         private void btnServis_Click(object sender, EventArgs e)
         {
             frmServis servisForm = new frmServis(baglanti);
+            servisForm.perno = perno;
             servisForm.ShowDialog();
         }
 
         private void btnRaporlar_Click(object sender, EventArgs e)
         {
             frmRaporlar raporlarForm = new frmRaporlar(baglanti);
+            raporlarForm.perno = perno;
             raporlarForm.ShowDialog();
         }
 
         private void btnYonetim_Click(object sender, EventArgs e)
         {
             frmYonetim yonetimForm = new frmYonetim(baglanti);
+            yonetimForm.perno = perno;
             yonetimForm.ShowDialog();
         }
     }
