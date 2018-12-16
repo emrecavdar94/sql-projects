@@ -34,6 +34,8 @@
             this.btnPersonelSil = new System.Windows.Forms.Button();
             this.btnYetkiEkle = new System.Windows.Forms.Button();
             this.btnYetkiSil = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbPersonel
@@ -91,11 +93,31 @@
             this.btnYetkiSil.Text = "Çıkar";
             this.btnYetkiSil.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(33, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Personeller";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(415, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 17);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Yetkiler";
+            // 
             // frmYetkiler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 403);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnYetkiSil);
             this.Controls.Add(this.btnYetkiEkle);
             this.Controls.Add(this.btnPersonelSil);
@@ -104,7 +126,9 @@
             this.Controls.Add(this.lbPersonel);
             this.Name = "frmYetkiler";
             this.Text = "frmYetkiler";
+            this.Load += new System.EventHandler(this.frmYetkiler_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -116,5 +140,7 @@
         private System.Windows.Forms.Button btnPersonelSil;
         private System.Windows.Forms.Button btnYetkiEkle;
         private System.Windows.Forms.Button btnYetkiSil;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
