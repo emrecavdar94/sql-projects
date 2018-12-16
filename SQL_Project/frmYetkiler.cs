@@ -44,21 +44,24 @@ namespace SQL_Project
         private void lbPersonel_SelectedIndexChanged(object sender, EventArgs e)
         {
             lbYetkiler.Items.Clear();
-            secilenPersonel = pernoList[lbPersonel.SelectedIndex];
-
-            string query = "select yetkiAdi,yetkilerNo from yetki inner join yetkiler on yetki.yetkiNo=yetkiler.yetkiNo where yetkiler.perNo="+secilenPersonel ;
-            using (SqlCommand cmd = new SqlCommand(query, baglanti))
+            if (lbPersonel.SelectedItems.Count > 0)
             {
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
+                secilenPersonel = pernoList[lbPersonel.SelectedIndex];
 
-                    while (reader.Read())
+                string query = "select yetkiAdi,yetkilerNo from yetki inner join yetkiler on yetki.yetkiNo=yetkiler.yetkiNo where yetkiler.perNo=" + secilenPersonel;
+                using (SqlCommand cmd = new SqlCommand(query, baglanti))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
 
+                        while (reader.Read())
+                        {
 
-                        lbYetkiler.Items.Add((string)reader[0]);
-                        yetkilerList.Add(int.Parse(reader[1].ToString()));
 
+                            lbYetkiler.Items.Add((string)reader[0]);
+                            yetkilerList.Add(int.Parse(reader[1].ToString()));
+
+                        }
                     }
                 }
             }
@@ -130,6 +133,7 @@ namespace SQL_Project
             frmYetkiEkle frmYetkiEkle = new frmYetkiEkle(baglanti);
             frmYetkiEkle.secilenPersonel = secilenPersonel;
             frmYetkiEkle.ShowDialog();
+            lbPersonel_SelectedIndexChanged(sender, e);
         }
     }
         
