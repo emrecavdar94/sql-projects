@@ -131,9 +131,13 @@ namespace SQL_Project
             {
                 String komut = "INSERT INTO satis " +
                     " (tarih, sasiNo, musNo, perNo, tutar) VALUES " +
-                    " ('" + dtSatis.ToString() + "', '" + tbSasiNo + "', " +
-                    musNo + ", " + perno + ", " + tbSatisTutari.ToString() + ")";
+                    " ('" + dtSatis.Value.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + tbSasiNo.Text + "', " +
+                    musNo + ", " + perno + ", " + tbSatisTutari.Text + ")SELECT SCOPE_IDENTITY()";
                 SqlCommand sorgu = new SqlCommand(komut, baglanti);
+
+               Int32 primaryKey = Convert.ToInt32(sorgu.ExecuteScalar());
+               
+
             }
         }
     }
