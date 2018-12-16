@@ -31,16 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRaporlar));
             this.dgVeriler = new System.Windows.Forms.DataGridView();
             this.gbRaporMusteriler = new System.Windows.Forms.GroupBox();
+            this.mtbMusteriTCNo = new System.Windows.Forms.MaskedTextBox();
             this.btnMusteriGetir = new System.Windows.Forms.Button();
             this.lblMusterSoyad = new System.Windows.Forms.Label();
             this.lblMusteriAd = new System.Windows.Forms.Label();
             this.tbMusteriSoyad = new System.Windows.Forms.TextBox();
             this.tbMusteriAd = new System.Windows.Forms.TextBox();
             this.lblMusteriTCNo = new System.Windows.Forms.Label();
-            this.tbMusteriTCNo = new System.Windows.Forms.TextBox();
             this.gbRaporAraba = new System.Windows.Forms.GroupBox();
-            this.chckAraba = new System.Windows.Forms.CheckBox();
+            this.rbTumArabalar = new System.Windows.Forms.RadioButton();
+            this.rbSatilmamisAraba = new System.Windows.Forms.RadioButton();
             this.btnArabaGetir = new System.Windows.Forms.Button();
+            this.rbSatilmisAraba = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tbRenk = new System.Windows.Forms.TextBox();
@@ -80,13 +82,13 @@
             // gbRaporMusteriler
             // 
             this.gbRaporMusteriler.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gbRaporMusteriler.Controls.Add(this.mtbMusteriTCNo);
             this.gbRaporMusteriler.Controls.Add(this.btnMusteriGetir);
             this.gbRaporMusteriler.Controls.Add(this.lblMusterSoyad);
             this.gbRaporMusteriler.Controls.Add(this.lblMusteriAd);
             this.gbRaporMusteriler.Controls.Add(this.tbMusteriSoyad);
             this.gbRaporMusteriler.Controls.Add(this.tbMusteriAd);
             this.gbRaporMusteriler.Controls.Add(this.lblMusteriTCNo);
-            this.gbRaporMusteriler.Controls.Add(this.tbMusteriTCNo);
             this.gbRaporMusteriler.Location = new System.Drawing.Point(12, 12);
             this.gbRaporMusteriler.Name = "gbRaporMusteriler";
             this.gbRaporMusteriler.Size = new System.Drawing.Size(260, 236);
@@ -94,9 +96,18 @@
             this.gbRaporMusteriler.TabStop = false;
             this.gbRaporMusteriler.Text = "Müşteri";
             // 
+            // mtbMusteriTCNo
+            // 
+            this.mtbMusteriTCNo.Location = new System.Drawing.Point(106, 22);
+            this.mtbMusteriTCNo.Mask = "00000000000";
+            this.mtbMusteriTCNo.Name = "mtbMusteriTCNo";
+            this.mtbMusteriTCNo.Size = new System.Drawing.Size(148, 20);
+            this.mtbMusteriTCNo.TabIndex = 16;
+            this.mtbMusteriTCNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // btnMusteriGetir
             // 
-            this.btnMusteriGetir.Location = new System.Drawing.Point(98, 164);
+            this.btnMusteriGetir.Location = new System.Drawing.Point(98, 176);
             this.btnMusteriGetir.Margin = new System.Windows.Forms.Padding(2);
             this.btnMusteriGetir.Name = "btnMusteriGetir";
             this.btnMusteriGetir.Size = new System.Drawing.Size(64, 46);
@@ -146,19 +157,13 @@
             this.lblMusteriTCNo.TabIndex = 7;
             this.lblMusteriTCNo.Text = "TC Kimlik Numarası";
             // 
-            // tbMusteriTCNo
-            // 
-            this.tbMusteriTCNo.Location = new System.Drawing.Point(106, 19);
-            this.tbMusteriTCNo.MaxLength = 11;
-            this.tbMusteriTCNo.Name = "tbMusteriTCNo";
-            this.tbMusteriTCNo.Size = new System.Drawing.Size(148, 20);
-            this.tbMusteriTCNo.TabIndex = 3;
-            // 
             // gbRaporAraba
             // 
             this.gbRaporAraba.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.gbRaporAraba.Controls.Add(this.chckAraba);
+            this.gbRaporAraba.Controls.Add(this.rbTumArabalar);
+            this.gbRaporAraba.Controls.Add(this.rbSatilmamisAraba);
             this.gbRaporAraba.Controls.Add(this.btnArabaGetir);
+            this.gbRaporAraba.Controls.Add(this.rbSatilmisAraba);
             this.gbRaporAraba.Controls.Add(this.label1);
             this.gbRaporAraba.Controls.Add(this.label4);
             this.gbRaporAraba.Controls.Add(this.tbRenk);
@@ -172,20 +177,31 @@
             this.gbRaporAraba.TabStop = false;
             this.gbRaporAraba.Text = "Araba";
             // 
-            // chckAraba
+            // rbTumArabalar
             // 
-            this.chckAraba.AutoSize = true;
-            this.chckAraba.Location = new System.Drawing.Point(51, 118);
-            this.chckAraba.Margin = new System.Windows.Forms.Padding(2);
-            this.chckAraba.Name = "chckAraba";
-            this.chckAraba.Size = new System.Drawing.Size(158, 17);
-            this.chckAraba.TabIndex = 16;
-            this.chckAraba.Text = "Satışı Yapılan Arabaları Getir";
-            this.chckAraba.UseVisualStyleBackColor = true;
+            this.rbTumArabalar.AutoSize = true;
+            this.rbTumArabalar.Location = new System.Drawing.Point(23, 103);
+            this.rbTumArabalar.Name = "rbTumArabalar";
+            this.rbTumArabalar.Size = new System.Drawing.Size(115, 17);
+            this.rbTumArabalar.TabIndex = 22;
+            this.rbTumArabalar.TabStop = true;
+            this.rbTumArabalar.Text = "Tüm Arabaları Getir";
+            this.rbTumArabalar.UseVisualStyleBackColor = true;
+            // 
+            // rbSatilmamisAraba
+            // 
+            this.rbSatilmamisAraba.AutoSize = true;
+            this.rbSatilmamisAraba.Location = new System.Drawing.Point(23, 126);
+            this.rbSatilmamisAraba.Name = "rbSatilmamisAraba";
+            this.rbSatilmamisAraba.Size = new System.Drawing.Size(214, 17);
+            this.rbSatilmamisAraba.TabIndex = 21;
+            this.rbSatilmamisAraba.TabStop = true;
+            this.rbSatilmamisAraba.Text = "Sadece Satışı Yapılmamış Arabaları Getir";
+            this.rbSatilmamisAraba.UseVisualStyleBackColor = true;
             // 
             // btnArabaGetir
             // 
-            this.btnArabaGetir.Location = new System.Drawing.Point(102, 164);
+            this.btnArabaGetir.Location = new System.Drawing.Point(102, 176);
             this.btnArabaGetir.Margin = new System.Windows.Forms.Padding(2);
             this.btnArabaGetir.Name = "btnArabaGetir";
             this.btnArabaGetir.Size = new System.Drawing.Size(56, 46);
@@ -193,6 +209,17 @@
             this.btnArabaGetir.Text = "Arabaları Getir";
             this.btnArabaGetir.UseVisualStyleBackColor = true;
             this.btnArabaGetir.Click += new System.EventHandler(this.btnArabaGetir_Click);
+            // 
+            // rbSatilmisAraba
+            // 
+            this.rbSatilmisAraba.AutoSize = true;
+            this.rbSatilmisAraba.Location = new System.Drawing.Point(23, 149);
+            this.rbSatilmisAraba.Name = "rbSatilmisAraba";
+            this.rbSatilmisAraba.Size = new System.Drawing.Size(197, 17);
+            this.rbSatilmisAraba.TabIndex = 20;
+            this.rbSatilmisAraba.TabStop = true;
+            this.rbSatilmisAraba.Text = "Sadece Satışı Yapılan Arabaları Getir";
+            this.rbSatilmisAraba.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -260,7 +287,7 @@
             // 
             // btnPersonelEncokSatisYapan
             // 
-            this.btnPersonelEncokSatisYapan.Location = new System.Drawing.Point(118, 164);
+            this.btnPersonelEncokSatisYapan.Location = new System.Drawing.Point(118, 176);
             this.btnPersonelEncokSatisYapan.Margin = new System.Windows.Forms.Padding(2);
             this.btnPersonelEncokSatisYapan.Name = "btnPersonelEncokSatisYapan";
             this.btnPersonelEncokSatisYapan.Size = new System.Drawing.Size(108, 46);
@@ -270,7 +297,7 @@
             // 
             // btnPersonelGetir
             // 
-            this.btnPersonelGetir.Location = new System.Drawing.Point(34, 164);
+            this.btnPersonelGetir.Location = new System.Drawing.Point(34, 176);
             this.btnPersonelGetir.Margin = new System.Windows.Forms.Padding(2);
             this.btnPersonelGetir.Name = "btnPersonelGetir";
             this.btnPersonelGetir.Size = new System.Drawing.Size(80, 46);
@@ -348,6 +375,7 @@
             this.Name = "frmRaporlar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RAPOR";
+            this.Load += new System.EventHandler(this.frmRaporlar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgVeriler)).EndInit();
             this.gbRaporMusteriler.ResumeLayout(false);
             this.gbRaporMusteriler.PerformLayout();
@@ -368,10 +396,8 @@
         private System.Windows.Forms.TextBox tbMusteriSoyad;
         private System.Windows.Forms.TextBox tbMusteriAd;
         private System.Windows.Forms.Label lblMusteriTCNo;
-        private System.Windows.Forms.TextBox tbMusteriTCNo;
         private System.Windows.Forms.Button btnMusteriGetir;
         private System.Windows.Forms.GroupBox gbRaporAraba;
-        private System.Windows.Forms.CheckBox chckAraba;
         private System.Windows.Forms.Button btnArabaGetir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
@@ -388,5 +414,9 @@
         private System.Windows.Forms.TextBox tbPersonelAd;
         private System.Windows.Forms.Button btnExportExcel;
         private System.Windows.Forms.Button btnYazdir;
+        private System.Windows.Forms.RadioButton rbSatilmisAraba;
+        private System.Windows.Forms.RadioButton rbSatilmamisAraba;
+        private System.Windows.Forms.RadioButton rbTumArabalar;
+        private System.Windows.Forms.MaskedTextBox mtbMusteriTCNo;
     }
 }
