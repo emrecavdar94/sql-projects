@@ -160,6 +160,10 @@ namespace SQL_Project
         private void frmRaporlar_Load(object sender, EventArgs e)
         {
             rbTumArabalar.Checked = true;
+            if (true)
+            {
+
+            }
         }
     }
 }
