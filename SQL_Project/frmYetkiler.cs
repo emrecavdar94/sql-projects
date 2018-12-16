@@ -29,6 +29,8 @@ namespace SQL_Project
 
         public partial class frmYetkiler : Form
     {
+       public List<long> pernoList = new List<long>();
+        public List<int> yetkilerList = new List<int>();
         private SqlConnection baglanti;
         public long perno;
         public frmYetkiler(SqlConnection baglanti)
@@ -40,26 +42,31 @@ namespace SQL_Project
 
         private void lbPersonel_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Item obj = new Item();
-            //string query = "SELECT yetkiad,ad,soyad FROM personel";
-            //using (SqlCommand cmd = new SqlCommand(query, baglanti))
-            //{
-            //    using (SqlDataReader reader = cmd.ExecuteReader())
-            //    {
+            lbYetkiler.Items.Clear();
+            long secilenPersonel = pernoList[lbPersonel.SelectedIndex];
 
-            //        while (reader.Read())
-            //        {
-            //            obj.deger = (string)reader[1];
-            //            obj.value= (int)reader[0];
-            //            lbPersonel.Items.Add(obj);
-            //        }
-            //    }
-            //}
+            string query = "select yetkiAdi,yetkilerNo from yetki inner join yetkiler on yetki.yetkiNo=yetkiler.yetkiNo where yetkiler.perNo="+secilenPersonel ;
+            using (SqlCommand cmd = new SqlCommand(query, baglanti))
+            {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+
+                    while (reader.Read())
+                    {
+
+
+                        lbYetkiler.Items.Add((string)reader[0]);
+                        yetkilerList.Add(int.Parse(reader[1].ToString()));
+
+                    }
+                }
+            }
+
         }
 
         private void frmYetkiler_Load(object sender, EventArgs e)
         {
-                List<long> pernoList = new List<long>();
+               
               
                 string query = "SELECT perNo,ad,soyad FROM personel";
                 using (SqlCommand cmd = new SqlCommand(query, baglanti))
@@ -78,7 +85,18 @@ namespace SQL_Project
                 }
                     }
                 }
-            }
+
+        private void btnYetkiSil_Click(object sender, EventArgs e)
+        {
+            int secilenYetki = yetkilerList[lbYetkiler.SelectedIndex];
+
+            string query = "delete from yetkiler  where  yetkilerNo=" + secilenYetki ;
+            SqlCommand cmd = new SqlCommand(query, baglanti);
+            cmd.ExecuteNonQuery();
+                MessageBox.Show("Silindi");
+            
+        }
+    }
         
     }
 
