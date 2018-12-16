@@ -20,5 +20,13 @@ namespace SQL_Project
             this.baglanti = baglanti;
             InitializeComponent();
         }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            string query = "insert into araba values('"+tbSasiNo.Text+ "','" + tbMotorNo.Text + "','" + tbPlaka.Text + "','" + tbModel.Text + "','" + tbMarka.Text + "','" + tbRenk.Text + "')";
+            SqlCommand cmd = new SqlCommand(query, baglanti);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Araç Eklendi");
+        }
     }
 }

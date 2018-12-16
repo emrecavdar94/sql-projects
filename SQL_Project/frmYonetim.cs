@@ -26,5 +26,24 @@ namespace SQL_Project
             frmYetkiler yetkilerForm = new frmYetkiler(baglanti);
             yetkilerForm.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmArac frmArac = new frmArac(baglanti);
+            frmArac.ShowDialog();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmMusteri frmMusteri = new frmMusteri(baglanti);
+            frmMusteri.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            frmSistemSabitleri frmSistemSabitleri = new frmSistemSabitleri(baglanti);
+            frmSistemSabitleri.ShowDialog();
+        }
     }
 }
