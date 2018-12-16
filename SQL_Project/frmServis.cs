@@ -49,7 +49,7 @@ namespace SQL_Project
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSasiNoDoldur_Click(object sender, EventArgs e)
         {
             String komut = "SELECT motorNo, plaka, marka, model, renk FROM araba WHERE sasiNo ='" + tbSasiNo.Text + "'";
             SqlDataAdapter sqlDA = new SqlDataAdapter(komut, baglanti);
@@ -78,8 +78,7 @@ namespace SQL_Project
         {
             if (tbIsEmriNo.Text.Count() > 0)
             {
-                String komut = "SELECT A.sasiNo, A.motorNo, A.plaka, A.marka, A.model, A.renk, " +
-                               "M.tckNo, M.ad, M.soyad, M.telefon, M.eposta, M.adres, " +
+                String komut = "SELECT A.sasiNo, M.tckNo, " +
                                "S.girisTarihi, S.girisTalimati, S.aracKm, S.yapilanIslemler, " +
                                "S.cikisTarihi, S.faturaTutari FROM araba A " +
                                "JOIN servis S on S.sasiNo = A.sasiNo " +
@@ -92,45 +91,20 @@ namespace SQL_Project
                 if (DS.Tables.Count > 0 && DS.Tables[0].Rows.Count > 0)
                 {
                     tbSasiNo.Text = DS.Tables[0].Rows[0][0].ToString();
-                    tbMotorNo.Text = DS.Tables[0].Rows[0][1].ToString();
-                    tbPlaka.Text = DS.Tables[0].Rows[0][2].ToString();
-                    tbMarka.Text = DS.Tables[0].Rows[0][3].ToString();
-                    tbModel.Text = DS.Tables[0].Rows[0][4].ToString();
-                    tbRenk.Text = DS.Tables[0].Rows[0][5].ToString();
-                    tbMusteriTCNo.Text = DS.Tables[0].Rows[0][6].ToString();
-                    tbAd.Text = DS.Tables[0].Rows[0][7].ToString();
-                    tbSoyad.Text = DS.Tables[0].Rows[0][8].ToString();
-                    tbTelNo.Text = DS.Tables[0].Rows[0][9].ToString();
-                    tbEPosta.Text = DS.Tables[0].Rows[0][10].ToString();
-                    tbAdres.Text = DS.Tables[0].Rows[0][11].ToString();
-                    dtGiris.Text = DS.Tables[0].Rows[0][12].ToString();
-                    tbGirisTalimat.Text = DS.Tables[0].Rows[0][13].ToString();
-                    tbArackm.Text = DS.Tables[0].Rows[0][14].ToString();
-                    tbYapilanIslemler.Text = DS.Tables[0].Rows[0][15].ToString();
-                    dtCikis.Text = DS.Tables[0].Rows[0][16].ToString();
-                    tbFaturaTutari.Text = DS.Tables[0].Rows[0][17].ToString();
+                    tbMusteriTCNo.Text = DS.Tables[0].Rows[0][1].ToString();
+                    dtGiris.Text = DS.Tables[0].Rows[0][2].ToString();
+                    tbGirisTalimat.Text = DS.Tables[0].Rows[0][3].ToString();
+                    tbArackm.Text = DS.Tables[0].Rows[0][4].ToString();
+                    tbYapilanIslemler.Text = DS.Tables[0].Rows[0][5].ToString();
+                    dtCikis.Text = DS.Tables[0].Rows[0][6].ToString();
+                    tbFaturaTutari.Text = DS.Tables[0].Rows[0][7].ToString();
+                    btnTCNoDoldur_Click(sender, e);
+                    btnSasiNoDoldur_Click(sender, e);
                     fillParcalar();
                 }
                 else
                 {
-                    tbSasiNo.Text = "";
-                    tbMotorNo.Text = "";
-                    tbPlaka.Text = "";
-                    tbMarka.Text = "";
-                    tbModel.Text = "";
-                    tbRenk.Text = "";
-                    tbMusteriTCNo.Text = "";
-                    tbAd.Text = "";
-                    tbSoyad.Text = "";
-                    tbTelNo.Text = "";
-                    tbEPosta.Text = "";
-                    tbAdres.Text = "";
-                    dtGiris.ResetText();
-                    tbGirisTalimat.Text = "";
-                    tbArackm.Text = "";
-                    tbYapilanIslemler.Text = "";
-                    dtCikis.ResetText();
-                    tbFaturaTutari.Text = "";
+                    btnTemizle_Click(sender, e);
                 }
             }
         }
@@ -156,6 +130,7 @@ namespace SQL_Project
             tbYapilanIslemler.Text = "";
             dtCikis.ResetText();
             tbFaturaTutari.Text = "";
+            musNo = 0;
         }
 
         private void btnCik_Click(object sender, EventArgs e)
@@ -195,7 +170,16 @@ namespace SQL_Project
         {
             if (tbIsEmriNo.Text.Count() > 0)
             {
-                
+                String komut = "UPDATE servis SET " +
+                    " girisTarihi='" + dtGiris.Value.ToString("yyyy-MM-dd HH:mm:ss") +
+                    "', sasiNo = '" + tbSasiNo.Text + "', musNo = " + musNo + ", perNo = " + perno +
+                    ", girisTalimati = '" + tbGirisTalimat.Text + "', aracKm = " + tbArackm.Text +
+                    ", cikisTarihi = '" + dtGiris.Value.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
+                    "yapilanIslemler = '" + tbYapilanIslemler.Text + "', " +
+                    "faturaTutari = " + tbFaturaTutari.Text;
+                SqlCommand sorgu = new SqlCommand(komut, baglanti);
+                sorgu.ExecuteNonQuery();
+                //tbIsEmriNo.Text = Convert.ToInt64(sorgu.ExecuteScalar()).ToString();
             }
         }
 
@@ -222,6 +206,21 @@ namespace SQL_Project
                 sqlDA.Fill(DS);
                 dgParcalar.DataSource = DS.Tables[0];
             }
+            btnFaturaHesapla_Click(this, new EventArgs());
+        }
+
+        private void btnFaturaHesapla_Click(object sender, EventArgs e)
+        {
+            double Tutar = 0;
+            for (int i = 0; i < dgParcalar.RowCount; i++)
+            {
+                int adet = int.Parse(dgParcalar.Rows[i].Cells[2].Value.ToString());
+                double iscilik = Convert.ToDouble(dgParcalar.Rows[i].Cells[3].Value);
+                double parcaTutari = Convert.ToDouble(dgParcalar.Rows[i].Cells[4].Value);
+
+                Tutar += adet * parcaTutari + iscilik * 100;
+            }
+            tbFaturaTutari.Text = Tutar.ToString();
         }
     }
 }

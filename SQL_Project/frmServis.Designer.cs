@@ -31,7 +31,7 @@
             this.gbAracBilgileri = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tbRenk = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSasiNoDoldur = new System.Windows.Forms.Button();
             this.lblModel = new System.Windows.Forms.Label();
             this.tbModel = new System.Windows.Forms.TextBox();
             this.lblMarka = new System.Windows.Forms.Label();
@@ -57,6 +57,7 @@
             this.tbAdres = new System.Windows.Forms.TextBox();
             this.tbEPosta = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnFaturaHesapla = new System.Windows.Forms.Button();
             this.dgParcalar = new System.Windows.Forms.DataGridView();
             this.btnParcaCikar = new System.Windows.Forms.Button();
             this.btnParcaEkle = new System.Windows.Forms.Button();
@@ -81,7 +82,6 @@
             this.btnRapor = new System.Windows.Forms.Button();
             this.btnTemizle = new System.Windows.Forms.Button();
             this.btnCik = new System.Windows.Forms.Button();
-            this.btnFaturaHesapla = new System.Windows.Forms.Button();
             this.gbAracBilgileri.SuspendLayout();
             this.gbKisiselBilgiler.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -93,7 +93,7 @@
             this.gbAracBilgileri.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.gbAracBilgileri.Controls.Add(this.label6);
             this.gbAracBilgileri.Controls.Add(this.tbRenk);
-            this.gbAracBilgileri.Controls.Add(this.button1);
+            this.gbAracBilgileri.Controls.Add(this.btnSasiNoDoldur);
             this.gbAracBilgileri.Controls.Add(this.lblModel);
             this.gbAracBilgileri.Controls.Add(this.tbModel);
             this.gbAracBilgileri.Controls.Add(this.lblMarka);
@@ -127,19 +127,19 @@
             this.tbRenk.Size = new System.Drawing.Size(148, 20);
             this.tbRenk.TabIndex = 16;
             // 
-            // button1
+            // btnSasiNoDoldur
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(230, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 20);
-            this.button1.TabIndex = 15;
-            this.button1.Tag = "";
-            this.button1.Text = "...";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSasiNoDoldur.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnSasiNoDoldur.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSasiNoDoldur.Location = new System.Drawing.Point(230, 18);
+            this.btnSasiNoDoldur.Name = "btnSasiNoDoldur";
+            this.btnSasiNoDoldur.Size = new System.Drawing.Size(25, 20);
+            this.btnSasiNoDoldur.TabIndex = 15;
+            this.btnSasiNoDoldur.Tag = "";
+            this.btnSasiNoDoldur.Text = "...";
+            this.btnSasiNoDoldur.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSasiNoDoldur.UseVisualStyleBackColor = true;
+            this.btnSasiNoDoldur.Click += new System.EventHandler(this.btnSasiNoDoldur_Click);
             // 
             // lblModel
             // 
@@ -387,6 +387,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Müşteri";
             // 
+            // btnFaturaHesapla
+            // 
+            this.btnFaturaHesapla.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnFaturaHesapla.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnFaturaHesapla.Location = new System.Drawing.Point(495, 46);
+            this.btnFaturaHesapla.Name = "btnFaturaHesapla";
+            this.btnFaturaHesapla.Size = new System.Drawing.Size(25, 20);
+            this.btnFaturaHesapla.TabIndex = 27;
+            this.btnFaturaHesapla.Tag = "";
+            this.btnFaturaHesapla.Text = "...";
+            this.btnFaturaHesapla.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFaturaHesapla.UseVisualStyleBackColor = true;
+            this.btnFaturaHesapla.Click += new System.EventHandler(this.btnFaturaHesapla_Click);
+            // 
             // dgParcalar
             // 
             this.dgParcalar.AllowUserToAddRows = false;
@@ -614,19 +628,6 @@
             this.btnCik.UseVisualStyleBackColor = true;
             this.btnCik.Click += new System.EventHandler(this.btnCik_Click);
             // 
-            // btnFaturaHesapla
-            // 
-            this.btnFaturaHesapla.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnFaturaHesapla.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnFaturaHesapla.Location = new System.Drawing.Point(495, 46);
-            this.btnFaturaHesapla.Name = "btnFaturaHesapla";
-            this.btnFaturaHesapla.Size = new System.Drawing.Size(25, 20);
-            this.btnFaturaHesapla.TabIndex = 27;
-            this.btnFaturaHesapla.Tag = "";
-            this.btnFaturaHesapla.Text = "...";
-            this.btnFaturaHesapla.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnFaturaHesapla.UseVisualStyleBackColor = true;
-            // 
             // frmServis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -657,7 +658,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbAracBilgileri;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSasiNoDoldur;
         private System.Windows.Forms.Label lblModel;
         private System.Windows.Forms.TextBox tbModel;
         private System.Windows.Forms.Label lblMarka;
