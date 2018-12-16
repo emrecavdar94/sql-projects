@@ -92,6 +92,7 @@
             this.btnYetkiSil.TabIndex = 5;
             this.btnYetkiSil.Text = "Çıkar";
             this.btnYetkiSil.UseVisualStyleBackColor = true;
+            this.btnYetkiSil.Click += new System.EventHandler(this.btnYetkiSil_Click);
             // 
             // label1
             // 
