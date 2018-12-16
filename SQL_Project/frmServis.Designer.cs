@@ -57,6 +57,7 @@
             this.tbAdres = new System.Windows.Forms.TextBox();
             this.tbEPosta = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgParcalar = new System.Windows.Forms.DataGridView();
             this.btnParcaCikar = new System.Windows.Forms.Button();
             this.btnParcaEkle = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -80,7 +81,7 @@
             this.btnRapor = new System.Windows.Forms.Button();
             this.btnTemizle = new System.Windows.Forms.Button();
             this.btnCik = new System.Windows.Forms.Button();
-            this.dgParcalar = new System.Windows.Forms.DataGridView();
+            this.btnFaturaHesapla = new System.Windows.Forms.Button();
             this.gbAracBilgileri.SuspendLayout();
             this.gbKisiselBilgiler.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -359,6 +360,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.btnFaturaHesapla);
             this.groupBox1.Controls.Add(this.dgParcalar);
             this.groupBox1.Controls.Add(this.btnParcaCikar);
             this.groupBox1.Controls.Add(this.btnParcaEkle);
@@ -384,6 +386,20 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Müşteri";
+            // 
+            // dgParcalar
+            // 
+            this.dgParcalar.AllowUserToAddRows = false;
+            this.dgParcalar.AllowUserToDeleteRows = false;
+            this.dgParcalar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgParcalar.Location = new System.Drawing.Point(106, 176);
+            this.dgParcalar.MultiSelect = false;
+            this.dgParcalar.Name = "dgParcalar";
+            this.dgParcalar.ReadOnly = true;
+            this.dgParcalar.RowHeadersVisible = false;
+            this.dgParcalar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgParcalar.Size = new System.Drawing.Size(335, 104);
+            this.dgParcalar.TabIndex = 26;
             // 
             // btnParcaCikar
             // 
@@ -427,7 +443,7 @@
             // 
             this.tbFaturaTutari.Location = new System.Drawing.Point(372, 46);
             this.tbFaturaTutari.Name = "tbFaturaTutari";
-            this.tbFaturaTutari.Size = new System.Drawing.Size(148, 20);
+            this.tbFaturaTutari.Size = new System.Drawing.Size(120, 20);
             this.tbFaturaTutari.TabIndex = 20;
             // 
             // dtCikis
@@ -598,13 +614,18 @@
             this.btnCik.UseVisualStyleBackColor = true;
             this.btnCik.Click += new System.EventHandler(this.btnCik_Click);
             // 
-            // dgParcalar
+            // btnFaturaHesapla
             // 
-            this.dgParcalar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgParcalar.Location = new System.Drawing.Point(106, 176);
-            this.dgParcalar.Name = "dgParcalar";
-            this.dgParcalar.Size = new System.Drawing.Size(335, 104);
-            this.dgParcalar.TabIndex = 26;
+            this.btnFaturaHesapla.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnFaturaHesapla.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnFaturaHesapla.Location = new System.Drawing.Point(495, 46);
+            this.btnFaturaHesapla.Name = "btnFaturaHesapla";
+            this.btnFaturaHesapla.Size = new System.Drawing.Size(25, 20);
+            this.btnFaturaHesapla.TabIndex = 27;
+            this.btnFaturaHesapla.Tag = "";
+            this.btnFaturaHesapla.Text = "...";
+            this.btnFaturaHesapla.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFaturaHesapla.UseVisualStyleBackColor = true;
             // 
             // frmServis
             // 
@@ -688,5 +709,6 @@
         private System.Windows.Forms.Button btnParcaEkle;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgParcalar;
+        private System.Windows.Forms.Button btnFaturaHesapla;
     }
 }

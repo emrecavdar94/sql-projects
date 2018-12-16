@@ -109,6 +109,7 @@ namespace SQL_Project
                     tbYapilanIslemler.Text = DS.Tables[0].Rows[0][15].ToString();
                     dtCikis.Text = DS.Tables[0].Rows[0][16].ToString();
                     tbFaturaTutari.Text = DS.Tables[0].Rows[0][17].ToString();
+                    fillParcalar();
                 }
                 else
                 {
@@ -164,6 +165,15 @@ namespace SQL_Project
 
         private void btnParcaCikar_Click(object sender, EventArgs e)
         {
+            if (tbIsEmriNo.Text.Count() > 0 && dgParcalar.SelectedRows.Count > 0)
+            {
+                String parcaKodu = dgParcalar.SelectedRows[0].Cells[0].Value.ToString();
+                String komut = "DELETE FROM degisim WHERE isEmriNo = " + tbIsEmriNo.Text + " AND parcaKodu = '" + parcaKodu + "'";
+                SqlCommand sorgu = new SqlCommand(komut, baglanti);
+                sorgu.ExecuteNonQuery();
+                fillParcalar();
+            }
+            
             //lbParcalar.Items.Remove(lbParcalar.SelectedItems);
         }
 
@@ -191,15 +201,27 @@ namespace SQL_Project
 
         private void btnParcaEkle_Click(object sender, EventArgs e)
         {
-            frmParcalar parcalarForm = new frmParcalar(baglanti);
-            parcalarForm.isEmriNo = Convert.ToInt64(tbIsEmriNo.Text);
-            parcalarForm.ShowDialog();
-            
+            if (tbIsEmriNo.Text.Count() > 0)
+            {
+                frmParcalar parcalarForm = new frmParcalar(baglanti);
+                parcalarForm.isEmriNo = Convert.ToInt64(tbIsEmriNo.Text);
+                parcalarForm.ShowDialog();
+                fillParcalar();
+            }
         }
 
         private void fillParcalar()
         {
-
+            if (tbIsEmriNo.Text.Count() > 0)
+            {
+                String komut = "SELECT P.parcaKodu, P.parcaAdi, count(D.degisimNo) as adet, P.parcaIscilik, P.parcaTutari " +
+                    "FROM degisim D JOIN parca P on D.parcaKodu = P.parcaKodu WHERE D.isEmriNo = " + tbIsEmriNo.Text +
+                    "GROUP BY P.parcaKodu, P.parcaAdi, P.parcaIscilik, P.parcaTutari";
+                SqlDataAdapter sqlDA = new SqlDataAdapter(komut, baglanti);
+                DataSet DS = new DataSet();
+                sqlDA.Fill(DS);
+                dgParcalar.DataSource = DS.Tables[0];
+            }
         }
     }
 }

@@ -21,6 +21,15 @@ namespace SQL_Project
             InitializeComponent();
         }
 
+        private void frmParcalar_Load(object sender, EventArgs e)
+        {
+            String komut = "SELECT * FROM parca";
+            SqlDataAdapter sqlDA = new SqlDataAdapter(komut, baglanti);
+            DataSet DS = new DataSet();
+            sqlDA.Fill(DS);
+            dgParcalar.DataSource = DS.Tables[0];
+        }
+
         private void btnVazgeç_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -28,13 +37,13 @@ namespace SQL_Project
 
         private void btnAra_Click(object sender, EventArgs e)
         {
-            String komut = "SELECT * FROM parcalar WHERE ";
+            String komut = "SELECT * FROM parca WHERE ";
             if (tbParcaKodu.Text.Count() > 0 && tbParcaAdi.Text.Count() > 0)
-                komut += "parcaKodu LIKE '" + tbParcaKodu.Text + "' AND parcaKodu LIKE '" + tbParcaAdi.Text + "'";
+                komut += "parcaKodu LIKE '%" + tbParcaKodu.Text + "%' AND parcaKodu LIKE '%" + tbParcaAdi.Text + "%'";
             else if (tbParcaKodu.Text.Count() > 0)
-                komut += "parcaKodu LIKE '" + tbParcaKodu.Text + "'";
+                komut += "parcaKodu LIKE '%" + tbParcaKodu.Text + "%'";
             else if (tbParcaAdi.Text.Count() > 0)
-                komut += "parcaAdi LIKE '" + tbParcaAdi.Text + "'";
+                komut += "parcaAdi LIKE '%" + tbParcaAdi.Text + "%'";
             
             if (tbParcaKodu.Text.Count() > 0 || tbParcaAdi.Text.Count() > 0)
             {
@@ -47,7 +56,15 @@ namespace SQL_Project
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-
+            if (dgParcalar.SelectedRows.Count > 0)
+            {
+                String parcaKodu = dgParcalar.SelectedRows[0].Cells[0].Value.ToString();
+                String komut = "INSERT INTO degisim (isEmriNo, parcaKodu) VALUES (" +
+                    isEmriNo + ", '" + parcaKodu + "')";
+                SqlCommand sorgu = new SqlCommand(komut, baglanti);
+                sorgu.ExecuteNonQuery();
+                MessageBox.Show("Parça Eklendi", "Parça Ekleme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

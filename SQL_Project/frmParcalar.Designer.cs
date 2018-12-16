@@ -114,11 +114,16 @@
             // 
             // dgParcalar
             // 
+            this.dgParcalar.AllowUserToAddRows = false;
             this.dgParcalar.AllowUserToDeleteRows = false;
             this.dgParcalar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgParcalar.Location = new System.Drawing.Point(16, 81);
+            this.dgParcalar.MultiSelect = false;
             this.dgParcalar.Name = "dgParcalar";
             this.dgParcalar.ReadOnly = true;
+            this.dgParcalar.RowHeadersVisible = false;
+            this.dgParcalar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgParcalar.ShowEditingIcon = false;
             this.dgParcalar.Size = new System.Drawing.Size(313, 171);
             this.dgParcalar.TabIndex = 9;
             // 
@@ -139,6 +144,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmParcalar";
             this.Text = "frmParcalar";
+            this.Load += new System.EventHandler(this.frmParcalar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgParcalar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
