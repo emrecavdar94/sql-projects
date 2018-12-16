@@ -39,7 +39,6 @@ namespace SQL_Project
                 da.Fill(dt);
                 dgVeriler.DataSource = dt;
             }
-
         }
 
         private void btnArabaGetir_Click(object sender, EventArgs e)
