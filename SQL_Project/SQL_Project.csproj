@@ -49,13 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmParcalar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmParcalar.Designer.cs">
-      <DependentUpon>frmParcalar.cs</DependentUpon>
+    <Compile Include="frmParcalar.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSistemSabitleri.cs">
+    <Compile Include="frmParcalar.Designer.cs">
+      <DependentUpon>frmParcalar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSistemSabitleri.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSistemSabitleri.Designer.cs">
@@ -115,6 +115,12 @@
     <Compile Include="frmYedek.Designer.cs">
       <DependentUpon>frmYedek.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmYetkiEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmYetkiEkle.Designer.cs">
+      <DependentUpon>frmYetkiEkle.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmYetkiler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,9 +135,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmParcalar.resx">
-      <DependentUpon>frmParcalar.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="frmParcalar.resx">
+      <DependentUpon>frmParcalar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSistemSabitleri.resx">
       <DependentUpon>frmSistemSabitleri.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmYedek.resx">
       <DependentUpon>frmYedek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmYetkiEkle.resx">
+      <DependentUpon>frmYetkiEkle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmYetkiler.resx">
       <DependentUpon>frmYetkiler.cs</DependentUpon>

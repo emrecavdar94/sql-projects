@@ -140,5 +140,10 @@ namespace SQL_Project
 
             }
         }
+
+        private void tbMusteriTCNo_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }

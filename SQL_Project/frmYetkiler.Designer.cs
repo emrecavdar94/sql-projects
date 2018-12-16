@@ -65,6 +65,7 @@
             this.btnPersonelEkle.TabIndex = 2;
             this.btnPersonelEkle.Text = "Ekle";
             this.btnPersonelEkle.UseVisualStyleBackColor = true;
+            this.btnPersonelEkle.Click += new System.EventHandler(this.btnPersonelEkle_Click);
             // 
             // btnPersonelSil
             // 
@@ -74,6 +75,7 @@
             this.btnPersonelSil.TabIndex = 3;
             this.btnPersonelSil.Text = "Çıkar";
             this.btnPersonelSil.UseVisualStyleBackColor = true;
+            this.btnPersonelSil.Click += new System.EventHandler(this.btnPersonelSil_Click);
             // 
             // btnYetkiEkle
             // 
@@ -83,6 +85,7 @@
             this.btnYetkiEkle.TabIndex = 4;
             this.btnYetkiEkle.Text = "Ekle";
             this.btnYetkiEkle.UseVisualStyleBackColor = true;
+            this.btnYetkiEkle.Click += new System.EventHandler(this.btnYetkiEkle_Click);
             // 
             // btnYetkiSil
             // 

@@ -58,6 +58,7 @@
             this.tbSasiNo = new System.Windows.Forms.TextBox();
             this.btnSatisYap = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.tbSatisTutari = new System.Windows.Forms.TextBox();
             this.dtSatis = new System.Windows.Forms.DateTimePicker();
@@ -65,7 +66,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tbSatisNo = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.gbKisiselBilgiler.SuspendLayout();
             this.gbAracBilgileri.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -88,9 +88,9 @@
             this.gbKisiselBilgiler.Controls.Add(this.tbAdres);
             this.gbKisiselBilgiler.Controls.Add(this.tbEPosta);
             this.gbKisiselBilgiler.Location = new System.Drawing.Point(13, 14);
-            this.gbKisiselBilgiler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbKisiselBilgiler.Margin = new System.Windows.Forms.Padding(4);
             this.gbKisiselBilgiler.Name = "gbKisiselBilgiler";
-            this.gbKisiselBilgiler.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbKisiselBilgiler.Padding = new System.Windows.Forms.Padding(4);
             this.gbKisiselBilgiler.Size = new System.Drawing.Size(347, 290);
             this.gbKisiselBilgiler.TabIndex = 1;
             this.gbKisiselBilgiler.TabStop = false;
@@ -99,16 +99,17 @@
             // tbMusteriTCNo
             // 
             this.tbMusteriTCNo.Location = new System.Drawing.Point(140, 22);
-            this.tbMusteriTCNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbMusteriTCNo.Margin = new System.Windows.Forms.Padding(4);
             this.tbMusteriTCNo.Mask = "00000000000";
             this.tbMusteriTCNo.Name = "tbMusteriTCNo";
             this.tbMusteriTCNo.Size = new System.Drawing.Size(156, 22);
             this.tbMusteriTCNo.TabIndex = 16;
+            this.tbMusteriTCNo.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.tbMusteriTCNo_MaskInputRejected);
             // 
             // tbTelNo
             // 
             this.tbTelNo.Location = new System.Drawing.Point(141, 119);
-            this.tbTelNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTelNo.Margin = new System.Windows.Forms.Padding(4);
             this.tbTelNo.Mask = "+\\9\\0000-000-00-00";
             this.tbTelNo.Name = "tbTelNo";
             this.tbTelNo.Size = new System.Drawing.Size(196, 22);
@@ -119,7 +120,7 @@
             this.btnTCNoDoldur.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnTCNoDoldur.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnTCNoDoldur.Location = new System.Drawing.Point(305, 22);
-            this.btnTCNoDoldur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTCNoDoldur.Margin = new System.Windows.Forms.Padding(4);
             this.btnTCNoDoldur.Name = "btnTCNoDoldur";
             this.btnTCNoDoldur.Size = new System.Drawing.Size(33, 25);
             this.btnTCNoDoldur.TabIndex = 4;
@@ -152,7 +153,7 @@
             // tbSoyad
             // 
             this.tbSoyad.Location = new System.Drawing.Point(141, 87);
-            this.tbSoyad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSoyad.Margin = new System.Windows.Forms.Padding(4);
             this.tbSoyad.Name = "tbSoyad";
             this.tbSoyad.Size = new System.Drawing.Size(196, 22);
             this.tbSoyad.TabIndex = 12;
@@ -160,7 +161,7 @@
             // tbAd
             // 
             this.tbAd.Location = new System.Drawing.Point(141, 55);
-            this.tbAd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbAd.Margin = new System.Windows.Forms.Padding(4);
             this.tbAd.Name = "tbAd";
             this.tbAd.Size = new System.Drawing.Size(196, 22);
             this.tbAd.TabIndex = 11;
@@ -208,7 +209,7 @@
             // tbAdres
             // 
             this.tbAdres.Location = new System.Drawing.Point(141, 183);
-            this.tbAdres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbAdres.Margin = new System.Windows.Forms.Padding(4);
             this.tbAdres.Multiline = true;
             this.tbAdres.Name = "tbAdres";
             this.tbAdres.Size = new System.Drawing.Size(196, 88);
@@ -217,7 +218,7 @@
             // tbEPosta
             // 
             this.tbEPosta.Location = new System.Drawing.Point(141, 151);
-            this.tbEPosta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbEPosta.Margin = new System.Windows.Forms.Padding(4);
             this.tbEPosta.Name = "tbEPosta";
             this.tbEPosta.Size = new System.Drawing.Size(196, 22);
             this.tbEPosta.TabIndex = 5;
@@ -239,9 +240,9 @@
             this.gbAracBilgileri.Controls.Add(this.lblSasiNo);
             this.gbAracBilgileri.Controls.Add(this.tbSasiNo);
             this.gbAracBilgileri.Location = new System.Drawing.Point(368, 14);
-            this.gbAracBilgileri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbAracBilgileri.Margin = new System.Windows.Forms.Padding(4);
             this.gbAracBilgileri.Name = "gbAracBilgileri";
-            this.gbAracBilgileri.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbAracBilgileri.Padding = new System.Windows.Forms.Padding(4);
             this.gbAracBilgileri.Size = new System.Drawing.Size(347, 290);
             this.gbAracBilgileri.TabIndex = 2;
             this.gbAracBilgileri.TabStop = false;
@@ -260,7 +261,7 @@
             // tbRenk
             // 
             this.tbRenk.Location = new System.Drawing.Point(141, 183);
-            this.tbRenk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbRenk.Margin = new System.Windows.Forms.Padding(4);
             this.tbRenk.Name = "tbRenk";
             this.tbRenk.Size = new System.Drawing.Size(196, 22);
             this.tbRenk.TabIndex = 16;
@@ -270,7 +271,7 @@
             this.btnSasiNoDoldur.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnSasiNoDoldur.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSasiNoDoldur.Location = new System.Drawing.Point(307, 22);
-            this.btnSasiNoDoldur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSasiNoDoldur.Margin = new System.Windows.Forms.Padding(4);
             this.btnSasiNoDoldur.Name = "btnSasiNoDoldur";
             this.btnSasiNoDoldur.Size = new System.Drawing.Size(33, 25);
             this.btnSasiNoDoldur.TabIndex = 15;
@@ -293,7 +294,7 @@
             // tbModel
             // 
             this.tbModel.Location = new System.Drawing.Point(141, 151);
-            this.tbModel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbModel.Margin = new System.Windows.Forms.Padding(4);
             this.tbModel.Name = "tbModel";
             this.tbModel.Size = new System.Drawing.Size(196, 22);
             this.tbModel.TabIndex = 8;
@@ -311,7 +312,7 @@
             // tbMarka
             // 
             this.tbMarka.Location = new System.Drawing.Point(141, 119);
-            this.tbMarka.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbMarka.Margin = new System.Windows.Forms.Padding(4);
             this.tbMarka.Name = "tbMarka";
             this.tbMarka.Size = new System.Drawing.Size(196, 22);
             this.tbMarka.TabIndex = 6;
@@ -329,7 +330,7 @@
             // tbPlaka
             // 
             this.tbPlaka.Location = new System.Drawing.Point(141, 87);
-            this.tbPlaka.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPlaka.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaka.Name = "tbPlaka";
             this.tbPlaka.Size = new System.Drawing.Size(196, 22);
             this.tbPlaka.TabIndex = 4;
@@ -347,7 +348,7 @@
             // tbMotorNo
             // 
             this.tbMotorNo.Location = new System.Drawing.Point(141, 55);
-            this.tbMotorNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbMotorNo.Margin = new System.Windows.Forms.Padding(4);
             this.tbMotorNo.Name = "tbMotorNo";
             this.tbMotorNo.Size = new System.Drawing.Size(196, 22);
             this.tbMotorNo.TabIndex = 2;
@@ -365,7 +366,7 @@
             // tbSasiNo
             // 
             this.tbSasiNo.Location = new System.Drawing.Point(141, 23);
-            this.tbSasiNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSasiNo.Margin = new System.Windows.Forms.Padding(4);
             this.tbSasiNo.Name = "tbSasiNo";
             this.tbSasiNo.Size = new System.Drawing.Size(157, 22);
             this.tbSasiNo.TabIndex = 0;
@@ -394,13 +395,23 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.tbSatisNo);
             this.groupBox1.Location = new System.Drawing.Point(13, 311);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(701, 139);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Satış Bilgileri";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(432, 81);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(167, 41);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Fatura Bas";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -415,7 +426,7 @@
             // tbSatisTutari
             // 
             this.tbSatisTutari.Location = new System.Drawing.Point(140, 101);
-            this.tbSatisTutari.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSatisTutari.Margin = new System.Windows.Forms.Padding(4);
             this.tbSatisTutari.Name = "tbSatisTutari";
             this.tbSatisTutari.Size = new System.Drawing.Size(196, 22);
             this.tbSatisTutari.TabIndex = 20;
@@ -433,7 +444,7 @@
             this.btnSatisDoldur.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnSatisDoldur.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSatisDoldur.Location = new System.Drawing.Point(304, 23);
-            this.btnSatisDoldur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSatisDoldur.Margin = new System.Windows.Forms.Padding(4);
             this.btnSatisDoldur.Name = "btnSatisDoldur";
             this.btnSatisDoldur.Size = new System.Drawing.Size(33, 25);
             this.btnSatisDoldur.TabIndex = 4;
@@ -466,20 +477,10 @@
             // tbSatisNo
             // 
             this.tbSatisNo.Location = new System.Drawing.Point(141, 23);
-            this.tbSatisNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSatisNo.Margin = new System.Windows.Forms.Padding(4);
             this.tbSatisNo.Name = "tbSatisNo";
             this.tbSatisNo.Size = new System.Drawing.Size(155, 22);
             this.tbSatisNo.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(432, 81);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 41);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Fatura Bas";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmSatis
             // 

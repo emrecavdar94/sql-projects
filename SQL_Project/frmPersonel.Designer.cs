@@ -38,7 +38,6 @@
             this.lblPersonelNo = new System.Windows.Forms.Label();
             this.tbPersonelSoyad = new System.Windows.Forms.TextBox();
             this.tbPersonelAd = new System.Windows.Forms.TextBox();
-            this.tbPersonelTCNo = new System.Windows.Forms.TextBox();
             this.tbPersonelNo = new System.Windows.Forms.TextBox();
             this.gbiletisimBilgileri = new System.Windows.Forms.GroupBox();
             this.lblPersonelAdres = new System.Windows.Forms.Label();
@@ -46,7 +45,13 @@
             this.lblPersonelTelNo = new System.Windows.Forms.Label();
             this.tbAdres = new System.Windows.Forms.TextBox();
             this.tbEPosta = new System.Windows.Forms.TextBox();
-            this.tbTelNo = new System.Windows.Forms.TextBox();
+            this.btnEkle = new System.Windows.Forms.Button();
+            this.tbParola = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbKullaniciAdi = new System.Windows.Forms.TextBox();
+            this.tbTcNo = new System.Windows.Forms.MaskedTextBox();
+            this.tbTelNo = new System.Windows.Forms.MaskedTextBox();
             this.gbDemografikBilgiler.SuspendLayout();
             this.gbiletisimBilgileri.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +59,11 @@
             // gbDemografikBilgiler
             // 
             this.gbDemografikBilgiler.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gbDemografikBilgiler.Controls.Add(this.tbTcNo);
+            this.gbDemografikBilgiler.Controls.Add(this.label2);
+            this.gbDemografikBilgiler.Controls.Add(this.tbKullaniciAdi);
+            this.gbDemografikBilgiler.Controls.Add(this.label1);
+            this.gbDemografikBilgiler.Controls.Add(this.tbParola);
             this.gbDemografikBilgiler.Controls.Add(this.btnTCNoDoldur);
             this.gbDemografikBilgiler.Controls.Add(this.btnPersonelNoDoldur);
             this.gbDemografikBilgiler.Controls.Add(this.lblPersonelSoyad);
@@ -62,13 +72,12 @@
             this.gbDemografikBilgiler.Controls.Add(this.lblPersonelNo);
             this.gbDemografikBilgiler.Controls.Add(this.tbPersonelSoyad);
             this.gbDemografikBilgiler.Controls.Add(this.tbPersonelAd);
-            this.gbDemografikBilgiler.Controls.Add(this.tbPersonelTCNo);
             this.gbDemografikBilgiler.Controls.Add(this.tbPersonelNo);
             this.gbDemografikBilgiler.Location = new System.Drawing.Point(16, 15);
-            this.gbDemografikBilgiler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbDemografikBilgiler.Margin = new System.Windows.Forms.Padding(4);
             this.gbDemografikBilgiler.Name = "gbDemografikBilgiler";
-            this.gbDemografikBilgiler.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbDemografikBilgiler.Size = new System.Drawing.Size(347, 181);
+            this.gbDemografikBilgiler.Padding = new System.Windows.Forms.Padding(4);
+            this.gbDemografikBilgiler.Size = new System.Drawing.Size(347, 213);
             this.gbDemografikBilgiler.TabIndex = 0;
             this.gbDemografikBilgiler.TabStop = false;
             this.gbDemografikBilgiler.Text = "Demografik Bilgiler";
@@ -78,7 +87,7 @@
             this.btnTCNoDoldur.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnTCNoDoldur.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnTCNoDoldur.Location = new System.Drawing.Point(305, 62);
-            this.btnTCNoDoldur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTCNoDoldur.Margin = new System.Windows.Forms.Padding(4);
             this.btnTCNoDoldur.Name = "btnTCNoDoldur";
             this.btnTCNoDoldur.Size = new System.Drawing.Size(33, 25);
             this.btnTCNoDoldur.TabIndex = 3;
@@ -92,7 +101,7 @@
             this.btnPersonelNoDoldur.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnPersonelNoDoldur.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPersonelNoDoldur.Location = new System.Drawing.Point(305, 30);
-            this.btnPersonelNoDoldur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPersonelNoDoldur.Margin = new System.Windows.Forms.Padding(4);
             this.btnPersonelNoDoldur.Name = "btnPersonelNoDoldur";
             this.btnPersonelNoDoldur.Size = new System.Drawing.Size(33, 25);
             this.btnPersonelNoDoldur.TabIndex = 1;
@@ -144,7 +153,7 @@
             // tbPersonelSoyad
             // 
             this.tbPersonelSoyad.Location = new System.Drawing.Point(141, 126);
-            this.tbPersonelSoyad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPersonelSoyad.Margin = new System.Windows.Forms.Padding(4);
             this.tbPersonelSoyad.Name = "tbPersonelSoyad";
             this.tbPersonelSoyad.Size = new System.Drawing.Size(196, 22);
             this.tbPersonelSoyad.TabIndex = 5;
@@ -152,23 +161,15 @@
             // tbPersonelAd
             // 
             this.tbPersonelAd.Location = new System.Drawing.Point(141, 94);
-            this.tbPersonelAd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPersonelAd.Margin = new System.Windows.Forms.Padding(4);
             this.tbPersonelAd.Name = "tbPersonelAd";
             this.tbPersonelAd.Size = new System.Drawing.Size(196, 22);
             this.tbPersonelAd.TabIndex = 4;
             // 
-            // tbPersonelTCNo
-            // 
-            this.tbPersonelTCNo.Location = new System.Drawing.Point(141, 62);
-            this.tbPersonelTCNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tbPersonelTCNo.Name = "tbPersonelTCNo";
-            this.tbPersonelTCNo.Size = new System.Drawing.Size(196, 22);
-            this.tbPersonelTCNo.TabIndex = 2;
-            // 
             // tbPersonelNo
             // 
             this.tbPersonelNo.Location = new System.Drawing.Point(141, 30);
-            this.tbPersonelNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPersonelNo.Margin = new System.Windows.Forms.Padding(4);
             this.tbPersonelNo.Name = "tbPersonelNo";
             this.tbPersonelNo.Size = new System.Drawing.Size(196, 22);
             this.tbPersonelNo.TabIndex = 0;
@@ -176,17 +177,17 @@
             // gbiletisimBilgileri
             // 
             this.gbiletisimBilgileri.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gbiletisimBilgileri.Controls.Add(this.tbTelNo);
             this.gbiletisimBilgileri.Controls.Add(this.lblPersonelAdres);
             this.gbiletisimBilgileri.Controls.Add(this.lblPersonelEPosta);
             this.gbiletisimBilgileri.Controls.Add(this.lblPersonelTelNo);
             this.gbiletisimBilgileri.Controls.Add(this.tbAdres);
             this.gbiletisimBilgileri.Controls.Add(this.tbEPosta);
-            this.gbiletisimBilgileri.Controls.Add(this.tbTelNo);
             this.gbiletisimBilgileri.Location = new System.Drawing.Point(371, 15);
-            this.gbiletisimBilgileri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbiletisimBilgileri.Margin = new System.Windows.Forms.Padding(4);
             this.gbiletisimBilgileri.Name = "gbiletisimBilgileri";
-            this.gbiletisimBilgileri.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbiletisimBilgileri.Size = new System.Drawing.Size(347, 181);
+            this.gbiletisimBilgileri.Padding = new System.Windows.Forms.Padding(4);
+            this.gbiletisimBilgileri.Size = new System.Drawing.Size(347, 213);
             this.gbiletisimBilgileri.TabIndex = 1;
             this.gbiletisimBilgileri.TabStop = false;
             this.gbiletisimBilgileri.Text = "İletişim Bilgileri";
@@ -224,7 +225,7 @@
             // tbAdres
             // 
             this.tbAdres.Location = new System.Drawing.Point(141, 87);
-            this.tbAdres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbAdres.Margin = new System.Windows.Forms.Padding(4);
             this.tbAdres.Multiline = true;
             this.tbAdres.Name = "tbAdres";
             this.tbAdres.Size = new System.Drawing.Size(196, 85);
@@ -233,28 +234,79 @@
             // tbEPosta
             // 
             this.tbEPosta.Location = new System.Drawing.Point(141, 55);
-            this.tbEPosta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbEPosta.Margin = new System.Windows.Forms.Padding(4);
             this.tbEPosta.Name = "tbEPosta";
             this.tbEPosta.Size = new System.Drawing.Size(196, 22);
             this.tbEPosta.TabIndex = 7;
             // 
+            // btnEkle
+            // 
+            this.btnEkle.Location = new System.Drawing.Point(633, 235);
+            this.btnEkle.Name = "btnEkle";
+            this.btnEkle.Size = new System.Drawing.Size(75, 23);
+            this.btnEkle.TabIndex = 2;
+            this.btnEkle.Text = "Ekle";
+            this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
+            // 
+            // tbParola
+            // 
+            this.tbParola.Location = new System.Drawing.Point(141, 158);
+            this.tbParola.Name = "tbParola";
+            this.tbParola.Size = new System.Drawing.Size(196, 22);
+            this.tbParola.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 163);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 17);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Parola";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(11, 192);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 17);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Kullanıcı Adı";
+            // 
+            // tbKullaniciAdi
+            // 
+            this.tbKullaniciAdi.Location = new System.Drawing.Point(141, 187);
+            this.tbKullaniciAdi.Name = "tbKullaniciAdi";
+            this.tbKullaniciAdi.Size = new System.Drawing.Size(196, 22);
+            this.tbKullaniciAdi.TabIndex = 13;
+            // 
+            // tbTcNo
+            // 
+            this.tbTcNo.Location = new System.Drawing.Point(141, 65);
+            this.tbTcNo.Mask = "00000000000";
+            this.tbTcNo.Name = "tbTcNo";
+            this.tbTcNo.Size = new System.Drawing.Size(166, 22);
+            this.tbTcNo.TabIndex = 15;
+            // 
             // tbTelNo
             // 
-            this.tbTelNo.Location = new System.Drawing.Point(141, 23);
-            this.tbTelNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTelNo.Location = new System.Drawing.Point(141, 27);
+            this.tbTelNo.Mask = "+90999-000-00-00";
             this.tbTelNo.Name = "tbTelNo";
             this.tbTelNo.Size = new System.Drawing.Size(196, 22);
-            this.tbTelNo.TabIndex = 6;
+            this.tbTelNo.TabIndex = 11;
             // 
             // frmPersonel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 320);
+            this.Controls.Add(this.btnEkle);
             this.Controls.Add(this.gbiletisimBilgileri);
             this.Controls.Add(this.gbDemografikBilgiler);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPersonel";
@@ -278,16 +330,21 @@
         private System.Windows.Forms.Label lblPersonelNo;
         private System.Windows.Forms.TextBox tbPersonelSoyad;
         private System.Windows.Forms.TextBox tbPersonelAd;
-        private System.Windows.Forms.TextBox tbPersonelTCNo;
         private System.Windows.Forms.TextBox tbPersonelNo;
         private System.Windows.Forms.GroupBox gbiletisimBilgileri;
         private System.Windows.Forms.TextBox tbAdres;
         private System.Windows.Forms.TextBox tbEPosta;
-        private System.Windows.Forms.TextBox tbTelNo;
         private System.Windows.Forms.Button btnTCNoDoldur;
         private System.Windows.Forms.Button btnPersonelNoDoldur;
         private System.Windows.Forms.Label lblPersonelAdres;
         private System.Windows.Forms.Label lblPersonelEPosta;
         private System.Windows.Forms.Label lblPersonelTelNo;
+        private System.Windows.Forms.Button btnEkle;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbParola;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbKullaniciAdi;
+        private System.Windows.Forms.MaskedTextBox tbTcNo;
+        private System.Windows.Forms.MaskedTextBox tbTelNo;
     }
 }
