@@ -23,7 +23,7 @@ namespace SQL_Project
 
         private void btnMusteriGetir_Click(object sender, EventArgs e)
         {
-            string komut = "SELECT ad AS[AD], soyad AS[SOYAD], tckNo AS[TC KIMLIK NO], telefon AS[TELEFON], eposta AS[E - POSTA], adres AS[ADRES]  FROM musteri";
+            string komut = "SELECT ad AS[AD], soyad AS[SOYAD], tckNo AS[TC KIMLIK NO], telefon AS[TELEFON], eposta AS[E-POSTA], adres AS[ADRES]  FROM musteri ";
             if (mtbMusteriTCNo.Text == string.Empty && tbMusteriAd.Text == string.Empty && tbMusteriSoyad.Text == string.Empty)
             {
                 SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
@@ -31,15 +31,15 @@ namespace SQL_Project
                 da.Fill(dt);
                 dgVeriler.DataSource = dt;
             }
-            else if (mtbMusteriTCNo.Text != string.Empty)
+            else if (mtbMusteriTCNo.Text != string.Empty && tbMusteriAd.Text == string.Empty && tbMusteriSoyad.Text == string.Empty)
             {
-                komut += " WHERE tckNo='" + mtbMusteriTCNo.Text + "'";
+                komut += "WHERE tckNo='" + mtbMusteriTCNo.Text + "'";
                 SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dgVeriler.DataSource = dt;
             }
-            else if (tbMusteriAd.Text != string.Empty)
+            else if (mtbMusteriTCNo.Text == string.Empty && tbMusteriAd.Text != string.Empty && tbMusteriSoyad.Text == string.Empty)
             {
                 komut += "WHERE ad = '" + tbMusteriAd.Text + "'";
                 SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
@@ -47,9 +47,17 @@ namespace SQL_Project
                 da.Fill(dt);
                 dgVeriler.DataSource = dt;
             }
-            else if (tbMusteriSoyad.Text != string.Empty)
+            else if (mtbMusteriTCNo.Text == string.Empty && tbMusteriAd.Text == string.Empty && tbMusteriSoyad.Text != string.Empty)
             {
                 komut += "WHERE soyad = '" + tbMusteriSoyad.Text + "'";
+                SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgVeriler.DataSource = dt;
+            }
+            else if (mtbMusteriTCNo.Text == string.Empty && tbMusteriAd.Text != string.Empty && tbMusteriSoyad.Text != string.Empty)
+            {
+                komut += "WHERE ad = '" + tbMusteriAd.Text + "' AND soyad = '" + tbMusteriSoyad.Text + "'";
                 SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -83,7 +91,7 @@ namespace SQL_Project
                 da.Fill(dt);
                 dgVeriler.DataSource = dt;
             }
-            else if (tbMarka.Text != string.Empty && rbSatilmisAraba.Checked == true)
+            else if (tbMarka.Text != string.Empty && tbModel.Text == string.Empty && tbRenk.Text == string.Empty && rbSatilmisAraba.Checked == true)
             {
                 komut += "WHERE sasiNo IN(SELECT sasiNo FROM satis) AND marka = '" + tbMarka.Text + "'";
                 SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
@@ -91,7 +99,7 @@ namespace SQL_Project
                 da.Fill(dt);
                 dgVeriler.DataSource = dt;
             }
-            else if (tbMarka.Text != string.Empty && rbSatilmamisAraba.Checked == true)
+            else if (tbMarka.Text != string.Empty && tbModel.Text == string.Empty && tbRenk.Text == string.Empty && rbSatilmamisAraba.Checked == true)
             {
                 komut += "WHERE sasiNo NOT IN(SELECT sasiNo FROM satis) AND marka = '" + tbMarka.Text + "'";
                 SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
@@ -99,7 +107,7 @@ namespace SQL_Project
                 da.Fill(dt);
                 dgVeriler.DataSource = dt;
             }
-            else if (tbMarka.Text != string.Empty && rbTumArabalar.Checked == true)
+            else if (tbMarka.Text != string.Empty && tbModel.Text == string.Empty && tbRenk.Text == string.Empty && rbTumArabalar.Checked == true)
             {
                 komut += "WHERE marka = '" + tbMarka.Text + "'";
                 SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
@@ -107,7 +115,7 @@ namespace SQL_Project
                 da.Fill(dt);
                 dgVeriler.DataSource = dt;
             }
-            else if (tbModel.Text != string.Empty && rbSatilmisAraba.Checked == true)
+            else if (tbModel.Text != string.Empty && tbMarka.Text == string.Empty && tbRenk.Text == string.Empty && rbSatilmisAraba.Checked == true)
             {
                 komut += "WHERE sasiNo IN(SELECT sasiNo FROM satis) AND model = '" + tbModel.Text + "'";
                 SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
@@ -115,7 +123,7 @@ namespace SQL_Project
                 da.Fill(dt);
                 dgVeriler.DataSource = dt;
             }
-            else if (tbModel.Text != string.Empty && rbSatilmamisAraba.Checked == true)
+            else if (tbModel.Text != string.Empty && tbMarka.Text == string.Empty && tbRenk.Text == string.Empty && rbSatilmamisAraba.Checked == true)
             {
                 komut += "WHERE sasiNo NOT IN(SELECT sasiNo FROM satis) AND model = '" + tbModel.Text + "'";
                 SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
@@ -123,7 +131,7 @@ namespace SQL_Project
                 da.Fill(dt);
                 dgVeriler.DataSource = dt;
             }
-            else if (tbModel.Text != string.Empty && rbTumArabalar.Checked == true)
+            else if (tbModel.Text != string.Empty && tbMarka.Text == string.Empty && tbRenk.Text == string.Empty && rbTumArabalar.Checked == true)
             {
                 komut += "WHERE model = '" + tbModel.Text + "'";
                 SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
@@ -131,7 +139,7 @@ namespace SQL_Project
                 da.Fill(dt);
                 dgVeriler.DataSource = dt;
             }
-            else if (tbRenk.Text != string.Empty && rbSatilmisAraba.Checked == true)
+            else if (tbRenk.Text != string.Empty && tbModel.Text == string.Empty && tbMarka.Text == string.Empty && rbSatilmisAraba.Checked == true)
             {
                 komut += "WHERE sasiNo IN(SELECT sasiNo FROM satis) AND renk = '" + tbRenk.Text + "'";
                 SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
@@ -139,7 +147,7 @@ namespace SQL_Project
                 da.Fill(dt);
                 dgVeriler.DataSource = dt;
             }
-            else if (tbRenk.Text != string.Empty && rbSatilmamisAraba.Checked == true)
+            else if (tbRenk.Text != string.Empty && tbModel.Text == string.Empty && tbMarka.Text == string.Empty && rbSatilmamisAraba.Checked == true)
             {
                 komut += "WHERE sasiNo NOT IN(SELECT sasiNo FROM satis) AND renk = '" + tbRenk.Text + "'";
                 SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
@@ -147,9 +155,81 @@ namespace SQL_Project
                 da.Fill(dt);
                 dgVeriler.DataSource = dt;
             }
-            else if (tbRenk.Text != string.Empty && rbTumArabalar.Checked == true)
+            else if (tbRenk.Text != string.Empty && tbModel.Text == string.Empty && tbMarka.Text == string.Empty && rbTumArabalar.Checked == true)
             {
                 komut += "WHERE renk = '" + tbRenk.Text + "'";
+                SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgVeriler.DataSource = dt;
+            }
+            else if (tbMarka.Text != string.Empty && tbRenk.Text != string.Empty && tbModel.Text == string.Empty && rbTumArabalar.Checked == true)
+            {
+                komut += "WHERE marka = '" + tbMarka.Text + "' AND renk = '" + tbRenk.Text + "'";
+                SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgVeriler.DataSource = dt;
+            }
+            else if (tbMarka.Text != string.Empty && tbRenk.Text != string.Empty && tbModel.Text == string.Empty && rbSatilmisAraba.Checked == true)
+            {
+                komut += "WHERE sasiNo IN(SELECT sasiNo FROM satis) AND marka = '" + tbMarka.Text + "' AND renk = '" + tbRenk.Text + "'";
+                SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgVeriler.DataSource = dt;
+            }
+            else if (tbMarka.Text != string.Empty && tbRenk.Text != string.Empty && tbModel.Text == string.Empty && rbSatilmamisAraba.Checked == true)
+            {
+                komut += "WHERE sasiNo NOT IN(SELECT sasiNo FROM satis) AND marka = '" + tbMarka.Text + "' AND renk = '" + tbRenk.Text + "'";
+                SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgVeriler.DataSource = dt;
+            }
+            else if (tbMarka.Text != string.Empty && tbRenk.Text == string.Empty && tbModel.Text != string.Empty && rbTumArabalar.Checked == true)
+            {
+                komut += "WHERE marka = '" + tbMarka.Text + "' AND model = '" + tbModel.Text + "'";
+                SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgVeriler.DataSource = dt;
+            }
+            else if (tbMarka.Text != string.Empty && tbRenk.Text == string.Empty && tbModel.Text != string.Empty && rbSatilmisAraba.Checked == true)
+            {
+                komut += "WHERE sasiNo IN(SELECT sasiNo FROM satis) AND marka = '" + tbMarka.Text + "' AND model = '" + tbModel.Text + "'";
+                SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgVeriler.DataSource = dt;
+            }
+            else if (tbMarka.Text != string.Empty && tbRenk.Text == string.Empty && tbModel.Text != string.Empty && rbSatilmamisAraba.Checked == true)
+            {
+                komut += "WHERE sasiNo NOT IN(SELECT sasiNo FROM satis) AND marka = '" + tbMarka.Text + "' AND model = '" + tbModel.Text + "'";
+                SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgVeriler.DataSource = dt;
+            }
+            else if (tbMarka.Text == string.Empty && tbRenk.Text != string.Empty && tbModel.Text != string.Empty && rbTumArabalar.Checked == true)
+            {
+                komut += "WHERE renk = '" + tbRenk.Text + "' AND model = '" + tbModel.Text + "'";
+                SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgVeriler.DataSource = dt;
+            }
+            else if (tbMarka.Text == string.Empty && tbRenk.Text != string.Empty && tbModel.Text != string.Empty && rbSatilmisAraba.Checked == true)
+            {
+                komut += "WHERE sasiNo IN(SELECT sasiNo FROM satis) AND renk = '" + tbRenk.Text + "' AND model = '" + tbModel.Text + "'";
+                SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgVeriler.DataSource = dt;
+            }
+            else if (tbMarka.Text == string.Empty && tbRenk.Text != string.Empty && tbModel.Text != string.Empty && rbSatilmamisAraba.Checked == true)
+            {
+                komut += "WHERE sasiNo NOT IN(SELECT sasiNo FROM satis) AND renk = '" + tbRenk.Text + "' AND model = '" + tbModel.Text + "'";
                 SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -160,10 +240,11 @@ namespace SQL_Project
         private void frmRaporlar_Load(object sender, EventArgs e)
         {
             rbTumArabalar.Checked = true;
-            if (true)
-            {
+        }
 
-            }
+        private void btnPersonelGetir_Click(object sender, EventArgs e)
+        {
+            string komut = "";
         }
     }
 }

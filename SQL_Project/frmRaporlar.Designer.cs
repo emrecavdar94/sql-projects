@@ -43,11 +43,11 @@
             this.rbSatilmamisAraba = new System.Windows.Forms.RadioButton();
             this.btnArabaGetir = new System.Windows.Forms.Button();
             this.rbSatilmisAraba = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblArabaRenk = new System.Windows.Forms.Label();
+            this.lblArabaModel = new System.Windows.Forms.Label();
             this.tbRenk = new System.Windows.Forms.TextBox();
             this.tbModel = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblArabaMarka = new System.Windows.Forms.Label();
             this.tbMarka = new System.Windows.Forms.TextBox();
             this.gbRaporPersonel = new System.Windows.Forms.GroupBox();
             this.btnPersonelEncokSatisYapan = new System.Windows.Forms.Button();
@@ -164,11 +164,11 @@
             this.gbRaporAraba.Controls.Add(this.rbSatilmamisAraba);
             this.gbRaporAraba.Controls.Add(this.btnArabaGetir);
             this.gbRaporAraba.Controls.Add(this.rbSatilmisAraba);
-            this.gbRaporAraba.Controls.Add(this.label1);
-            this.gbRaporAraba.Controls.Add(this.label4);
+            this.gbRaporAraba.Controls.Add(this.lblArabaRenk);
+            this.gbRaporAraba.Controls.Add(this.lblArabaModel);
             this.gbRaporAraba.Controls.Add(this.tbRenk);
             this.gbRaporAraba.Controls.Add(this.tbModel);
-            this.gbRaporAraba.Controls.Add(this.label8);
+            this.gbRaporAraba.Controls.Add(this.lblArabaMarka);
             this.gbRaporAraba.Controls.Add(this.tbMarka);
             this.gbRaporAraba.Location = new System.Drawing.Point(278, 12);
             this.gbRaporAraba.Name = "gbRaporAraba";
@@ -221,23 +221,23 @@
             this.rbSatilmisAraba.Text = "Sadece Satışı Yapılan Arabaları Getir";
             this.rbSatilmisAraba.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblArabaRenk
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Renk";
+            this.lblArabaRenk.AutoSize = true;
+            this.lblArabaRenk.Location = new System.Drawing.Point(6, 74);
+            this.lblArabaRenk.Name = "lblArabaRenk";
+            this.lblArabaRenk.Size = new System.Drawing.Size(33, 13);
+            this.lblArabaRenk.TabIndex = 14;
+            this.lblArabaRenk.Text = "Renk";
             // 
-            // label4
+            // lblArabaModel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Model";
+            this.lblArabaModel.AutoSize = true;
+            this.lblArabaModel.Location = new System.Drawing.Point(6, 48);
+            this.lblArabaModel.Name = "lblArabaModel";
+            this.lblArabaModel.Size = new System.Drawing.Size(36, 13);
+            this.lblArabaModel.TabIndex = 13;
+            this.lblArabaModel.Text = "Model";
             // 
             // tbRenk
             // 
@@ -253,14 +253,14 @@
             this.tbModel.Size = new System.Drawing.Size(148, 20);
             this.tbModel.TabIndex = 11;
             // 
-            // label8
+            // lblArabaMarka
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 22);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Marka";
+            this.lblArabaMarka.AutoSize = true;
+            this.lblArabaMarka.Location = new System.Drawing.Point(6, 22);
+            this.lblArabaMarka.Name = "lblArabaMarka";
+            this.lblArabaMarka.Size = new System.Drawing.Size(37, 13);
+            this.lblArabaMarka.TabIndex = 7;
+            this.lblArabaMarka.Text = "Marka";
             // 
             // tbMarka
             // 
@@ -304,6 +304,7 @@
             this.btnPersonelGetir.TabIndex = 15;
             this.btnPersonelGetir.Text = "Personelleri Listele";
             this.btnPersonelGetir.UseVisualStyleBackColor = true;
+            this.btnPersonelGetir.Click += new System.EventHandler(this.btnPersonelGetir_Click);
             // 
             // label6
             // 
@@ -399,11 +400,11 @@
         private System.Windows.Forms.Button btnMusteriGetir;
         private System.Windows.Forms.GroupBox gbRaporAraba;
         private System.Windows.Forms.Button btnArabaGetir;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblArabaRenk;
+        private System.Windows.Forms.Label lblArabaModel;
         private System.Windows.Forms.TextBox tbRenk;
         private System.Windows.Forms.TextBox tbModel;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblArabaMarka;
         private System.Windows.Forms.TextBox tbMarka;
         private System.Windows.Forms.GroupBox gbRaporPersonel;
         private System.Windows.Forms.Button btnPersonelEncokSatisYapan;
