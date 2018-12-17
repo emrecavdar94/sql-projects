@@ -45,5 +45,11 @@ namespace SQL_Project
             frmSistemSabitleri frmSistemSabitleri = new frmSistemSabitleri(baglanti);
             frmSistemSabitleri.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmYedekleGeriYukle yedekleGeriYukleForm = new frmYedekleGeriYukle(baglanti);
+            yedekleGeriYukleForm.ShowDialog();
+        }
     }
 }

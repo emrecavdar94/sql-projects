@@ -255,7 +255,7 @@
             // tbTelNo
             // 
             this.tbTelNo.Location = new System.Drawing.Point(106, 98);
-            this.tbTelNo.Mask = "+\\9\\0000-000-00-00";
+            this.tbTelNo.Mask = "+\\9\\0(000) 000 0000";
             this.tbTelNo.Name = "tbTelNo";
             this.tbTelNo.Size = new System.Drawing.Size(150, 20);
             this.tbTelNo.TabIndex = 18;

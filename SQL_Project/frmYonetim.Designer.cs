@@ -45,20 +45,19 @@
             this.gbAracBilgileri.Controls.Add(this.button3);
             this.gbAracBilgileri.Controls.Add(this.button2);
             this.gbAracBilgileri.Controls.Add(this.btnPersoneller);
-            this.gbAracBilgileri.Location = new System.Drawing.Point(23, 13);
-            this.gbAracBilgileri.Margin = new System.Windows.Forms.Padding(4);
+            this.gbAracBilgileri.Location = new System.Drawing.Point(17, 11);
             this.gbAracBilgileri.Name = "gbAracBilgileri";
-            this.gbAracBilgileri.Padding = new System.Windows.Forms.Padding(4);
-            this.gbAracBilgileri.Size = new System.Drawing.Size(563, 352);
+            this.gbAracBilgileri.Size = new System.Drawing.Size(422, 286);
             this.gbAracBilgileri.TabIndex = 3;
             this.gbAracBilgileri.TabStop = false;
             this.gbAracBilgileri.Text = "Yönetim Paneli";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(382, 148);
+            this.button5.Location = new System.Drawing.Point(286, 120);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(123, 62);
+            this.button5.Size = new System.Drawing.Size(92, 50);
             this.button5.TabIndex = 4;
             this.button5.Text = "Sistem Sabitleri";
             this.button5.UseVisualStyleBackColor = true;
@@ -66,18 +65,21 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(30, 148);
+            this.button4.Location = new System.Drawing.Point(22, 120);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(123, 62);
+            this.button4.Size = new System.Drawing.Size(92, 50);
             this.button4.TabIndex = 3;
             this.button4.Text = "Yedek/Geri Yükle";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(382, 35);
+            this.button3.Location = new System.Drawing.Point(286, 28);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(123, 62);
+            this.button3.Size = new System.Drawing.Size(92, 50);
             this.button3.TabIndex = 2;
             this.button3.Text = "Müşteriler";
             this.button3.UseVisualStyleBackColor = true;
@@ -85,9 +87,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(203, 35);
+            this.button2.Location = new System.Drawing.Point(152, 28);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 62);
+            this.button2.Size = new System.Drawing.Size(92, 50);
             this.button2.TabIndex = 1;
             this.button2.Text = "Araçlar";
             this.button2.UseVisualStyleBackColor = true;
@@ -95,9 +98,10 @@
             // 
             // btnPersoneller
             // 
-            this.btnPersoneller.Location = new System.Drawing.Point(30, 35);
+            this.btnPersoneller.Location = new System.Drawing.Point(22, 28);
+            this.btnPersoneller.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPersoneller.Name = "btnPersoneller";
-            this.btnPersoneller.Size = new System.Drawing.Size(123, 62);
+            this.btnPersoneller.Size = new System.Drawing.Size(92, 50);
             this.btnPersoneller.TabIndex = 0;
             this.btnPersoneller.Text = "Personeller";
             this.btnPersoneller.UseVisualStyleBackColor = true;
@@ -105,10 +109,11 @@
             // 
             // frmYonetim
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.gbAracBilgileri);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmYonetim";
             this.Text = "frmYonetim";
             this.gbAracBilgileri.ResumeLayout(false);

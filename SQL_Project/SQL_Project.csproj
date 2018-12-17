@@ -115,6 +115,12 @@
     <Compile Include="frmYedek.Designer.cs">
       <DependentUpon>frmYedek.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmYedekleGeriYukle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmYedekleGeriYukle.Designer.cs">
+      <DependentUpon>frmYedekleGeriYukle.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmYetkiEkle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmYedek.resx">
       <DependentUpon>frmYedek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmYedekleGeriYukle.resx">
+      <DependentUpon>frmYedekleGeriYukle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmYetkiEkle.resx">
       <DependentUpon>frmYetkiEkle.cs</DependentUpon>
