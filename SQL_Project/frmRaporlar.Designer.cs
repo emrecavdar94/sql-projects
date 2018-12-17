@@ -66,6 +66,7 @@
             // 
             // dgVeriler
             // 
+            this.dgVeriler.AllowUserToAddRows = false;
             this.dgVeriler.AllowUserToResizeColumns = false;
             this.dgVeriler.AllowUserToResizeRows = false;
             this.dgVeriler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -74,6 +75,7 @@
             this.dgVeriler.Margin = new System.Windows.Forms.Padding(2);
             this.dgVeriler.Name = "dgVeriler";
             this.dgVeriler.ReadOnly = true;
+            this.dgVeriler.RowHeadersVisible = false;
             this.dgVeriler.RowTemplate.Height = 24;
             this.dgVeriler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVeriler.Size = new System.Drawing.Size(656, 257);

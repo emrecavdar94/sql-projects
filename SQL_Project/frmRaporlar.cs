@@ -244,7 +244,38 @@ namespace SQL_Project
 
         private void btnPersonelGetir_Click(object sender, EventArgs e)
         {
-            string komut = "";
+            string komut = "SELECT ad AS[AD], soyad AS[SOYAD], tckNo AS[TC KIMLIK NO], eposta AS[E-POSTA], adres AS[ADRES] FROM personel ";
+            if (tbPersonelAd.Text == string.Empty && tbPersonelSoyad.Text == string.Empty)
+            {
+                SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgVeriler.DataSource = dt;
+            }
+            else if (tbPersonelAd.Text != string.Empty && tbPersonelSoyad.Text == string.Empty)
+            {
+                komut += "WHERE ad = '" + tbPersonelAd.Text + "'";
+                SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgVeriler.DataSource = dt;
+            }
+            else if (tbPersonelAd.Text == string.Empty && tbPersonelSoyad.Text != string.Empty)
+            {
+                komut += "WHERE soyad = '" + tbPersonelSoyad.Text + "'";
+                SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgVeriler.DataSource = dt;
+            }
+            else if (tbPersonelAd.Text != string.Empty && tbPersonelSoyad.Text != string.Empty)
+            {
+                komut += "WHERE ad = '" + tbPersonelAd.Text + "' AND soyad = '" + tbPersonelSoyad.Text + "'";
+                SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgVeriler.DataSource = dt;
+            }
         }
     }
 }
