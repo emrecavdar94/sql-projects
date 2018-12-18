@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmParca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParca.Designer.cs">
+      <DependentUpon>frmParca.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmParcalar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmParca.resx">
+      <DependentUpon>frmParca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmParcalar.resx">
       <DependentUpon>frmParcalar.cs</DependentUpon>
     </EmbeddedResource>

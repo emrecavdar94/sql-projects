@@ -37,6 +37,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgParcalar = new System.Windows.Forms.DataGridView();
+            this.btnYeniParca = new System.Windows.Forms.Button();
+            this.btnParcaSil = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgParcalar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,12 +55,12 @@
             // 
             this.tbParcaKodu.Location = new System.Drawing.Point(82, 10);
             this.tbParcaKodu.Name = "tbParcaKodu";
-            this.tbParcaKodu.Size = new System.Drawing.Size(186, 20);
+            this.tbParcaKodu.Size = new System.Drawing.Size(191, 20);
             this.tbParcaKodu.TabIndex = 1;
             // 
             // btnAra
             // 
-            this.btnAra.Location = new System.Drawing.Point(274, 9);
+            this.btnAra.Location = new System.Drawing.Point(279, 8);
             this.btnAra.Name = "btnAra";
             this.btnAra.Size = new System.Drawing.Size(55, 49);
             this.btnAra.TabIndex = 2;
@@ -68,7 +70,8 @@
             // 
             // btnEkle
             // 
-            this.btnEkle.Location = new System.Drawing.Point(254, 258);
+            this.btnEkle.Enabled = false;
+            this.btnEkle.Location = new System.Drawing.Point(259, 258);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(75, 23);
             this.btnEkle.TabIndex = 4;
@@ -91,7 +94,7 @@
             // 
             this.tbParcaAdi.Location = new System.Drawing.Point(82, 36);
             this.tbParcaAdi.Name = "tbParcaAdi";
-            this.tbParcaAdi.Size = new System.Drawing.Size(186, 20);
+            this.tbParcaAdi.Size = new System.Drawing.Size(191, 20);
             this.tbParcaAdi.TabIndex = 7;
             // 
             // label2
@@ -124,8 +127,28 @@
             this.dgParcalar.RowHeadersVisible = false;
             this.dgParcalar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgParcalar.ShowEditingIcon = false;
-            this.dgParcalar.Size = new System.Drawing.Size(313, 171);
+            this.dgParcalar.Size = new System.Drawing.Size(318, 171);
             this.dgParcalar.TabIndex = 9;
+            // 
+            // btnYeniParca
+            // 
+            this.btnYeniParca.Location = new System.Drawing.Point(97, 258);
+            this.btnYeniParca.Name = "btnYeniParca";
+            this.btnYeniParca.Size = new System.Drawing.Size(75, 23);
+            this.btnYeniParca.TabIndex = 10;
+            this.btnYeniParca.Text = "Yeni Parça";
+            this.btnYeniParca.UseVisualStyleBackColor = true;
+            this.btnYeniParca.Click += new System.EventHandler(this.btnYeniParca_Click);
+            // 
+            // btnParcaSil
+            // 
+            this.btnParcaSil.Location = new System.Drawing.Point(178, 258);
+            this.btnParcaSil.Name = "btnParcaSil";
+            this.btnParcaSil.Size = new System.Drawing.Size(75, 23);
+            this.btnParcaSil.TabIndex = 11;
+            this.btnParcaSil.Text = "Parça Sil";
+            this.btnParcaSil.UseVisualStyleBackColor = true;
+            this.btnParcaSil.Click += new System.EventHandler(this.btnParcaSil_Click);
             // 
             // frmParcalar
             // 
@@ -133,6 +156,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnVazgeç;
             this.ClientSize = new System.Drawing.Size(341, 287);
+            this.Controls.Add(this.btnParcaSil);
+            this.Controls.Add(this.btnYeniParca);
             this.Controls.Add(this.dgParcalar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbParcaAdi);
@@ -162,5 +187,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgParcalar;
+        private System.Windows.Forms.Button btnYeniParca;
+        private System.Windows.Forms.Button btnParcaSil;
     }
 }

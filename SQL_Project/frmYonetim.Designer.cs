@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.gbAracBilgileri = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnParcalar = new System.Windows.Forms.Button();
+            this.btnSistemSabitleri = new System.Windows.Forms.Button();
+            this.btnYedekleGeriYukle = new System.Windows.Forms.Button();
+            this.btnMusteriler = new System.Windows.Forms.Button();
+            this.btnAraclar = new System.Windows.Forms.Button();
             this.btnPersoneller = new System.Windows.Forms.Button();
             this.gbAracBilgileri.SuspendLayout();
             this.SuspendLayout();
@@ -40,10 +41,11 @@
             // gbAracBilgileri
             // 
             this.gbAracBilgileri.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.gbAracBilgileri.Controls.Add(this.button5);
-            this.gbAracBilgileri.Controls.Add(this.button4);
-            this.gbAracBilgileri.Controls.Add(this.button3);
-            this.gbAracBilgileri.Controls.Add(this.button2);
+            this.gbAracBilgileri.Controls.Add(this.btnParcalar);
+            this.gbAracBilgileri.Controls.Add(this.btnSistemSabitleri);
+            this.gbAracBilgileri.Controls.Add(this.btnYedekleGeriYukle);
+            this.gbAracBilgileri.Controls.Add(this.btnMusteriler);
+            this.gbAracBilgileri.Controls.Add(this.btnAraclar);
             this.gbAracBilgileri.Controls.Add(this.btnPersoneller);
             this.gbAracBilgileri.Location = new System.Drawing.Point(17, 11);
             this.gbAracBilgileri.Name = "gbAracBilgileri";
@@ -52,54 +54,65 @@
             this.gbAracBilgileri.TabStop = false;
             this.gbAracBilgileri.Text = "Yönetim Paneli";
             // 
-            // button5
+            // btnParcalar
             // 
-            this.button5.Location = new System.Drawing.Point(286, 120);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(92, 50);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Sistem Sabitleri";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnParcalar.Location = new System.Drawing.Point(22, 120);
+            this.btnParcalar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnParcalar.Name = "btnParcalar";
+            this.btnParcalar.Size = new System.Drawing.Size(92, 50);
+            this.btnParcalar.TabIndex = 5;
+            this.btnParcalar.Text = "Parçalar";
+            this.btnParcalar.UseVisualStyleBackColor = true;
+            this.btnParcalar.Click += new System.EventHandler(this.btnParcalar_Click);
             // 
-            // button4
+            // btnSistemSabitleri
             // 
-            this.button4.Location = new System.Drawing.Point(22, 120);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(92, 50);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Yedek/Geri Yükle";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnSistemSabitleri.Location = new System.Drawing.Point(286, 120);
+            this.btnSistemSabitleri.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSistemSabitleri.Name = "btnSistemSabitleri";
+            this.btnSistemSabitleri.Size = new System.Drawing.Size(92, 50);
+            this.btnSistemSabitleri.TabIndex = 4;
+            this.btnSistemSabitleri.Text = "Sistem Sabitleri";
+            this.btnSistemSabitleri.UseVisualStyleBackColor = true;
+            this.btnSistemSabitleri.Click += new System.EventHandler(this.btnSistemSabitleri_Click);
             // 
-            // button3
+            // btnYedekleGeriYukle
             // 
-            this.button3.Location = new System.Drawing.Point(286, 28);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 50);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Müşteriler";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnYedekleGeriYukle.Location = new System.Drawing.Point(152, 120);
+            this.btnYedekleGeriYukle.Margin = new System.Windows.Forms.Padding(2);
+            this.btnYedekleGeriYukle.Name = "btnYedekleGeriYukle";
+            this.btnYedekleGeriYukle.Size = new System.Drawing.Size(92, 50);
+            this.btnYedekleGeriYukle.TabIndex = 3;
+            this.btnYedekleGeriYukle.Text = "Yedek/Geri Yükle";
+            this.btnYedekleGeriYukle.UseVisualStyleBackColor = true;
+            this.btnYedekleGeriYukle.Click += new System.EventHandler(this.btnYedekleGeriYukle_Click);
             // 
-            // button2
+            // btnMusteriler
             // 
-            this.button2.Location = new System.Drawing.Point(152, 28);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 50);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Araçlar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnMusteriler.Location = new System.Drawing.Point(286, 28);
+            this.btnMusteriler.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMusteriler.Name = "btnMusteriler";
+            this.btnMusteriler.Size = new System.Drawing.Size(92, 50);
+            this.btnMusteriler.TabIndex = 2;
+            this.btnMusteriler.Text = "Müşteriler";
+            this.btnMusteriler.UseVisualStyleBackColor = true;
+            this.btnMusteriler.Click += new System.EventHandler(this.btnMusteriler_Click);
+            // 
+            // btnAraclar
+            // 
+            this.btnAraclar.Location = new System.Drawing.Point(152, 28);
+            this.btnAraclar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAraclar.Name = "btnAraclar";
+            this.btnAraclar.Size = new System.Drawing.Size(92, 50);
+            this.btnAraclar.TabIndex = 1;
+            this.btnAraclar.Text = "Araçlar";
+            this.btnAraclar.UseVisualStyleBackColor = true;
+            this.btnAraclar.Click += new System.EventHandler(this.btnAraclar_Click);
             // 
             // btnPersoneller
             // 
             this.btnPersoneller.Location = new System.Drawing.Point(22, 28);
-            this.btnPersoneller.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPersoneller.Margin = new System.Windows.Forms.Padding(2);
             this.btnPersoneller.Name = "btnPersoneller";
             this.btnPersoneller.Size = new System.Drawing.Size(92, 50);
             this.btnPersoneller.TabIndex = 0;
@@ -113,7 +126,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.gbAracBilgileri);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmYonetim";
             this.Text = "frmYonetim";
             this.gbAracBilgileri.ResumeLayout(false);
@@ -124,10 +137,11 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbAracBilgileri;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSistemSabitleri;
+        private System.Windows.Forms.Button btnYedekleGeriYukle;
+        private System.Windows.Forms.Button btnMusteriler;
+        private System.Windows.Forms.Button btnAraclar;
         private System.Windows.Forms.Button btnPersoneller;
+        private System.Windows.Forms.Button btnParcalar;
     }
 }

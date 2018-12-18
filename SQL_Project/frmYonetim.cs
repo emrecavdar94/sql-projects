@@ -27,29 +27,35 @@ namespace SQL_Project
             yetkilerForm.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnAraclar_Click(object sender, EventArgs e)
         {
             frmArac frmArac = new frmArac(baglanti);
             frmArac.ShowDialog();
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnMusteriler_Click(object sender, EventArgs e)
         {
             frmMusteri frmMusteri = new frmMusteri(baglanti);
             frmMusteri.ShowDialog();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnSistemSabitleri_Click(object sender, EventArgs e)
         {
             frmSistemSabitleri frmSistemSabitleri = new frmSistemSabitleri(baglanti);
             frmSistemSabitleri.ShowDialog();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnYedekleGeriYukle_Click(object sender, EventArgs e)
         {
             frmYedekleGeriYukle yedekleGeriYukleForm = new frmYedekleGeriYukle(baglanti);
             yedekleGeriYukleForm.ShowDialog();
+        }
+
+        private void btnParcalar_Click(object sender, EventArgs e)
+        {
+            frmParcalar parcalarForm = new frmParcalar(baglanti);
+            parcalarForm.ShowDialog();
         }
     }
 }

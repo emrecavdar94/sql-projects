@@ -23,6 +23,11 @@ namespace SQL_Project
 
         private void frmParcalar_Load(object sender, EventArgs e)
         {
+            doldur();
+        }
+
+        private void doldur()
+        {
             String komut = "SELECT * FROM parca";
             SqlDataAdapter sqlDA = new SqlDataAdapter(komut, baglanti);
             DataSet DS = new DataSet();
@@ -52,6 +57,10 @@ namespace SQL_Project
                 sqlDA.Fill(DS);
                 dgParcalar.DataSource = DS.Tables[0];
             }
+            else
+            {
+                doldur();
+            }
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -65,6 +74,31 @@ namespace SQL_Project
                 sorgu.ExecuteNonQuery();
                 MessageBox.Show("Parça Eklendi", "Parça Ekleme", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        public void setEnabledBtnEkle(Boolean durum)
+        {
+            btnEkle.Enabled = durum;
+        }
+
+        private void btnParcaSil_Click(object sender, EventArgs e)
+        {
+            if (dgParcalar.SelectedRows.Count > 0)
+            {
+                String parcaKodu = dgParcalar.SelectedRows[0].Cells[0].Value.ToString();
+                String komut = "DELETE FROM parca WHERE parcaKodu = '" + parcaKodu + "'";
+                SqlCommand sorgu = new SqlCommand(komut, baglanti);
+                sorgu.ExecuteNonQuery();
+                MessageBox.Show("Parça Silindi", "Parça Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            doldur();
+        }
+
+        private void btnYeniParca_Click(object sender, EventArgs e)
+        {
+            frmParca parcaForm = new frmParca(baglanti);
+            parcaForm.ShowDialog();
+            doldur();
         }
     }
 }

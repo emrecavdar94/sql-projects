@@ -189,6 +189,7 @@ namespace SQL_Project
             {
                 frmParcalar parcalarForm = new frmParcalar(baglanti);
                 parcalarForm.isEmriNo = Convert.ToInt64(tbIsEmriNo.Text);
+                parcalarForm.setEnabledBtnEkle(true);
                 parcalarForm.ShowDialog();
                 fillParcalar();
             }
