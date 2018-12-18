@@ -277,5 +277,50 @@ namespace SQL_Project
                 dgVeriler.DataSource = dt;
             }
         }
+
+        private void btnPersonelEncokSatisYapan_Click(object sender, EventArgs e)
+        {
+            string komut = "SELECT TOP (10) p.tckNo AS[TC KIMLIK NO], p.ad AS[AD], p.soyad AS[SOYAD], COUNT(p.perNo) AS[SATIŞ ADEDİ], SUM(s.tutar) AS[SATIŞ TUTARI] FROM personel p INNER JOIN satis s ON p.perNo=s.perNo GROUP BY p.tckNo,p.ad,p.soyad,p.perNo ORDER BY [SATIŞ ADEDİ] DESC, [SATIŞ TUTARI] DESC ";
+            if (tbPersonelAd.Text == string.Empty && tbPersonelSoyad.Text == string.Empty)
+            {
+                SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgVeriler.DataSource = dt;
+            }
+        }
+
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application Excel = new Microsoft.Office.Interop.Excel.Application();
+            object Missing = Type.Missing;
+            Microsoft.Office.Interop.Excel.Workbook workbook = Excel.Workbooks.Add(Missing);
+            Microsoft.Office.Interop.Excel.Worksheet sheet1 = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets[1];
+            int StartCol = 1;
+            int StartRow = 1;
+            for (int j = 0; j < dgVeriler.Columns.Count; j++)
+            {
+                Microsoft.Office.Interop.Excel.Range myRange = (Microsoft.Office.Interop.Excel.Range)sheet1.Cells[StartRow, StartCol + j];
+                myRange.Value2 = dgVeriler.Columns[j].HeaderText;
+            }
+            StartRow++;
+            for (int i = 0; i < dgVeriler.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgVeriler.Columns.Count; j++)
+                {
+                    try
+                    {
+                        Microsoft.Office.Interop.Excel.Range myRange = (Microsoft.Office.Interop.Excel.Range)sheet1.Cells[StartRow + i, StartCol + j];
+                        myRange.Value2 = dgVeriler[j, i].Value == null ? "" : dgVeriler[j, i].Value;
+                        myRange.Select();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Aktarım Yapılırken Hata Oluştu", "Aktarım Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            Excel.Visible = true;
+        }
     }
 }

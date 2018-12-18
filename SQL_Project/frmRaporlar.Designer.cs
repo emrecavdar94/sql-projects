@@ -296,6 +296,7 @@
             this.btnPersonelEncokSatisYapan.TabIndex = 16;
             this.btnPersonelEncokSatisYapan.Text = "En Çok Satış Yapan Personeller";
             this.btnPersonelEncokSatisYapan.UseVisualStyleBackColor = true;
+            this.btnPersonelEncokSatisYapan.Click += new System.EventHandler(this.btnPersonelEncokSatisYapan_Click);
             // 
             // btnPersonelGetir
             // 
@@ -349,6 +350,7 @@
             this.btnExportExcel.TabIndex = 18;
             this.btnExportExcel.Text = "Excel Olarak Dışarı Aktar";
             this.btnExportExcel.UseVisualStyleBackColor = true;
+            this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
             // 
             // btnYazdir
             // 
