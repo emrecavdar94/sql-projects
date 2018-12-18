@@ -14,9 +14,11 @@ namespace SQL_Project
     public partial class frmYedekleGeriYukle : Form
     {
         private SqlConnection baglanti;
-        public frmYedekleGeriYukle(SqlConnection baglanti)
+        private Personel personel;
+        public frmYedekleGeriYukle(SqlConnection baglanti, Personel personel)
         {
             this.baglanti = baglanti;
+            this.personel = personel;
             InitializeComponent();
         }
 

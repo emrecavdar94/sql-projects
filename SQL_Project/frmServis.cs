@@ -14,11 +14,12 @@ namespace SQL_Project
     public partial class frmServis : Form
     {
         private SqlConnection baglanti;
-        public long perno;
+        private Personel personel;
         private long musNo;
-        public frmServis(SqlConnection baglanti)
+        public frmServis(SqlConnection baglanti, Personel personel)
         {
             this.baglanti = baglanti;
+            this.personel = personel;
             InitializeComponent();
         }
 
@@ -158,8 +159,8 @@ namespace SQL_Project
             {
                 String komut = "INSERT INTO servis " +
                     " (girisTarihi, sasiNo, musNo, perNo, girisTalimati, aracKm) VALUES " +
-                    " ('" + dtGiris.Value.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + tbSasiNo.Text + "', " +
-                    musNo + ", " + perno + ", '" + tbGirisTalimat.Text + "', " +
+                    " ('" + dtGiris.Value.ToString("yyyyMMdd HH:mm:ss") + "', '" + tbSasiNo.Text + "', " +
+                    musNo + ", " + personel.getPerNo() + ", '" + tbGirisTalimat.Text + "', " +
                     tbArackm.Text + ") SELECT SCOPE_IDENTITY()";
                 SqlCommand sorgu = new SqlCommand(komut, baglanti);
                 tbIsEmriNo.Text = Convert.ToInt64(sorgu.ExecuteScalar()).ToString();
@@ -171,8 +172,8 @@ namespace SQL_Project
             if (tbIsEmriNo.Text.Count() > 0)
             {
                 String komut = "UPDATE servis SET " +
-                    " girisTarihi='" + dtGiris.Value.ToString("yyyy-MM-dd HH:mm:ss") +
-                    "', sasiNo = '" + tbSasiNo.Text + "', musNo = " + musNo + ", perNo = " + perno +
+                    " girisTarihi='" + dtGiris.Value.ToString("yyyyMMdd HH:mm:ss") +
+                    "', sasiNo = '" + tbSasiNo.Text + "', musNo = " + musNo + ", perNo = " + personel.getPerNo() +
                     ", girisTalimati = '" + tbGirisTalimat.Text + "', aracKm = " + tbArackm.Text +
                     ", cikisTarihi = '" + dtGiris.Value.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
                     "yapilanIslemler = '" + tbYapilanIslemler.Text + "', " +
@@ -187,9 +188,8 @@ namespace SQL_Project
         {
             if (tbIsEmriNo.Text.Count() > 0)
             {
-                frmParcalar parcalarForm = new frmParcalar(baglanti);
-                parcalarForm.isEmriNo = Convert.ToInt64(tbIsEmriNo.Text);
-                parcalarForm.setEnabledBtnEkle(true);
+                frmParcalar parcalarForm = new frmParcalar(baglanti, personel);
+                parcalarForm.setIsEmriNo(Convert.ToInt64(tbIsEmriNo.Text));
                 parcalarForm.ShowDialog();
                 fillParcalar();
             }

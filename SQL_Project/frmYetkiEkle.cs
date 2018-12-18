@@ -15,13 +15,13 @@ namespace SQL_Project
     {
         List<int> yetkiList = new List<int>();
         private SqlConnection baglanti;
-        public long perno;
+        private Personel personel;
         public long secilenPersonel;
-        public frmYetkiEkle(SqlConnection baglanti)
+        public frmYetkiEkle(SqlConnection baglanti, Personel personel)
         {
             this.baglanti = baglanti;
+            this.personel = personel;
             InitializeComponent();
-
         }
 
         private void frmYetkiEkle_Load(object sender, EventArgs e)
@@ -31,14 +31,10 @@ namespace SQL_Project
             {
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-
                     while (reader.Read())
                     {
-
                         cbYetki.Items.Add((string)reader[0]);
-                        
                         yetkiList.Add(int.Parse(reader[1].ToString()));
-
                     }
                 }
             }

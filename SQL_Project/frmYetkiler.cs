@@ -11,32 +11,17 @@ using System.Windows.Forms;
 
 namespace SQL_Project
 {
-    //public class Item
-    //{
-    //    public string deger;
-    //    public string value;
-
-    //    public Item(string deger,string value)
-    //    {
-    //        this.deger = deger;
-    //        this.value = value;
-    //    }
-    //    public Item()
-    //    {
-           
-    //    }
-    //}
-
-        public partial class frmYetkiler : Form
+    public partial class frmYetkiler : Form
         {
-       public List<long> pernoList = new List<long>();
+        public List<long> pernoList = new List<long>();
         public List<int> yetkilerList = new List<int>();
         private SqlConnection baglanti;
-        public long perno;
+        private Personel personel;
         long secilenPersonel;
-        public frmYetkiler(SqlConnection baglanti)
+        public frmYetkiler(SqlConnection baglanti, Personel personel)
         {
             this.baglanti = baglanti;
+            this.personel = personel;
             InitializeComponent();
 
         }
@@ -53,14 +38,10 @@ namespace SQL_Project
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-
                         while (reader.Read())
                         {
-
-
                             lbYetkiler.Items.Add((string)reader[0]);
                             yetkilerList.Add(int.Parse(reader[1].ToString()));
-
                         }
                     }
                 }
@@ -70,25 +51,19 @@ namespace SQL_Project
 
         private void frmYetkiler_Load(object sender, EventArgs e)
         {
-               
-              
-                string query = "SELECT perNo,ad,soyad FROM personel";
-                using (SqlCommand cmd = new SqlCommand(query, baglanti))
+            string query = "SELECT perNo,ad,soyad FROM personel";
+            using (SqlCommand cmd = new SqlCommand(query, baglanti))
+            {
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-
                     while (reader.Read())
                     {
-                        
-                       
                         lbPersonel.Items.Add((string)reader[1]);
                         pernoList.Add(long.Parse(reader[0].ToString()));
-
                     }
                 }
-                    }
-                }
+            }
+        }
 
         private void btnYetkiSil_Click(object sender, EventArgs e)
         {
@@ -103,7 +78,6 @@ namespace SQL_Project
             }
             catch (Exception)
             {
-
                 MessageBox.Show(" Yetki Silinemedi Silindi");
             }
            
@@ -124,13 +98,13 @@ namespace SQL_Project
 
         private void btnPersonelEkle_Click(object sender, EventArgs e)
         {
-            frmPersonel frmPersonel = new frmPersonel(baglanti);
+            frmPersonel frmPersonel = new frmPersonel(baglanti, personel);
             frmPersonel.ShowDialog();
         }
 
         private void btnYetkiEkle_Click(object sender, EventArgs e)
         {
-            frmYetkiEkle frmYetkiEkle = new frmYetkiEkle(baglanti);
+            frmYetkiEkle frmYetkiEkle = new frmYetkiEkle(baglanti, personel);
             frmYetkiEkle.secilenPersonel = secilenPersonel;
             frmYetkiEkle.ShowDialog();
             lbPersonel_SelectedIndexChanged(sender, e);

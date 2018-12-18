@@ -34,6 +34,7 @@
             this.btnYonetim = new System.Windows.Forms.Button();
             this.btnRaporlar = new System.Windows.Forms.Button();
             this.lblMasterKarsilama = new System.Windows.Forms.Label();
+            this.btnKisisel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSatis
@@ -91,18 +92,31 @@
             // lblMasterKarsilama
             // 
             this.lblMasterKarsilama.AutoSize = true;
-            this.lblMasterKarsilama.Location = new System.Drawing.Point(175, 23);
+            this.lblMasterKarsilama.Location = new System.Drawing.Point(79, 19);
             this.lblMasterKarsilama.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMasterKarsilama.Name = "lblMasterKarsilama";
-            this.lblMasterKarsilama.Size = new System.Drawing.Size(35, 13);
+            this.lblMasterKarsilama.Size = new System.Drawing.Size(216, 26);
             this.lblMasterKarsilama.TabIndex = 6;
-            this.lblMasterKarsilama.Text = "label1";
+            this.lblMasterKarsilama.Text = "Araç Satışı ve Satış Sonrası Servis Hizmetleri\r\nUygulamasına Hoşgeldiniz";
+            this.lblMasterKarsilama.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnKisisel
+            // 
+            this.btnKisisel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnKisisel.Location = new System.Drawing.Point(274, 316);
+            this.btnKisisel.Name = "btnKisisel";
+            this.btnKisisel.Size = new System.Drawing.Size(75, 23);
+            this.btnKisisel.TabIndex = 7;
+            this.btnKisisel.Text = "Bilgilerim";
+            this.btnKisisel.UseVisualStyleBackColor = true;
+            this.btnKisisel.Click += new System.EventHandler(this.btnKisisel_Click);
             // 
             // frmMasterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 362);
+            this.Controls.Add(this.btnKisisel);
             this.Controls.Add(this.lblMasterKarsilama);
             this.Controls.Add(this.btnYonetim);
             this.Controls.Add(this.btnRaporlar);
@@ -126,6 +140,7 @@
         private System.Windows.Forms.Button btnYonetim;
         private System.Windows.Forms.Button btnRaporlar;
         private System.Windows.Forms.Label lblMasterKarsilama;
+        private System.Windows.Forms.Button btnKisisel;
     }
 }
 

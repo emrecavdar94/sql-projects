@@ -21,11 +21,11 @@ namespace SQL_Project
             Application.SetCompatibleTextRenderingDefault(false);
             frmLogin login = new frmLogin(baglanti);
             Application.Run(login);
+            Personel personel = login.getPersonel();
 
-            if (login.perno != -1)
+            if (personel != null)
             {
-                frmMasterForm master = new frmMasterForm(baglanti);
-                master.perno = login.perno;
+                frmMasterForm master = new frmMasterForm(baglanti, personel);
                 Application.Run(master);
             }
         }

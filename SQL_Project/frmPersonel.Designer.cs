@@ -63,9 +63,9 @@
             this.gbDemografikBilgiler.Controls.Add(this.label2);
             this.gbDemografikBilgiler.Controls.Add(this.tbKullaniciAdi);
             this.gbDemografikBilgiler.Controls.Add(this.label1);
-            this.gbDemografikBilgiler.Controls.Add(this.tbParola);
             this.gbDemografikBilgiler.Controls.Add(this.btnTCNoDoldur);
             this.gbDemografikBilgiler.Controls.Add(this.btnPersonelNoDoldur);
+            this.gbDemografikBilgiler.Controls.Add(this.tbParola);
             this.gbDemografikBilgiler.Controls.Add(this.lblPersonelSoyad);
             this.gbDemografikBilgiler.Controls.Add(this.lblPersonelAd);
             this.gbDemografikBilgiler.Controls.Add(this.lblPersonelTCNo);
@@ -75,24 +75,24 @@
             this.gbDemografikBilgiler.Controls.Add(this.tbPersonelNo);
             this.gbDemografikBilgiler.Location = new System.Drawing.Point(12, 12);
             this.gbDemografikBilgiler.Name = "gbDemografikBilgiler";
-            this.gbDemografikBilgiler.Size = new System.Drawing.Size(260, 173);
+            this.gbDemografikBilgiler.Size = new System.Drawing.Size(260, 176);
             this.gbDemografikBilgiler.TabIndex = 0;
             this.gbDemografikBilgiler.TabStop = false;
             this.gbDemografikBilgiler.Text = "Demografik Bilgiler";
             // 
             // tbTcNo
             // 
-            this.tbTcNo.Location = new System.Drawing.Point(106, 53);
-            this.tbTcNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbTcNo.Location = new System.Drawing.Point(106, 49);
+            this.tbTcNo.Margin = new System.Windows.Forms.Padding(2);
             this.tbTcNo.Mask = "00000000000";
             this.tbTcNo.Name = "tbTcNo";
-            this.tbTcNo.Size = new System.Drawing.Size(126, 20);
+            this.tbTcNo.Size = new System.Drawing.Size(117, 20);
             this.tbTcNo.TabIndex = 15;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 156);
+            this.label2.Location = new System.Drawing.Point(8, 129);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
@@ -101,8 +101,8 @@
             // 
             // tbKullaniciAdi
             // 
-            this.tbKullaniciAdi.Location = new System.Drawing.Point(106, 152);
-            this.tbKullaniciAdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbKullaniciAdi.Location = new System.Drawing.Point(106, 125);
+            this.tbKullaniciAdi.Margin = new System.Windows.Forms.Padding(2);
             this.tbKullaniciAdi.Name = "tbKullaniciAdi";
             this.tbKullaniciAdi.Size = new System.Drawing.Size(148, 20);
             this.tbKullaniciAdi.TabIndex = 13;
@@ -110,7 +110,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 132);
+            this.label1.Location = new System.Drawing.Point(8, 153);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
@@ -119,9 +119,10 @@
             // 
             // tbParola
             // 
-            this.tbParola.Location = new System.Drawing.Point(106, 128);
-            this.tbParola.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbParola.Location = new System.Drawing.Point(106, 149);
+            this.tbParola.Margin = new System.Windows.Forms.Padding(2);
             this.tbParola.Name = "tbParola";
+            this.tbParola.PasswordChar = '*';
             this.tbParola.Size = new System.Drawing.Size(148, 20);
             this.tbParola.TabIndex = 11;
             // 
@@ -129,7 +130,7 @@
             // 
             this.btnTCNoDoldur.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnTCNoDoldur.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnTCNoDoldur.Location = new System.Drawing.Point(229, 50);
+            this.btnTCNoDoldur.Location = new System.Drawing.Point(228, 48);
             this.btnTCNoDoldur.Name = "btnTCNoDoldur";
             this.btnTCNoDoldur.Size = new System.Drawing.Size(25, 20);
             this.btnTCNoDoldur.TabIndex = 3;
@@ -137,12 +138,13 @@
             this.btnTCNoDoldur.Text = "...";
             this.btnTCNoDoldur.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTCNoDoldur.UseVisualStyleBackColor = true;
+            this.btnTCNoDoldur.Click += new System.EventHandler(this.btnTCNoDoldur_Click);
             // 
             // btnPersonelNoDoldur
             // 
             this.btnPersonelNoDoldur.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnPersonelNoDoldur.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnPersonelNoDoldur.Location = new System.Drawing.Point(229, 24);
+            this.btnPersonelNoDoldur.Location = new System.Drawing.Point(228, 22);
             this.btnPersonelNoDoldur.Name = "btnPersonelNoDoldur";
             this.btnPersonelNoDoldur.Size = new System.Drawing.Size(25, 20);
             this.btnPersonelNoDoldur.TabIndex = 1;
@@ -150,11 +152,12 @@
             this.btnPersonelNoDoldur.Text = "...";
             this.btnPersonelNoDoldur.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPersonelNoDoldur.UseVisualStyleBackColor = true;
+            this.btnPersonelNoDoldur.Click += new System.EventHandler(this.btnPersonelNoDoldur_Click);
             // 
             // lblPersonelSoyad
             // 
             this.lblPersonelSoyad.AutoSize = true;
-            this.lblPersonelSoyad.Location = new System.Drawing.Point(6, 108);
+            this.lblPersonelSoyad.Location = new System.Drawing.Point(6, 106);
             this.lblPersonelSoyad.Name = "lblPersonelSoyad";
             this.lblPersonelSoyad.Size = new System.Drawing.Size(37, 13);
             this.lblPersonelSoyad.TabIndex = 10;
@@ -163,7 +166,7 @@
             // lblPersonelAd
             // 
             this.lblPersonelAd.AutoSize = true;
-            this.lblPersonelAd.Location = new System.Drawing.Point(6, 78);
+            this.lblPersonelAd.Location = new System.Drawing.Point(6, 76);
             this.lblPersonelAd.Name = "lblPersonelAd";
             this.lblPersonelAd.Size = new System.Drawing.Size(20, 13);
             this.lblPersonelAd.TabIndex = 9;
@@ -172,7 +175,7 @@
             // lblPersonelTCNo
             // 
             this.lblPersonelTCNo.AutoSize = true;
-            this.lblPersonelTCNo.Location = new System.Drawing.Point(6, 52);
+            this.lblPersonelTCNo.Location = new System.Drawing.Point(6, 50);
             this.lblPersonelTCNo.Name = "lblPersonelTCNo";
             this.lblPersonelTCNo.Size = new System.Drawing.Size(98, 13);
             this.lblPersonelTCNo.TabIndex = 8;
@@ -181,7 +184,7 @@
             // lblPersonelNo
             // 
             this.lblPersonelNo.AutoSize = true;
-            this.lblPersonelNo.Location = new System.Drawing.Point(6, 26);
+            this.lblPersonelNo.Location = new System.Drawing.Point(6, 24);
             this.lblPersonelNo.Name = "lblPersonelNo";
             this.lblPersonelNo.Size = new System.Drawing.Size(95, 13);
             this.lblPersonelNo.TabIndex = 7;
@@ -189,23 +192,23 @@
             // 
             // tbPersonelSoyad
             // 
-            this.tbPersonelSoyad.Location = new System.Drawing.Point(106, 102);
+            this.tbPersonelSoyad.Location = new System.Drawing.Point(106, 100);
             this.tbPersonelSoyad.Name = "tbPersonelSoyad";
             this.tbPersonelSoyad.Size = new System.Drawing.Size(148, 20);
             this.tbPersonelSoyad.TabIndex = 5;
             // 
             // tbPersonelAd
             // 
-            this.tbPersonelAd.Location = new System.Drawing.Point(106, 76);
+            this.tbPersonelAd.Location = new System.Drawing.Point(106, 74);
             this.tbPersonelAd.Name = "tbPersonelAd";
             this.tbPersonelAd.Size = new System.Drawing.Size(148, 20);
             this.tbPersonelAd.TabIndex = 4;
             // 
             // tbPersonelNo
             // 
-            this.tbPersonelNo.Location = new System.Drawing.Point(106, 24);
+            this.tbPersonelNo.Location = new System.Drawing.Point(106, 22);
             this.tbPersonelNo.Name = "tbPersonelNo";
-            this.tbPersonelNo.Size = new System.Drawing.Size(148, 20);
+            this.tbPersonelNo.Size = new System.Drawing.Size(117, 20);
             this.tbPersonelNo.TabIndex = 0;
             // 
             // gbiletisimBilgileri
@@ -219,7 +222,7 @@
             this.gbiletisimBilgileri.Controls.Add(this.tbEPosta);
             this.gbiletisimBilgileri.Location = new System.Drawing.Point(278, 12);
             this.gbiletisimBilgileri.Name = "gbiletisimBilgileri";
-            this.gbiletisimBilgileri.Size = new System.Drawing.Size(260, 173);
+            this.gbiletisimBilgileri.Size = new System.Drawing.Size(260, 142);
             this.gbiletisimBilgileri.TabIndex = 1;
             this.gbiletisimBilgileri.TabStop = false;
             this.gbiletisimBilgileri.Text = "İletişim Bilgileri";
@@ -227,7 +230,7 @@
             // tbTelNo
             // 
             this.tbTelNo.Location = new System.Drawing.Point(106, 22);
-            this.tbTelNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbTelNo.Margin = new System.Windows.Forms.Padding(2);
             this.tbTelNo.Mask = "+\\9\\0(999) 000 0000";
             this.tbTelNo.Name = "tbTelNo";
             this.tbTelNo.Size = new System.Drawing.Size(148, 20);
@@ -265,7 +268,7 @@
             this.tbAdres.Location = new System.Drawing.Point(106, 71);
             this.tbAdres.Multiline = true;
             this.tbAdres.Name = "tbAdres";
-            this.tbAdres.Size = new System.Drawing.Size(148, 70);
+            this.tbAdres.Size = new System.Drawing.Size(148, 59);
             this.tbAdres.TabIndex = 8;
             // 
             // tbEPosta
@@ -277,20 +280,20 @@
             // 
             // btnEkle
             // 
-            this.btnEkle.Location = new System.Drawing.Point(475, 191);
-            this.btnEkle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEkle.Location = new System.Drawing.Point(444, 159);
+            this.btnEkle.Margin = new System.Windows.Forms.Padding(2);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(56, 19);
+            this.btnEkle.Size = new System.Drawing.Size(94, 29);
             this.btnEkle.TabIndex = 2;
-            this.btnEkle.Text = "Ekle";
+            this.btnEkle.Text = "Ekle/Güncelle";
             this.btnEkle.UseVisualStyleBackColor = true;
-            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
+            this.btnEkle.Click += new System.EventHandler(this.btnEkleGuncelle_Click);
             // 
             // frmPersonel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 260);
+            this.ClientSize = new System.Drawing.Size(545, 196);
             this.Controls.Add(this.btnEkle);
             this.Controls.Add(this.gbiletisimBilgileri);
             this.Controls.Add(this.gbDemografikBilgiler);

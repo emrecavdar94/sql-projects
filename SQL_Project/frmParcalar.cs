@@ -14,11 +14,19 @@ namespace SQL_Project
     public partial class frmParcalar : Form
     {
         private SqlConnection baglanti;
-        public long isEmriNo;
-        public frmParcalar(SqlConnection baglanti)
+        private Personel personel;
+        private long isEmriNo;
+        public frmParcalar(SqlConnection baglanti, Personel personel)
         {
             this.baglanti = baglanti;
+            this.personel = personel;
             InitializeComponent();
+        }
+
+        public void setIsEmriNo(long isEmriNo)
+        {
+            this.isEmriNo = isEmriNo;
+            setEnabledBtnEkle(true);
         }
 
         private void frmParcalar_Load(object sender, EventArgs e)
@@ -96,7 +104,7 @@ namespace SQL_Project
 
         private void btnYeniParca_Click(object sender, EventArgs e)
         {
-            frmParca parcaForm = new frmParca(baglanti);
+            frmParca parcaForm = new frmParca(baglanti, personel);
             parcaForm.ShowDialog();
             doldur();
         }

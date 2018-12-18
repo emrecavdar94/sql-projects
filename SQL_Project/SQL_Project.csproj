@@ -115,12 +115,6 @@
     <Compile Include="frmServis.Designer.cs">
       <DependentUpon>frmServis.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmYedek.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmYedek.Designer.cs">
-      <DependentUpon>frmYedek.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmYedekleGeriYukle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +139,7 @@
     <Compile Include="frmYonetim.Designer.cs">
       <DependentUpon>frmYonetim.cs</DependentUpon>
     </Compile>
+    <Compile Include="Personel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmParca.resx">
@@ -179,9 +174,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmServis.resx">
       <DependentUpon>frmServis.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmYedek.resx">
-      <DependentUpon>frmYedek.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmYedekleGeriYukle.resx">
       <DependentUpon>frmYedekleGeriYukle.cs</DependentUpon>

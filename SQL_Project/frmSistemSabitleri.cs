@@ -14,10 +14,11 @@ namespace SQL_Project
     public partial class frmSistemSabitleri : Form
     {
         private SqlConnection baglanti;
-        public long perno;
-        public frmSistemSabitleri(SqlConnection baglanti)
+        private Personel personel;
+        public frmSistemSabitleri(SqlConnection baglanti, Personel personel)
         {
             this.baglanti = baglanti;
+            this.personel = personel;
             InitializeComponent();
         }
 

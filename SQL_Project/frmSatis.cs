@@ -14,11 +14,12 @@ namespace SQL_Project
     public partial class frmSatis : Form
     {
         private SqlConnection baglanti;
-        public long perno;
+        private Personel personel;
         private long musNo;
-        public frmSatis(SqlConnection baglanti)
+        public frmSatis(SqlConnection baglanti, Personel personel)
         {
             this.baglanti = baglanti;
+            this.personel = personel;
             InitializeComponent();
         }
 
@@ -78,9 +79,7 @@ namespace SQL_Project
         {
             if (tbSatisNo.Text.Count() > 0)
             {
-                String komut = "SELECT A.sasiNo, A.motorNo, A.plaka, A.marka, A.model, A.renk, " +
-                               "M.tckNo, M.ad, M.soyad, M.telefon, M.eposta, M.adres, " +
-                               "S.tarih, S.tutar FROM araba A " +
+                String komut = "SELECT A.sasiNo, M.tckNo, S.tarih, S.tutar FROM araba A " +
                                "JOIN satis S on S.sasiNo = A.sasiNo " +
                                "JOIN musteri M on S.musNo = M.musNo " +
                                " WHERE satisNo =" + tbSatisNo.Text;
@@ -91,36 +90,20 @@ namespace SQL_Project
                 if (DS.Tables.Count > 0 && DS.Tables[0].Rows.Count > 0)
                 {
                     tbSasiNo.Text = DS.Tables[0].Rows[0][0].ToString();
-                    tbMotorNo.Text = DS.Tables[0].Rows[0][1].ToString();
-                    tbPlaka.Text = DS.Tables[0].Rows[0][2].ToString();
-                    tbMarka.Text = DS.Tables[0].Rows[0][3].ToString();
-                    tbModel.Text = DS.Tables[0].Rows[0][4].ToString();
-                    tbRenk.Text = DS.Tables[0].Rows[0][5].ToString();
-                    tbMusteriTCNo.Text = DS.Tables[0].Rows[0][6].ToString();
-                    tbAd.Text = DS.Tables[0].Rows[0][7].ToString();
-                    tbSoyad.Text = DS.Tables[0].Rows[0][8].ToString();
-                    tbTelNo.Text = DS.Tables[0].Rows[0][9].ToString();
-                    tbEPosta.Text = DS.Tables[0].Rows[0][10].ToString();
-                    tbAdres.Text = DS.Tables[0].Rows[0][11].ToString();
-                    dtSatis.Text = DS.Tables[0].Rows[0][12].ToString();
-                    tbSatisTutari.Text = DS.Tables[0].Rows[0][13].ToString();
+                    tbMusteriTCNo.Text = DS.Tables[0].Rows[0][1].ToString();
+                    dtSatis.Text = DS.Tables[0].Rows[0][2].ToString();
+                    tbSatisTutari.Text = DS.Tables[0].Rows[0][3].ToString();
+                    btnSasiNoDoldur_Click(sender, e);
+                    btnTCNoDoldur_Click(sender, e);
                 }
                 else
                 {
                     tbSasiNo.Text = "";
-                    tbMotorNo.Text = "";
-                    tbPlaka.Text = "";
-                    tbMarka.Text = "";
-                    tbModel.Text = "";
-                    tbRenk.Text = "";
                     tbMusteriTCNo.Text = "";
-                    tbAd.Text = "";
-                    tbSoyad.Text = "";
-                    tbTelNo.Text = "";
-                    tbEPosta.Text = "";
-                    tbAdres.Text = "";
                     dtSatis.Text = "";
                     tbSatisTutari.Text = "";
+                    btnSasiNoDoldur_Click(sender, e);
+                    btnTCNoDoldur_Click(sender, e);
                 }
             }
         }
@@ -131,8 +114,8 @@ namespace SQL_Project
             {
                 String komut = "INSERT INTO satis " +
                     " (tarih, sasiNo, musNo, perNo, tutar) VALUES " +
-                    " ('" + dtSatis.Value.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + tbSasiNo.Text + "', " +
-                    musNo + ", " + perno + ", " + tbSatisTutari.Text + ")SELECT SCOPE_IDENTITY()";
+                    " ('" + dtSatis.Value.ToString("yyyyMMdd HH:mm:ss") + "', '" + tbSasiNo.Text + "', " +
+                    musNo + ", " + personel.getPerNo() + ", " + tbSatisTutari.Text + ")SELECT SCOPE_IDENTITY()";
                 SqlCommand sorgu = new SqlCommand(komut, baglanti);
 
                Int32 primaryKey = Convert.ToInt32(sorgu.ExecuteScalar());

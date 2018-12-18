@@ -14,10 +14,11 @@ namespace SQL_Project
     public partial class frmArac : Form
     {
         private SqlConnection baglanti;
-        public long perno;
-        public frmArac(SqlConnection baglanti)
+        private Personel personel;
+        public frmArac(SqlConnection baglanti, Personel personel)
         {
             this.baglanti = baglanti;
+            this.personel = personel;
             InitializeComponent();
         }
 

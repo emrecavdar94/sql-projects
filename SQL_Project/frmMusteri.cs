@@ -14,10 +14,11 @@ namespace SQL_Project
     public partial class frmMusteri : Form
     {
         private SqlConnection baglanti;
-        public long perno;
-        public frmMusteri(SqlConnection baglanti)
+        private Personel personel;
+        public frmMusteri(SqlConnection baglanti, Personel personel)
         {
             this.baglanti = baglanti;
+            this.personel = personel;
             InitializeComponent();
         }
 
@@ -55,10 +56,6 @@ namespace SQL_Project
                     tbMusteriEPosta.Text = (string)reader[4];
                     tbMusteriAdres.Text = (string)reader[5];
                     }
-
-
-                    
-
                 }
             }
            
