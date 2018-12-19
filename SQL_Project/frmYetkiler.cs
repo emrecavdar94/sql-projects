@@ -32,6 +32,8 @@ namespace SQL_Project
             if (lbPersonel.SelectedItems.Count > 0)
             {
                 secilenPersonel = pernoList[lbPersonel.SelectedIndex];
+                yetkilerList.Clear();
+                lbYetkiler.Items.Clear();
 
                 string query = "select yetkiAdi,yetkilerNo from yetki inner join yetkiler on yetki.yetkiNo=yetkiler.yetkiNo where yetkiler.perNo=" + secilenPersonel;
                 using (SqlCommand cmd = new SqlCommand(query, baglanti))
@@ -51,6 +53,8 @@ namespace SQL_Project
 
         private void frmYetkiler_Load(object sender, EventArgs e)
         {
+            pernoList.Clear();
+            lbPersonel.Items.Clear();
             string query = "SELECT perNo,ad,soyad FROM personel";
             using (SqlCommand cmd = new SqlCommand(query, baglanti))
             {
@@ -78,28 +82,28 @@ namespace SQL_Project
             }
             catch (Exception)
             {
-                MessageBox.Show(" Yetki Silinemedi Silindi");
+                MessageBox.Show(" Yetki Silinemedi");
             }
-           
+            lbPersonel_SelectedIndexChanged(sender, e);
             
         }
 
         private void btnPersonelSil_Click(object sender, EventArgs e)
         {
-            
             long secilenPersonel = pernoList[lbPersonel.SelectedIndex];
 
             string query = "delete from personel  where  perNo=" + secilenPersonel;
             SqlCommand cmd = new SqlCommand(query, baglanti);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Personel Silindi");
-            
+            frmYetkiler_Load(sender, e);
         }
 
         private void btnPersonelEkle_Click(object sender, EventArgs e)
         {
             frmPersonel frmPersonel = new frmPersonel(baglanti, personel);
             frmPersonel.ShowDialog();
+            frmYetkiler_Load(sender, e);
         }
 
         private void btnYetkiEkle_Click(object sender, EventArgs e)

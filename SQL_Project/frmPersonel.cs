@@ -27,12 +27,14 @@ namespace SQL_Project
         {
             tbPersonelNo.Enabled = personel.yetkiliMi("Yönetim");
             tbTcNo.Enabled = personel.yetkiliMi("Yönetim");
-            tbPersonelAd.Enabled = personel.yetkiliMi("Yönetim"); ;
-            tbPersonelSoyad.Enabled = personel.yetkiliMi("Yönetim"); ;
-            tbTelNo.Enabled = personel.yetkiliMi("Yönetim"); ;
-            tbEPosta.Enabled = personel.yetkiliMi("Yönetim"); ;
-            tbAdres.Enabled = personel.yetkiliMi("Yönetim"); ;
-            tbKullaniciAdi.Enabled = personel.yetkiliMi("Yönetim"); ;
+            tbPersonelAd.Enabled = personel.yetkiliMi("Yönetim");
+            tbPersonelSoyad.Enabled = personel.yetkiliMi("Yönetim");
+            tbTelNo.Enabled = personel.yetkiliMi("Yönetim");
+            tbEPosta.Enabled = personel.yetkiliMi("Yönetim");
+            tbAdres.Enabled = personel.yetkiliMi("Yönetim");
+            tbKullaniciAdi.Enabled = personel.yetkiliMi("Yönetim");
+            btnTCNoDoldur.Enabled = personel.yetkiliMi("Yönetim");
+            btnPersonelNoDoldur.Enabled = personel.yetkiliMi("Yönetim");
         }
 
         public void kisiselDoldur()

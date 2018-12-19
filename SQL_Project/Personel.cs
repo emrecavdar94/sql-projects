@@ -49,12 +49,18 @@ namespace SQL_Project
             return yetki;
         }
 
-        public Boolean yetkiliMi(String yeti)
+        public Boolean yetkiliMi(params String[] yeti)
         {
-            if (yetki.IndexOf(yeti) >= 0)
-                return true;
-            else
-                return false;
+            Boolean durum = false;
+            foreach (String yetenek in yeti)
+            {
+                if (yetki.IndexOf(yetenek) >= 0)
+                {
+                    durum = true;
+                    break;
+                }
+            }
+            return durum;
         }
 
         public long getPerNo()

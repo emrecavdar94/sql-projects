@@ -57,7 +57,6 @@
             this.tbAdres = new System.Windows.Forms.TextBox();
             this.tbEPosta = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnFaturaHesapla = new System.Windows.Forms.Button();
             this.dgParcalar = new System.Windows.Forms.DataGridView();
             this.btnParcaCikar = new System.Windows.Forms.Button();
             this.btnParcaEkle = new System.Windows.Forms.Button();
@@ -360,7 +359,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox1.Controls.Add(this.btnFaturaHesapla);
             this.groupBox1.Controls.Add(this.dgParcalar);
             this.groupBox1.Controls.Add(this.btnParcaCikar);
             this.groupBox1.Controls.Add(this.btnParcaEkle);
@@ -386,20 +384,6 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Müşteri";
-            // 
-            // btnFaturaHesapla
-            // 
-            this.btnFaturaHesapla.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnFaturaHesapla.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnFaturaHesapla.Location = new System.Drawing.Point(495, 46);
-            this.btnFaturaHesapla.Name = "btnFaturaHesapla";
-            this.btnFaturaHesapla.Size = new System.Drawing.Size(25, 20);
-            this.btnFaturaHesapla.TabIndex = 27;
-            this.btnFaturaHesapla.Tag = "";
-            this.btnFaturaHesapla.Text = "...";
-            this.btnFaturaHesapla.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnFaturaHesapla.UseVisualStyleBackColor = true;
-            this.btnFaturaHesapla.Click += new System.EventHandler(this.btnFaturaHesapla_Click);
             // 
             // dgParcalar
             // 
@@ -457,7 +441,8 @@
             // 
             this.tbFaturaTutari.Location = new System.Drawing.Point(372, 46);
             this.tbFaturaTutari.Name = "tbFaturaTutari";
-            this.tbFaturaTutari.Size = new System.Drawing.Size(120, 20);
+            this.tbFaturaTutari.ReadOnly = true;
+            this.tbFaturaTutari.Size = new System.Drawing.Size(149, 20);
             this.tbFaturaTutari.TabIndex = 20;
             // 
             // dtCikis
@@ -710,6 +695,5 @@
         private System.Windows.Forms.Button btnParcaEkle;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgParcalar;
-        private System.Windows.Forms.Button btnFaturaHesapla;
     }
 }

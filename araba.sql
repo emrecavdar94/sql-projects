@@ -4,13 +4,13 @@ CREATE LOGIN [araba] WITH PASSWORD=N'arabaparola', DEFAULT_DATABASE=[master], DE
 GO
 ALTER SERVER ROLE [dbcreator] ADD MEMBER [araba]
 GO
-/****** Object:  Database [araba]    Script Date: 19.12.2018 00:13:06 ******/
+/****** Object:  Database [araba]    Script Date: 19.12.2018 23:26:16 ******/
 CREATE DATABASE [araba]
  CONTAINMENT = NONE
  ON  PRIMARY 
 ( NAME = N'araba', FILENAME = N'D:\kodlar\sql-project-db\araba.mdf' , SIZE = 5120KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
  LOG ON 
-( NAME = N'araba_log', FILENAME = N'D:\kodlar\sql-project-db\araba_log.ldf' , SIZE = 2048KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+( NAME = N'araba_log', FILENAME = N'D:\kodlar\sql-project-db\araba_log.ldf' , SIZE = 427392KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
 GO
 ALTER DATABASE [araba] SET COMPATIBILITY_LEVEL = 110
 GO
@@ -81,7 +81,7 @@ USE [araba]
 GO
 EXEC dbo.sp_changedbowner @loginame = N'araba', @map = false
 GO
-/****** Object:  StoredProcedure [dbo].[spParcaEkleGuncelle]    Script Date: 19.12.2018 00:13:07 ******/
+/****** Object:  StoredProcedure [dbo].[spParcaEkleGuncelle]    Script Date: 19.12.2018 23:26:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -99,7 +99,7 @@ AS
 	END
 
 GO
-/****** Object:  StoredProcedure [dbo].[spPersonelEkleGuncelle]    Script Date: 19.12.2018 00:13:07 ******/
+/****** Object:  StoredProcedure [dbo].[spPersonelEkleGuncelle]    Script Date: 19.12.2018 23:26:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -139,7 +139,7 @@ AS
 	END
 
 GO
-/****** Object:  Table [dbo].[araba]    Script Date: 19.12.2018 00:13:07 ******/
+/****** Object:  Table [dbo].[araba]    Script Date: 19.12.2018 23:26:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -166,7 +166,7 @@ CREATE TABLE [dbo].[araba](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[degisim]    Script Date: 19.12.2018 00:13:07 ******/
+/****** Object:  Table [dbo].[degisim]    Script Date: 19.12.2018 23:26:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -182,7 +182,7 @@ CREATE TABLE [dbo].[degisim](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[musteri]    Script Date: 19.12.2018 00:13:07 ******/
+/****** Object:  Table [dbo].[musteri]    Script Date: 19.12.2018 23:26:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -210,7 +210,7 @@ CREATE TABLE [dbo].[musteri](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[parca]    Script Date: 19.12.2018 00:13:07 ******/
+/****** Object:  Table [dbo].[parca]    Script Date: 19.12.2018 23:26:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -227,7 +227,24 @@ CREATE TABLE [dbo].[parca](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[personel]    Script Date: 19.12.2018 00:13:07 ******/
+/****** Object:  Table [dbo].[parcaSilinen]    Script Date: 19.12.2018 23:26:16 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[parcaSilinen](
+	[parcaKodu] [nvarchar](20) NOT NULL,
+	[parcaAdi] [nvarchar](50) NULL,
+	[parcaIscilik] [float] NULL,
+	[parcaTutari] [money] NULL,
+ CONSTRAINT [PK_parcaSilinen] PRIMARY KEY CLUSTERED 
+(
+	[parcaKodu] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[personel]    Script Date: 19.12.2018 23:26:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -258,7 +275,38 @@ CREATE TABLE [dbo].[personel](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[satis]    Script Date: 19.12.2018 00:13:07 ******/
+/****** Object:  Table [dbo].[personelSilinen]    Script Date: 19.12.2018 23:26:16 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[personelSilinen](
+	[perNo] [int] NOT NULL,
+	[ad] [nvarchar](50) NOT NULL,
+	[soyad] [nvarchar](50) NULL,
+	[tckNo] [char](11) NULL,
+	[telefon] [char](17) NULL,
+	[eposta] [varchar](50) NULL,
+	[adres] [nvarchar](250) NULL,
+	[kullaniciAdi] [varchar](50) NULL,
+	[parola] [char](40) NULL,
+ CONSTRAINT [PK_personelSilinen] PRIMARY KEY CLUSTERED 
+(
+	[perNo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+ CONSTRAINT [UK_personelSilinen] UNIQUE NONCLUSTERED 
+(
+	[tckNo] ASC,
+	[kullaniciAdi] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = ON, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[satis]    Script Date: 19.12.2018 23:26:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -281,7 +329,7 @@ CREATE TABLE [dbo].[satis](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[servis]    Script Date: 19.12.2018 00:13:07 ******/
+/****** Object:  Table [dbo].[servis]    Script Date: 19.12.2018 23:26:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -308,7 +356,7 @@ CREATE TABLE [dbo].[servis](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[yetki]    Script Date: 19.12.2018 00:13:07 ******/
+/****** Object:  Table [dbo].[yetki]    Script Date: 19.12.2018 23:26:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -323,7 +371,7 @@ CREATE TABLE [dbo].[yetki](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[yetkiler]    Script Date: 19.12.2018 00:13:07 ******/
+/****** Object:  Table [dbo].[yetkiler]    Script Date: 19.12.2018 23:26:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -338,6 +386,8 @@ CREATE TABLE [dbo].[yetkiler](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
+GO
+ALTER TABLE [dbo].[servis] ADD  CONSTRAINT [DF_servis_faturaTutari]  DEFAULT ((0)) FOR [faturaTutari]
 GO
 ALTER TABLE [dbo].[degisim]  WITH CHECK ADD  CONSTRAINT [FK_degisim_parca] FOREIGN KEY([parcaKodu])
 REFERENCES [dbo].[parca] ([parcaKodu])
@@ -437,7 +487,82 @@ ALTER TABLE [dbo].[personel]  WITH CHECK ADD  CONSTRAINT [ck_personel_telefon] C
 GO
 ALTER TABLE [dbo].[personel] CHECK CONSTRAINT [ck_personel_telefon]
 GO
+ALTER TABLE [dbo].[personelSilinen]  WITH CHECK ADD  CONSTRAINT [ck_personelSilinen_eposta] CHECK  (([eposta] like '%_@_%_.__%'))
+GO
+ALTER TABLE [dbo].[personelSilinen] CHECK CONSTRAINT [ck_personelSilinen_eposta]
+GO
+ALTER TABLE [dbo].[personelSilinen]  WITH CHECK ADD  CONSTRAINT [ck_personelSilinen_tckNo] CHECK  (([tckNo] like '[1-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'))
+GO
+ALTER TABLE [dbo].[personelSilinen] CHECK CONSTRAINT [ck_personelSilinen_tckNo]
+GO
+ALTER TABLE [dbo].[personelSilinen]  WITH CHECK ADD  CONSTRAINT [ck_personelSilinen_telefon] CHECK  (([telefon] like '+90([2-5][0-9][0-9]) [0-9][0-9][0-9] [0-9][0-9][0-9][0-9]'))
+GO
+ALTER TABLE [dbo].[personelSilinen] CHECK CONSTRAINT [ck_personelSilinen_telefon]
+GO
+/****** Ontanimli degerler                                                                *******/
 INSERT INTO [dbo].[personel] ([ad], [kullaniciAdi], [parola]) VALUES ('admin', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997')
+GO
+INSERT INTO [dbo].[yetki] ([yetkiAdi]) VALUES ('Yönetim'), ('Satış'), ('Servis'), ('Parça')
+GO
+/****** Object:  Trigger [dbo].[trServisFaturaHesapla]    Script Date: 19.12.2018 23:26:16 ******/
+CREATE TRIGGER [dbo].[trServisFaturaHesapla]
+ON [dbo].[degisim]
+FOR  INSERT, UPDATE, DELETE 
+AS
+BEGIN
+	DECLARE @isemri int, @iscilik int = 100, @pIscilik float, @pTutar money, @parca nvarchar(20)
+	DECLARE crsUpdated CURSOR FOR
+		SELECT isEmriNo,  parcaKodu  FROM INSERTED
+
+	OPEN crsUpdated
+	FETCH NEXT FROM crsUpdated INTO @isemri, @parca
+	WHILE @@FETCH_STATUS = 0
+	BEGIN
+		SELECT @pIscilik = parcaIscilik, @pTutar = parcaTutari FROM parca WHERE parcaKodu = @parca
+		UPDATE servis SET faturaTutari = faturaTutari + @pTutar + @iscilik * @pIscilik WHERE isEmriNo = @isemri
+		FETCH NEXT FROM crsUpdated INTO @isemri, @parca
+	END
+	CLOSE crsUpdated
+
+	DECLARE crsDeleted CURSOR FOR
+		SELECT isEmriNo, parcaKodu  FROM DELETED
+
+	OPEN crsDeleted
+	FETCH NEXT FROM crsDeleted INTO @isemri, @parca
+	WHILE @@FETCH_STATUS = 0
+	BEGIN
+		SELECT @pIscilik = parcaIscilik, @pTutar = parcaTutari FROM parca WHERE parcaKodu = @parca
+		UPDATE servis SET faturaTutari = faturaTutari - ( @pTutar + @iscilik * @pIscilik ) WHERE isEmriNo = @isemri
+		FETCH NEXT FROM crsDeleted INTO @isemri, @parca
+	END
+	CLOSE crsDeleted
+END
+GO
+/****** Object:  Trigger [dbo].[trParcaSil]    Script Date: 19.12.2018 23:26:16 ******/
+CREATE TRIGGER [dbo].[trParcaSil]
+ON [dbo].[parca]
+FOR DELETE 
+AS
+BEGIN
+	INSERT INTO parcaSilinen
+	SELECT * FROM DELETED
+END
+GO
+/****** Object:  Trigger [dbo].[trPersonelSil]    Script Date: 19.12.2018 23:26:16 ******/
+CREATE TRIGGER [dbo].[trPersonelSil]
+ON [dbo].[personel]
+INSTEAD OF DELETE 
+AS
+BEGIN
+	DECLARE @kullaniciAdi nvarchar(50) = ''
+	SELECT @kullaniciAdi = kullaniciAdi FROM DELETED WHERE kullaniciAdi = 'admin'
+	if @kullaniciAdi != 'admin'
+	BEGIN
+		INSERT INTO personelSilinen
+		SELECT * FROM DELETED
+		DELETE personel FROM personel JOIN DELETED on personel.perNo = DELETED.perNo
+	END
+END
 GO
 USE [master]
 GO

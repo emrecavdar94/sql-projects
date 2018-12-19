@@ -132,6 +132,7 @@ namespace SQL_Project
             dtCikis.ResetText();
             tbFaturaTutari.Text = "";
             musNo = 0;
+            
         }
 
         private void btnCik_Click(object sender, EventArgs e)
@@ -147,7 +148,7 @@ namespace SQL_Project
                 String komut = "DELETE FROM degisim WHERE isEmriNo = " + tbIsEmriNo.Text + " AND parcaKodu = '" + parcaKodu + "'";
                 SqlCommand sorgu = new SqlCommand(komut, baglanti);
                 sorgu.ExecuteNonQuery();
-                fillParcalar();
+                btnIsEmriDoldur_Click(sender, e);
             }
             
             //lbParcalar.Items.Remove(lbParcalar.SelectedItems);
@@ -175,9 +176,8 @@ namespace SQL_Project
                     " girisTarihi='" + dtGiris.Value.ToString("yyyyMMdd HH:mm:ss") +
                     "', sasiNo = '" + tbSasiNo.Text + "', musNo = " + musNo + ", perNo = " + personel.getPerNo() +
                     ", girisTalimati = '" + tbGirisTalimat.Text + "', aracKm = " + tbArackm.Text +
-                    ", cikisTarihi = '" + dtGiris.Value.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
-                    "yapilanIslemler = '" + tbYapilanIslemler.Text + "', " +
-                    "faturaTutari = " + tbFaturaTutari.Text;
+                    ", cikisTarihi = '" + dtCikis.Value.ToString("yyyyMMdd HH:mm:ss") + "', " +
+                    "yapilanIslemler = '" + tbYapilanIslemler.Text + "' WHERE isEmriNo = '" + tbIsEmriNo.Text + "'";
                 SqlCommand sorgu = new SqlCommand(komut, baglanti);
                 sorgu.ExecuteNonQuery();
                 //tbIsEmriNo.Text = Convert.ToInt64(sorgu.ExecuteScalar()).ToString();
@@ -191,7 +191,7 @@ namespace SQL_Project
                 frmParcalar parcalarForm = new frmParcalar(baglanti, personel);
                 parcalarForm.setIsEmriNo(Convert.ToInt64(tbIsEmriNo.Text));
                 parcalarForm.ShowDialog();
-                fillParcalar();
+                btnIsEmriDoldur_Click(sender, e);
             }
         }
 
@@ -207,21 +207,6 @@ namespace SQL_Project
                 sqlDA.Fill(DS);
                 dgParcalar.DataSource = DS.Tables[0];
             }
-            btnFaturaHesapla_Click(this, new EventArgs());
-        }
-
-        private void btnFaturaHesapla_Click(object sender, EventArgs e)
-        {
-            double Tutar = 0;
-            for (int i = 0; i < dgParcalar.RowCount; i++)
-            {
-                int adet = int.Parse(dgParcalar.Rows[i].Cells[2].Value.ToString());
-                double iscilik = Convert.ToDouble(dgParcalar.Rows[i].Cells[3].Value);
-                double parcaTutari = Convert.ToDouble(dgParcalar.Rows[i].Cells[4].Value);
-
-                Tutar += adet * parcaTutari + iscilik * 100;
-            }
-            tbFaturaTutari.Text = Tutar.ToString();
         }
     }
 }

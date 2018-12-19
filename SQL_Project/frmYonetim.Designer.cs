@@ -47,16 +47,17 @@
             this.gbAracBilgileri.Controls.Add(this.btnMusteriler);
             this.gbAracBilgileri.Controls.Add(this.btnAraclar);
             this.gbAracBilgileri.Controls.Add(this.btnPersoneller);
-            this.gbAracBilgileri.Location = new System.Drawing.Point(17, 11);
+            this.gbAracBilgileri.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbAracBilgileri.Location = new System.Drawing.Point(0, 0);
             this.gbAracBilgileri.Name = "gbAracBilgileri";
-            this.gbAracBilgileri.Size = new System.Drawing.Size(422, 286);
+            this.gbAracBilgileri.Size = new System.Drawing.Size(353, 167);
             this.gbAracBilgileri.TabIndex = 3;
             this.gbAracBilgileri.TabStop = false;
             this.gbAracBilgileri.Text = "Yönetim Paneli";
             // 
             // btnParcalar
             // 
-            this.btnParcalar.Location = new System.Drawing.Point(22, 120);
+            this.btnParcalar.Location = new System.Drawing.Point(22, 92);
             this.btnParcalar.Margin = new System.Windows.Forms.Padding(2);
             this.btnParcalar.Name = "btnParcalar";
             this.btnParcalar.Size = new System.Drawing.Size(92, 50);
@@ -67,7 +68,7 @@
             // 
             // btnSistemSabitleri
             // 
-            this.btnSistemSabitleri.Location = new System.Drawing.Point(286, 120);
+            this.btnSistemSabitleri.Location = new System.Drawing.Point(239, 92);
             this.btnSistemSabitleri.Margin = new System.Windows.Forms.Padding(2);
             this.btnSistemSabitleri.Name = "btnSistemSabitleri";
             this.btnSistemSabitleri.Size = new System.Drawing.Size(92, 50);
@@ -78,7 +79,7 @@
             // 
             // btnYedekleGeriYukle
             // 
-            this.btnYedekleGeriYukle.Location = new System.Drawing.Point(152, 120);
+            this.btnYedekleGeriYukle.Location = new System.Drawing.Point(132, 92);
             this.btnYedekleGeriYukle.Margin = new System.Windows.Forms.Padding(2);
             this.btnYedekleGeriYukle.Name = "btnYedekleGeriYukle";
             this.btnYedekleGeriYukle.Size = new System.Drawing.Size(92, 50);
@@ -89,7 +90,7 @@
             // 
             // btnMusteriler
             // 
-            this.btnMusteriler.Location = new System.Drawing.Point(286, 28);
+            this.btnMusteriler.Location = new System.Drawing.Point(239, 28);
             this.btnMusteriler.Margin = new System.Windows.Forms.Padding(2);
             this.btnMusteriler.Name = "btnMusteriler";
             this.btnMusteriler.Size = new System.Drawing.Size(92, 50);
@@ -100,7 +101,7 @@
             // 
             // btnAraclar
             // 
-            this.btnAraclar.Location = new System.Drawing.Point(152, 28);
+            this.btnAraclar.Location = new System.Drawing.Point(132, 28);
             this.btnAraclar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAraclar.Name = "btnAraclar";
             this.btnAraclar.Size = new System.Drawing.Size(92, 50);
@@ -124,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(353, 167);
             this.Controls.Add(this.gbAracBilgileri);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmYonetim";

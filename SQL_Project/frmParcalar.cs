@@ -32,7 +32,8 @@ namespace SQL_Project
         private void frmParcalar_Load(object sender, EventArgs e)
         {
             doldur();
-        }
+            btnYeniParca.Enabled = personel.yetkiliMi("Parça");
+            btnParcaSil.Enabled = personel.yetkiliMi("Parça");        }
 
         private void doldur()
         {
