@@ -205,5 +205,11 @@ namespace SQL_Project
             }
             Excel.Visible = true;
         }
+
+        private void btnYazdir_Click(object sender, EventArgs e)
+        {
+            frmRaporRapor disariaktar = new frmRaporRapor();
+            disariaktar.ShowDialog();
+        }
     }
 }

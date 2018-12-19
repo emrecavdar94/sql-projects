@@ -361,6 +361,7 @@
             this.btnYazdir.TabIndex = 19;
             this.btnYazdir.Text = "Yazdır";
             this.btnYazdir.UseVisualStyleBackColor = true;
+            this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
             // 
             // frmRaporlar
             // 
