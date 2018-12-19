@@ -25,8 +25,8 @@ namespace SQL_Project
         private void frmMasterForm_Load(object sender, EventArgs e)
         {
             btnYonetim.Enabled = personel.yetkiliMi("Yönetim");
-            btnSatis.Enabled = personel.yetkiliMi("Satış");
-            btnServis.Enabled = personel.yetkiliMi("Servis");
+            btnSatis.Enabled = personel.yetkiliMi("Satış", "Yönetim");
+            btnServis.Enabled = personel.yetkiliMi("Servis", "Yönetim");
             //btnKisisel.Text = personel.tamAd();
         }
 

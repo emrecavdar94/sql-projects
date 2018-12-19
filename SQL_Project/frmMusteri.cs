@@ -22,23 +22,47 @@ namespace SQL_Project
             InitializeComponent();
         }
 
-        private void btnEkle_Click(object sender, EventArgs e)
+        private void frmMusteri_Load(object sender, EventArgs e)
         {
-            string query = "insert into musteri values('" + tbMusteriAd.Text + "','" + tbMusteriSoyad.Text + "','" + tbTcNo.Text + "','" + tbMusTelNo.Text + "','" + tbMusteriEPosta.Text + "','" + tbMusteriAdres.Text + "')";
-            SqlCommand cmd = new SqlCommand(query, baglanti);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Müşteri Eklendi Eklendi");
+            String komut = "SELECT ad, soyad, tckNo, telefon, eposta, adres FROM musteri";
+            SqlDataAdapter sorgu = new SqlDataAdapter(komut, baglanti);
+            DataSet DS = new DataSet();
+            sorgu.Fill(DS);
+            dgMusteriler.DataSource = DS.Tables[0];
         }
 
-        private void btnGuncelle_Click(object sender, EventArgs e)
+        private void btnSil_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE musteri SET ad = '"+tbMusteriAd.Text+"', soyad = '"+tbMusteriSoyad.Text+ "', telefon = '" + tbMusTelNo.Text + "',eposta = '" + tbMusteriEPosta.Text + "', adres = '" + tbMusteriAdres.Text + "' WHERE tckNo ='" + tbTcNo.Text + "'";
-            SqlCommand cmd = new SqlCommand(query, baglanti);
-            
-          
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Müşteri Güncellendi");
+            string komut = "DELETE FROM musteri WHERE tckNo = '" + dgMusteriler.SelectedRows[0].Cells[2].Value.ToString() + "'";
+            SqlCommand sorgu = new SqlCommand(komut, baglanti);
+            sorgu.ExecuteNonQuery();
+            MessageBox.Show("Müşteri Silindi", "Müşteri İşlemi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            frmMusteri_Load(sender, e);
+        }
 
+        private void btnEkleGuncelle_Click(object sender, EventArgs e)
+        {
+            String komut = String.Format("spMusteriEkleGuncelle '{0}', '{1}', '{2}', '{3}', '{4}', '{5}'",
+                                             tbTcNo.Text,
+                                             tbMusteriAd.Text,
+                                             tbMusteriSoyad.Text,
+                                             tbMusTelNo.Text,
+                                             tbMusteriEPosta.Text,
+                                             tbMusteriAdres.Text);
+
+            SqlDataAdapter sorgu = new SqlDataAdapter(komut, baglanti);
+            DataSet DS = new DataSet();
+            sorgu.Fill(DS);
+            if (DS.Tables.Count > 0)
+            {
+                tbTcNo.Text = DS.Tables[0].Rows[0][0].ToString();
+                MessageBox.Show("Müsteri eklendi", "Müşteri İşlemi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Müşteri bilgileri güncellendi", "Müşteri İşlemi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            frmMusteri_Load(sender, e);
         }
 
         private void btnGetir_Click(object sender, EventArgs e)
@@ -59,6 +83,12 @@ namespace SQL_Project
                 }
             }
            
+        }
+
+        private void dgMusteriler_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbTcNo.Text = dgMusteriler.SelectedRows[0].Cells[2].Value.ToString();
+            btnGetir_Click(sender, e);
         }
     }
 }

@@ -85,7 +85,7 @@ namespace SQL_Project
                 MessageBox.Show(" Yetki Silinemedi");
             }
             lbPersonel_SelectedIndexChanged(sender, e);
-            
+            personel.yetkileriTazele();
         }
 
         private void btnPersonelSil_Click(object sender, EventArgs e)
@@ -112,6 +112,7 @@ namespace SQL_Project
             frmYetkiEkle.secilenPersonel = secilenPersonel;
             frmYetkiEkle.ShowDialog();
             lbPersonel_SelectedIndexChanged(sender, e);
+            personel.yetkileriTazele();
         }
     }
         

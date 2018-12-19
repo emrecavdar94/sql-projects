@@ -12,7 +12,7 @@ namespace SQL_Project
     {
         private String ad;
         private String soyad;
-        private List<String> yetki = new List<string>();
+        private List<String> yetkiler = new List<string>();
         private SqlConnection baglanti;
         private long perno;
 
@@ -20,6 +20,17 @@ namespace SQL_Project
         {
             this.baglanti = baglanti;
             this.perno = perno;
+            yetkileriTazele();
+        }
+
+        public String tamAd()
+        {
+            return ad + " " + soyad;
+        }
+
+        public void yetkileriTazele()
+        {
+            yetkiler.Clear();
             String komut = "SELECT P.ad, P.soyad, Y.yetkiAdi FROM personel P " +
                            "JOIN yetkiler YY on YY.perNo = P.perNo " +
                            "JOIN yetki Y on YY.yetkiNo = Y.yetkiNo " +
@@ -31,30 +42,20 @@ namespace SQL_Project
             if (DS.Tables.Count > 0 && DS.Tables[0].Rows.Count > 0)
             {
                 ad = DS.Tables[0].Rows[0][0].ToString();
-                soyad =  DS.Tables[0].Rows[0][1].ToString();
+                soyad = DS.Tables[0].Rows[0][1].ToString();
                 for (int i = 0; i < DS.Tables[0].Rows.Count; i++)
                 {
-                    yetki.Add(DS.Tables[0].Rows[i][2].ToString());
+                    yetkiler.Add(DS.Tables[0].Rows[i][2].ToString());
                 }
             }
         }
 
-        public String tamAd()
-        {
-            return ad + " " + soyad;
-        }
-
-        public List<String> yetkiler()
-        {
-            return yetki;
-        }
-
-        public Boolean yetkiliMi(params String[] yeti)
+        public Boolean yetkiliMi(params String[] yetkiler)
         {
             Boolean durum = false;
-            foreach (String yetenek in yeti)
+            foreach (String yetki in yetkiler)
             {
-                if (yetki.IndexOf(yetenek) >= 0)
+                if (this.yetkiler.IndexOf(yetki) >= 0)
                 {
                     durum = true;
                     break;
