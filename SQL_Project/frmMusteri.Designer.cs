@@ -223,7 +223,9 @@
             // 
             this.dgMusteriler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMusteriler.Location = new System.Drawing.Point(13, 12);
+            this.dgMusteriler.MultiSelect = false;
             this.dgMusteriler.Name = "dgMusteriler";
+            this.dgMusteriler.ReadOnly = true;
             this.dgMusteriler.RowHeadersVisible = false;
             this.dgMusteriler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMusteriler.Size = new System.Drawing.Size(253, 300);

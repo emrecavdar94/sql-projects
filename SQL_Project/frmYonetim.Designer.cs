@@ -130,6 +130,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmYonetim";
             this.Text = "frmYonetim";
+            this.Load += new System.EventHandler(this.frmYonetim_Load);
             this.gbAracBilgileri.ResumeLayout(false);
             this.ResumeLayout(false);
 

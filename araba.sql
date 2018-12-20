@@ -137,7 +137,93 @@ AS
 			(@adi, @soyadi, @tckNo, @telefon, @eposta, @adres, @kAdi, @parola)
 		SELECT SCOPE_IDENTITY()
 	END
+GO/****** Object:  StoredProcedure [dbo].[spMusteriEkleGuncelle]    Script Date: 20.12.2018 01:45:49 ******/
+SET ANSI_NULLS ON
+GO
 
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROC [dbo].[spMusteriEkleGuncelle] ( 
+	@tckNo char(11),
+	@adi nvarchar(50), 
+	@soyadi nvarchar(50), 
+	@telefon char(17),
+	@eposta varchar(50),
+	@adres nvarchar(250) )
+AS
+	IF EXISTS(SELECT * FROM musteri WHERE tckNo = @tckNo)
+	BEGIN
+		UPDATE musteri SET 
+			ad = @adi, 
+			soyad = @soyadi, 
+			telefon = @telefon,
+			eposta = @eposta,
+			adres = @adres
+			WHERE tckNo = @tckNo
+	END
+	ELSE
+	BEGIN
+		INSERT INTO musteri
+			(ad, soyad, tckNo, telefon, eposta, adres)
+		VALUES
+			(@adi, @soyadi, @tckNo, @telefon, @eposta, @adres)
+		SELECT @tckNo
+	END
+GO
+/****** Object:  StoredProcedure [dbo].[spEnCokSatanPersoneller]    Script Date: 20.12.2018 01:44:27 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[spEnCokSatanPersoneller]
+AS
+BEGIN
+	SELECT TOP (10) P.tckNo AS[TC KIMLIK NO],
+					P.ad AS[AD],
+					P.soyad AS[SOYAD],
+					COUNT(P.perNo) AS[SATIŞ ADEDİ],
+					SUM(S.tutar) AS[SATIŞ TUTARI] 
+		FROM personel P INNER JOIN satis S ON P.perNo=S.perNo
+		GROUP BY P.tckNo, P.ad, P.soyad, P.perNo
+		ORDER BY [SATIŞ ADEDİ] DESC, [SATIŞ TUTARI] DESC
+END
+GO
+/****** Object:  StoredProcedure [dbo].[spArabaEkleGuncelle]    Script Date: 20.12.2018 02:15:27 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROC [dbo].[spArabaEkleGuncelle] ( 
+	@sasiNo varchar(50),
+	@motorNo varchar(50), 
+	@plaka nchar(8), 
+	@marka varchar(50),
+	@model varchar(50),
+	@renk nvarchar(50) )
+AS
+	IF EXISTS(SELECT * FROM araba WHERE sasiNo = @sasiNo)
+	BEGIN
+		UPDATE araba SET  
+			motorNo = @motorNo, 
+			plaka = @plaka,
+			marka = @marka,
+			model = @model,
+			renk = @renk
+			WHERE sasiNo = @sasiNo
+	END
+	ELSE
+	BEGIN
+		INSERT INTO araba
+			(sasiNo, motorNo, plaka, marka, model, renk)
+		VALUES
+			(@sasiNo, @motorNo, @plaka, @marka, @model, @renk)
+		SELECT @sasiNo
+	END
 GO
 /****** Object:  Table [dbo].[araba]    Script Date: 19.12.2018 23:26:16 ******/
 SET ANSI_NULLS ON
@@ -503,6 +589,8 @@ GO
 INSERT INTO [dbo].[personel] ([ad], [kullaniciAdi], [parola]) VALUES ('admin', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997')
 GO
 INSERT INTO [dbo].[yetki] ([yetkiAdi]) VALUES ('Yönetim'), ('Satış'), ('Servis'), ('Parça')
+GO
+INSERT INTO [dbo].[yetkiler] ([perNo], [yetkiNo]) VALUES (1, 1)
 GO
 /****** Object:  Trigger [dbo].[trServisFaturaHesapla]    Script Date: 19.12.2018 23:26:16 ******/
 CREATE TRIGGER [dbo].[trServisFaturaHesapla]
