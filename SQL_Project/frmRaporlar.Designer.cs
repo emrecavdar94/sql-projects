@@ -57,7 +57,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tbPersonelAd = new System.Windows.Forms.TextBox();
             this.btnExportExcel = new System.Windows.Forms.Button();
-            this.btnYazdir = new System.Windows.Forms.Button();
+            this.btnRaporAl = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgVeriler)).BeginInit();
             this.gbRaporMusteriler.SuspendLayout();
             this.gbRaporAraba.SuspendLayout();
@@ -343,7 +343,7 @@
             // 
             // btnExportExcel
             // 
-            this.btnExportExcel.Location = new System.Drawing.Point(660, 295);
+            this.btnExportExcel.Location = new System.Drawing.Point(660, 279);
             this.btnExportExcel.Margin = new System.Windows.Forms.Padding(2);
             this.btnExportExcel.Name = "btnExportExcel";
             this.btnExportExcel.Size = new System.Drawing.Size(144, 51);
@@ -352,23 +352,22 @@
             this.btnExportExcel.UseVisualStyleBackColor = true;
             this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
             // 
-            // btnYazdir
+            // btnRaporAl
             // 
-            this.btnYazdir.Location = new System.Drawing.Point(660, 435);
-            this.btnYazdir.Margin = new System.Windows.Forms.Padding(2);
-            this.btnYazdir.Name = "btnYazdir";
-            this.btnYazdir.Size = new System.Drawing.Size(144, 51);
-            this.btnYazdir.TabIndex = 19;
-            this.btnYazdir.Text = "Yazdır";
-            this.btnYazdir.UseVisualStyleBackColor = true;
-            this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
+            this.btnRaporAl.Location = new System.Drawing.Point(660, 390);
+            this.btnRaporAl.Name = "btnRaporAl";
+            this.btnRaporAl.Size = new System.Drawing.Size(144, 51);
+            this.btnRaporAl.TabIndex = 19;
+            this.btnRaporAl.Text = "RAPOR AL";
+            this.btnRaporAl.UseVisualStyleBackColor = true;
+            this.btnRaporAl.Click += new System.EventHandler(this.btnRaporAl_Click);
             // 
             // frmRaporlar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 510);
-            this.Controls.Add(this.btnYazdir);
+            this.Controls.Add(this.btnRaporAl);
             this.Controls.Add(this.btnExportExcel);
             this.Controls.Add(this.gbRaporPersonel);
             this.Controls.Add(this.gbRaporAraba);
@@ -419,10 +418,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbPersonelAd;
         private System.Windows.Forms.Button btnExportExcel;
-        private System.Windows.Forms.Button btnYazdir;
         private System.Windows.Forms.RadioButton rbSatilmisAraba;
         private System.Windows.Forms.RadioButton rbSatilmamisAraba;
         private System.Windows.Forms.RadioButton rbTumArabalar;
         private System.Windows.Forms.MaskedTextBox mtbMusteriTCNo;
+        private System.Windows.Forms.Button btnRaporAl;
     }
 }

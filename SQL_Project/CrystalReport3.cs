@@ -16,14 +16,14 @@ namespace SQL_Project {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class crDisariAktar : ReportClass {
+    public class CrystalReport3 : ReportClass {
         
-        public crDisariAktar() {
+        public CrystalReport3() {
         }
         
         public override string ResourceName {
             get {
-                return "crDisariAktar.rpt";
+                return "CrystalReport3.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SQL_Project {
         
         public override string FullResourceName {
             get {
-                return "SQL_Project.crDisariAktar.rpt";
+                return "SQL_Project.CrystalReport3.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace SQL_Project {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedcrDisariAktar : Component, ICachedReport {
+    public class CachedCrystalReport3 : Component, ICachedReport {
         
-        public CachedcrDisariAktar() {
+        public CachedCrystalReport3() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace SQL_Project {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            crDisariAktar rpt = new crDisariAktar();
+            CrystalReport3 rpt = new CrystalReport3();
             rpt.Site = this.Site;
             return rpt;
         }

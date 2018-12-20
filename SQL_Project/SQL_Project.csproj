@@ -61,17 +61,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="crDisariAktar.cs">
+    <Compile Include="CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>crDisariAktar.rpt</DependentUpon>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="disariaktar.cs">
+    <Compile Include="CrystalReport2.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>disariaktar.rpt</DependentUpon>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport4.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport4.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmArabaRaporAl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArabaRaporAl.Designer.cs">
+      <DependentUpon>frmArabaRaporAl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEnCokSatisPersonel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnCokSatisPersonel.Designer.cs">
+      <DependentUpon>frmEnCokSatisPersonel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMusteriRaporAl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMusteriRaporAl.Designer.cs">
+      <DependentUpon>frmMusteriRaporAl.cs</DependentUpon>
     </Compile>
     <Compile Include="frmParca.cs">
       <SubType>Form</SubType>
@@ -85,11 +115,11 @@
     <Compile Include="frmParcalar.Designer.cs">
       <DependentUpon>frmParcalar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRaporRapor.cs">
+    <Compile Include="frmPersonelRaporAl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRaporRapor.Designer.cs">
-      <DependentUpon>frmRaporRapor.cs</DependentUpon>
+    <Compile Include="frmPersonelRaporAl.Designer.cs">
+      <DependentUpon>frmPersonelRaporAl.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSistemSabitleri.cs">
       <SubType>Form</SubType>
@@ -172,13 +202,30 @@
     <Compile Include="Personel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="crDisariAktar.rpt">
+    <EmbeddedResource Include="CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crDisariAktar.cs</LastGenOutput>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="disariaktar.rpt">
+    <EmbeddedResource Include="CrystalReport2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>disariaktar.cs</LastGenOutput>
+      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport4.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport4.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArabaRaporAl.resx">
+      <DependentUpon>frmArabaRaporAl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEnCokSatisPersonel.resx">
+      <DependentUpon>frmEnCokSatisPersonel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMusteriRaporAl.resx">
+      <DependentUpon>frmMusteriRaporAl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmParca.resx">
       <DependentUpon>frmParca.cs</DependentUpon>
@@ -186,8 +233,8 @@
     <EmbeddedResource Include="frmParcalar.resx">
       <DependentUpon>frmParcalar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRaporRapor.resx">
-      <DependentUpon>frmRaporRapor.cs</DependentUpon>
+    <EmbeddedResource Include="frmPersonelRaporAl.resx">
+      <DependentUpon>frmPersonelRaporAl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSistemSabitleri.resx">
       <DependentUpon>frmSistemSabitleri.cs</DependentUpon>

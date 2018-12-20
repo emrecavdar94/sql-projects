@@ -13,6 +13,8 @@ namespace SQL_Project
 {
     public partial class frmRaporlar : Form
     {
+        private enum Formlar { PERSONEL, MUSTERI, ARABA, PERSONELENCOK };
+        private Formlar sonForm;
         private SqlConnection baglanti;
         public long perno;
         public frmRaporlar(SqlConnection baglanti)
@@ -63,6 +65,7 @@ namespace SQL_Project
                 da.Fill(dt);
                 dgVeriler.DataSource = dt;
             }
+            sonForm = Formlar.MUSTERI;
         }
 
         private void btnArabaGetir_Click(object sender, EventArgs e)
@@ -118,6 +121,7 @@ namespace SQL_Project
             DataTable dt = new DataTable();
             da.Fill(dt);
             dgVeriler.DataSource = dt;
+            sonForm = Formlar.ARABA;
         }
 
         private void frmRaporlar_Load(object sender, EventArgs e)
@@ -159,6 +163,7 @@ namespace SQL_Project
                 da.Fill(dt);
                 dgVeriler.DataSource = dt;
             }
+            sonForm = Formlar.PERSONEL;
         }
 
         private void btnPersonelEncokSatisYapan_Click(object sender, EventArgs e)
@@ -171,6 +176,7 @@ namespace SQL_Project
                 da.Fill(dt);
                 dgVeriler.DataSource = dt;
             }
+            sonForm = Formlar.PERSONELENCOK;
         }
 
         private void btnExportExcel_Click(object sender, EventArgs e)
@@ -206,10 +212,28 @@ namespace SQL_Project
             Excel.Visible = true;
         }
 
-        private void btnYazdir_Click(object sender, EventArgs e)
+        private void btnRaporAl_Click(object sender, EventArgs e)
         {
-            frmRaporRapor disariaktar = new frmRaporRapor();
-            disariaktar.ShowDialog();
+            if (sonForm == Formlar.ARABA)
+            {
+                frmArabaRaporAl arabaraporal = new frmArabaRaporAl(baglanti, (DataTable)dgVeriler.DataSource);
+                arabaraporal.ShowDialog();
+            }
+            else if (sonForm==Formlar.PERSONEL)
+            {
+                frmPersonelRaporAl personelraporal = new frmPersonelRaporAl(baglanti, (DataTable)dgVeriler.DataSource);
+                personelraporal.ShowDialog();
+            }
+            else if (sonForm == Formlar.MUSTERI)
+            {
+                frmMusteriRaporAl musteriraporal = new frmMusteriRaporAl(baglanti, (DataTable)dgVeriler.DataSource);
+                musteriraporal.ShowDialog();
+            }
+            else if (sonForm == Formlar.PERSONELENCOK)
+            {
+                frmEnCokSatisPersonel encoksatisraporal = new frmEnCokSatisPersonel(baglanti, (DataTable)dgVeriler.DataSource);
+                encoksatisraporal.ShowDialog();
+            }
         }
     }
 }

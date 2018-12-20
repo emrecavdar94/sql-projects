@@ -16,14 +16,14 @@ namespace SQL_Project {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class disariaktar : ReportClass {
+    public class CrystalReport2 : ReportClass {
         
-        public disariaktar() {
+        public CrystalReport2() {
         }
         
         public override string ResourceName {
             get {
-                return "disariaktar.rpt";
+                return "CrystalReport2.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SQL_Project {
         
         public override string FullResourceName {
             get {
-                return "SQL_Project.disariaktar.rpt";
+                return "SQL_Project.CrystalReport2.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace SQL_Project {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cacheddisariaktar : Component, ICachedReport {
+    public class CachedCrystalReport2 : Component, ICachedReport {
         
-        public Cacheddisariaktar() {
+        public CachedCrystalReport2() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace SQL_Project {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            disariaktar rpt = new disariaktar();
+            CrystalReport2 rpt = new CrystalReport2();
             rpt.Site = this.Site;
             return rpt;
         }
