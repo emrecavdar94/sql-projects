@@ -22,6 +22,16 @@ namespace SQL_Project
             InitializeComponent();
         }
 
+        private void frmYonetim_Load(object sender, EventArgs e)
+        {
+            btnPersoneller.Enabled = personel.yetkiliMi("Yönetim");
+            btnYedekleGeriYukle.Enabled = personel.yetkiliMi("Yönetim");
+            btnSistemSabitleri.Enabled = personel.yetkiliMi("Yönetim");
+            btnParcalar.Enabled = personel.yetkiliMi("Yönetim", "Parça");
+            btnAraclar.Enabled = personel.yetkiliMi("Yönetim", "Servis", "Satış");
+            btnMusteriler.Enabled = personel.yetkiliMi("Yönetim", "Servis", "Satış");
+        }
+
         private void btnPersoneller_Click(object sender, EventArgs e)
         {
             frmYetkiler yetkilerForm = new frmYetkiler(baglanti, personel);

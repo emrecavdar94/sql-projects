@@ -29,6 +29,8 @@ namespace SQL_Project
             DataSet DS = new DataSet();
             sorgu.Fill(DS);
             dgMusteriler.DataSource = DS.Tables[0];
+
+            btnSil.Enabled = personel.yetkiliMi("Yönetim");
         }
 
         private void btnSil_Click(object sender, EventArgs e)

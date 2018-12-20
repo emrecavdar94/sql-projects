@@ -163,7 +163,7 @@ namespace SQL_Project
 
         private void btnPersonelEncokSatisYapan_Click(object sender, EventArgs e)
         {
-            string komut = "SELECT TOP (10) p.tckNo AS[TC KIMLIK NO], p.ad AS[AD], p.soyad AS[SOYAD], COUNT(p.perNo) AS[SATIŞ ADEDİ], SUM(s.tutar) AS[SATIŞ TUTARI] FROM personel p INNER JOIN satis s ON p.perNo=s.perNo GROUP BY p.tckNo,p.ad,p.soyad,p.perNo ORDER BY [SATIŞ ADEDİ] DESC, [SATIŞ TUTARI] DESC ";
+            string komut = "spEnCokSatanPersoneller";
             if (tbPersonelAd.Text == string.Empty && tbPersonelSoyad.Text == string.Empty)
             {
                 SqlDataAdapter da = new SqlDataAdapter(komut, baglanti);
